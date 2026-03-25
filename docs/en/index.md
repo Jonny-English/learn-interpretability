@@ -1,6 +1,6 @@
 # From Circuits to Claude
 
-This course is now Colab-first and paper-reproduction-first: every paper in the core path has its own note, its own notebook, and its own self-check.
+This course is now Colab-first under a strict honesty rule: only notebooks that generate outputs live at runtime count as runnable work. Anything that still depends on precomputed artifacts is treated as reading-only.
 
 ## Pre-P4 foundation pack
 
@@ -29,8 +29,8 @@ This course is now Colab-first and paper-reproduction-first: every paper in the 
 ## How to use the repo
 
 - Read the note first.
-- Open the paired notebook locally or in Colab.
-- Inspect the JSON artifact when the article is artifact-guided.
+- If the item is marked `paper-faithful` or `method-lab`, open the paired notebook locally or in Colab.
+- If the item is marked `reading-only`, treat it as a paper note rather than a runnable reproduction.
 - Answer the self-check questions at the end of the note and notebook rather than stopping at the plots.
 - Turn each reproduction into a reading note, an experiment log, and a short memo rather than keeping it only in your head.
 
@@ -42,7 +42,7 @@ This course is now Colab-first and paper-reproduction-first: every paper in the 
 - [12-week bootcamp](program/week-by-week.md)
 - [Research playbook](program/research-playbook.md)
 - [Evaluation rubric](program/evaluation-rubric.md)
-- [Company onramp simulation](program/company-onramp.md)
+- [Independent research sprints](program/independent-sprints.md)
 - [Reference-output layer](program/reference-outputs.md)
 - [Advanced extension track](program/advanced-extensions.md)
 
@@ -52,12 +52,12 @@ Use the track in this order:
 2. Commit to the 12-week schedule.
 3. Use the playbook and templates while you work through the articles.
 4. Score yourself with the rubric at Week 7 and Week 12.
-5. Finish one company-style simulation task and one capstone proposal.
+5. Finish one independent research sprint and one capstone proposal.
 
 ## Ground rules
 
-- `M00-M05` are runnable on CPU or free Colab.
-- `M06` and `M08` now include lightweight local reproductions; `M03`, `M07`, `M09`, and `M10` still remain primarily artifact-guided teaching reconstructions.
-- `X01-X07` are the longer Colab reproduction track used to keep pushing the path toward the breadth and rigor needed for P7/P8-level growth.
+- Under the strict realtime policy, the live core path is `M00`, `M01`, `M02`, `M04`, and `M05`; `M03` and `M06-M10` are currently reading-only because this repo would otherwise rely on precomputed artifacts.
+- `X01-X07` stay runnable, but they are method labs rather than claims of full paper-faithful reproduction.
+- Use `python3 scripts/audit_realtime_policy.py` after notebook generation if you want the repo to enforce the no-precomputed-artifact rule.
 - Chinese and English stay structurally mirrored. If you add an article note in one language, add it in the other.
-- If your goal is company research readiness, output quality matters more than completion counts.
+- If your goal is serious research growth, output quality matters more than completion counts.

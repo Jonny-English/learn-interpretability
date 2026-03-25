@@ -98,12 +98,12 @@ WORKSHEETS = {
             "列出当你把这套直觉推广出去时，最先出现的一个歧义点。",
         ],
         "ship_en": [
-            "One reading note with a manager-summary paragraph.",
+            "One reading note with a mentor/peer-summary paragraph.",
             "One glossary list of unclear terms.",
             "One next-question list for M01.",
         ],
         "ship_zh": [
-            "1 份带 manager summary 的 reading note。",
+            "1 份带导师/同伴摘要的 reading note。",
             "1 份不懂术语清单。",
             "1 份通往 M01 的 next-question list。",
         ],
@@ -2033,6 +2033,8 @@ def main() -> None:
     course = json.loads(COURSE_PATH.read_text())
     clean_generated_notebooks()
     for module in course:
+        if not module["notebook_enabled"]:
+            continue
         builder = NOTEBOOK_BUILDERS[module["id"]]
         filename = f"{module['id'].lower()}_{module['web_slug'].replace('-', '_')}.ipynb"
         for language in ("en", "zh"):

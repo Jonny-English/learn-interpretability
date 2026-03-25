@@ -29,6 +29,10 @@ REQUIRED_FIELDS = {
     "prereqs",
     "paper_refs",
     "artifact_refs",
+    "delivery_mode",
+    "notebook_enabled",
+    "integrity_note_zh",
+    "integrity_note_en",
     "runnable_tier",
     "web_slug",
 }
@@ -45,7 +49,7 @@ PROGRAM_REQUIRED_FIELDS = {
     "exit_portfolio_en",
     "phases",
     "weeks",
-    "company_tasks",
+    "independent_sprints",
     "capstones",
     "rubric",
 }
@@ -57,7 +61,7 @@ EXPECTED_PROGRAM_DOCS = {
     "week-by-week.md",
     "research-playbook.md",
     "evaluation-rubric.md",
-    "company-onramp.md",
+    "independent-sprints.md",
     "reference-outputs.md",
     "advanced-extensions.md",
 }
@@ -113,6 +117,9 @@ EXTENSION_REQUIRED_FIELDS = {
     "why_now_en",
     "assignment_zh",
     "assignment_en",
+    "delivery_mode",
+    "integrity_note_zh",
+    "integrity_note_en",
     "prereqs",
     "notebook_slug",
     "runnable_tier",
@@ -201,13 +208,18 @@ def main() -> None:
         for artifact_id in module["artifact_refs"]:
             if artifact_id not in artifact_lookup:
                 fail(f"module {module['id']} references missing artifact {artifact_id}")
+        if module["delivery_mode"] == "reading-only" and module["notebook_enabled"]:
+            fail(f"module {module['id']} cannot be reading-only and notebook-enabled at the same time")
+        if not module["notebook_enabled"] and module["runnable_tier"] != "reading-only":
+            fail(f"module {module['id']} must use runnable_tier=reading-only when notebook_enabled is false")
 
         doc_name = f"{module['id'].lower()}-{module['web_slug']}.md"
         notebook_name = f"{module['id'].lower()}_{module['web_slug'].replace('-', '_')}.ipynb"
         expected_docs["en"].add(doc_name)
         expected_docs["zh"].add(doc_name)
-        expected_notebooks["en"].add(notebook_name)
-        expected_notebooks["zh"].add(notebook_name)
+        if module["notebook_enabled"]:
+            expected_notebooks["en"].add(notebook_name)
+            expected_notebooks["zh"].add(notebook_name)
 
     if not isinstance(foundations, list) or not foundations:
         fail("content/foundations.json must be a non-empty list")
@@ -256,6 +268,8 @@ def main() -> None:
         missing = EXTENSION_REQUIRED_FIELDS - set(entry)
         if missing:
             fail(f"extension {entry.get('id', '<missing>')} missing fields: {sorted(missing)}")
+        if entry["delivery_mode"] != "method-lab":
+            fail(f"extension {entry['id']} must currently be labeled method-lab under the strict policy")
         for prereq in entry["prereqs"]:
             if prereq not in module_ids and prereq not in extension_ids:
                 fail(f"extension {entry['id']} references unknown prerequisite {prereq}")
@@ -271,8 +285,8 @@ def main() -> None:
     missing_program = PROGRAM_REQUIRED_FIELDS - set(program)
     if missing_program:
         fail(f"content/program.json is missing fields: {sorted(missing_program)}")
-    if not program["phases"] or not program["weeks"] or not program["company_tasks"] or not program["rubric"]:
-        fail("content/program.json must define non-empty phases, weeks, company_tasks, and rubric")
+    if not program["phases"] or not program["weeks"] or not program["independent_sprints"] or not program["rubric"]:
+        fail("content/program.json must define non-empty phases, weeks, independent_sprints, and rubric")
 
     phase_ids = [phase["id"] for phase in program["phases"]]
     if len(phase_ids) != len(set(phase_ids)):
@@ -397,10 +411,12 @@ def main() -> None:
         if markdown_shape(zh_path) != markdown_shape(en_path):
             fail(f"reference output markdown structure mismatch for {entry['id']}")
 
+    live_article_count = sum(1 for module in course if module["notebook_enabled"])
     print(
-        f"validated {len(course)} article notebooks, {len(foundations)} foundation labs, "
-        f"{len(reference_outputs)} reference outputs, {len(extensions)} extension papers, "
-        f"{len(artifacts)} artifacts, and {len(program['weeks'])} research-ready weeks"
+        f"validated {len(course)} article entries with {live_article_count} live article notebooks, "
+        f"{len(foundations)} foundation labs, {len(reference_outputs)} reference outputs, "
+        f"{len(extensions)} extension papers, {len(artifacts)} artifacts, and "
+        f"{len(program['weeks'])} research-ready weeks"
     )
 
 

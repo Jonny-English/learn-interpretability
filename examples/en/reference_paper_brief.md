@@ -2,7 +2,7 @@
 
 ## Task context
 
-Write a one-page brief for a research manager who has not read the paper, explaining the question, strongest evidence, biggest weakness, and next experiment for `M05 Evaluating Feature Steering`.
+Write a one-page brief for a mentor, advisor, or peer who has not read the paper, explaining the question, strongest evidence, biggest weakness, and next experiment for `M05 Evaluating Feature Steering`.
 
 ## Summary
 

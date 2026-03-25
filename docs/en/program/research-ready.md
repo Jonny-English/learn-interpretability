@@ -6,18 +6,18 @@ This repository is no longer a single course. It is a three-layer training syste
 - a research-apprenticeship bootcamp
 - an extension-and-portfolio layer meant to keep pushing toward an Alibaba-style `P8`
 
-The second and third layers matter because the gap between "I followed the notebook" and "I create stable value for a research team" is usually not one more paper summary. The gap is reproduction density, writing density, and research judgment.
+The second and third layers matter because the gap between "I followed the notebook" and "I produce stable value in a serious research setting" is usually not one more paper summary. The gap is reproduction density, writing density, and research judgment.
 
 ## What this path is actually trying to produce
 
-This path first tries to make you useful in a company research environment, and then places you on a longer `P8` growth arc.
+This path first tries to make you effective as a student researcher or independent researcher, and then places you on a longer `P8` growth arc.
 
 In the core stage, a learner should be able to:
 
 - read a paper quickly and explain the real question, method, evidence, limitations, and next experiment
 - reproduce a result cleanly and explain which change actually moved the output
 - distinguish observation, inference, and speculation in their own writing
-- write short memos that both research engineers and managers can scan
+- write short memos that mentors, peers, and future collaborators can scan
 - propose a next experiment with a baseline, budget, and stop condition
 
 After that, the target becomes:
@@ -114,11 +114,11 @@ Finishing the full path should leave you with a portfolio, not a memory:
 - 2 or more graph, artifact, or edit critiques
 - 2 two-week capstone proposals
 
-This portfolio is what lets you show a mentor, manager, or hiring loop that you did more than consume material. You learned how to work in a research mode.
+This portfolio is what lets you show a mentor, advisor, collaborator, or peer reviewer that you did more than consume material. You learned how to work in a research mode.
 
 ## What this path still cannot replace
 
-No repository can literally guarantee a company offer, and no bootcamp can replace the taste of a real team. What this path can do is remove the most common blockers:
+No repository can literally replace a real advisor, collaborator group, or long apprenticeship. What this path can do is remove the most common blockers:
 
 - weak paper reading
 - weak experiment logging

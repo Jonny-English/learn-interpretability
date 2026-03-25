@@ -14,10 +14,11 @@
 - 中间文件和打分阶段会直接影响你最后能看见什么。
 - 工具层的设计会决定后续图的保真度和可用性。
 
-## Notebook 与 artifact
+## 当前状态
 
-- Notebook：`notebooks/zh/m07_circuit_tracing_tools.ipynb`
-- 共享 artifact：`artifacts/m06_attribution_graph.json` 与 `artifacts/m07_tracing_tool_workflow.json`
+- 在严格实时规则下是 `reading-only`
+- 当前仓库不再提供这里的 live notebook，因为工具工作流说明仍然依赖预计算 artifact。
+- 共享参考 artifact：`artifacts/m06_attribution_graph.json` 与 `artifacts/m07_tracing_tool_workflow.json`
 
 ## 验收题
 

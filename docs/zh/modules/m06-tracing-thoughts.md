@@ -2,7 +2,7 @@
 
 ## 目标
 
-先在本地构造一条 toy tracing 路径，再学习如何阅读一张局部 attribution graph，并解释一条从输入走到答案的计算路径。
+学习如何阅读一张局部 attribution graph，并解释一条从输入走到答案的计算路径，但不假装当前仓库已经具备公开实时 tracing 栈。
 
 ## 核心参考
 
@@ -14,11 +14,11 @@
 - 好的 trace 是有选择地暴露局部，而不是一次性摊开整个模型。
 - “解释答案是什么”与“解释答案是怎么算出来的”是两件不同的事。
 
-## Notebook 与 artifact
+## 当前状态
 
-- Notebook：`notebooks/zh/m06_tracing_thoughts.ipynb`
-- 共享 artifact：`artifacts/m06_attribution_graph.json`
-- notebook 现在先跑一个本地 toy trace，再把结果和共享图对照。
+- 在严格实时规则下是 `reading-only`
+- 当前仓库不再提供这里的 live notebook，因为那会依赖预计算 attribution artifact。
+- 共享参考 artifact：`artifacts/m06_attribution_graph.json`
 
 ## 验收题
 
@@ -28,4 +28,4 @@
 
 ## 模块结论
 
-这篇论文把焦点从孤立 feature 推进到局部计算图，而 notebook 则把“自己先算一条路径”放到了阅读共享图之前。
+这篇论文把焦点从孤立 feature 推进到局部计算图，而当前仓库只把它保留为阅读与批判入口，直到公开实时 tracing 栈可用。

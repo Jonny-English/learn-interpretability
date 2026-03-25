@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
-`From Circuits to Claude` 是一个面向初学者的双语、Colab 优先 interpretability 训练项目。仓库现在改成了“论文复现优先”结构：核心路径里的每一篇论文，都有一份同步讲义和一份独立 Colab notebook。
+`From Circuits to Claude` 是一个面向初学者的双语、Colab 优先 interpretability 训练项目。仓库现在改成了“论文复现优先”结构：核心路径里的每一篇论文，都有一份同步讲义；凡是能诚实实时复现的论文，再配一份独立 Colab notebook。
 
 仓库由三层核心同步层组成：
 
@@ -15,11 +15,17 @@
 现在仓库还多了四层强化内容：
 
 - `Pre-P4 基础包`：补环境、attention 形状感、向量几何和实验纪律。
-- `research-ready path`：12 周训练营、memo 模板、rubric 和公司研究模拟任务。
+- `research-ready path`：12 周训练营、memo 模板、rubric 和独立研究冲刺任务。
 - `参考答案层`：用样例校准输出密度。
 - `扩展论文复现轨道`：用更多 Colab 复现，把视野扩到 Anthropic 主线之外。
 
 这些层的目的，是避免自学里最常见的失败模式：内容看完了，但复现习惯、写作习惯和研究判断都没有建立起来。
+
+从现在起增加一条硬规则：
+
+- 只有运行时实时产生输出的代码，才算可运行内容
+- 凡是仍然依赖预计算 JSON artifact 的部分，一律降级成 `reading-only`
+- 即使有简化版 live notebook，也只能叫 `method-lab`，不能再包装成完整论文复现
 
 ## 这个项目适合谁
 
@@ -35,7 +41,7 @@
 |---|---|
 | `P4` | 校招生 / 初级工程师水平：能在明确指导下完成环境搭建、跑通 notebook、复述概念，但独立研究判断还很弱。 |
 | `P5` | 工程师水平：能独立完成小范围复现、记录实验、比较 baseline 与 variant，并写出基本结论。 |
-| `P6` | 高级工程师 / 资深 IC 起步水平：能在给定方向下承担明确研究任务，完成读论文、复现、批判、提出下一步实验。 |
+| `P6` | 高级工程师 / 资深 IC 起步水平：能在实验室、读书小组或个人项目里承担明确研究任务，完成读论文、复现、批判、提出下一步实验。 |
 | `P7` | 专家水平：能独立定义一个小方向、设计两周级研究计划，并把实验、工具和汇报串成闭环。 |
 | `**P8**` | 高级专家水平：能负责一个研究子方向或工具线，对多名研究工程师形成稳定技术带动。 |
 | `P9` | 资深专家 / Principal 水平：能定义中期研究主题，影响多个团队的判断、方法和协作方式。 |
@@ -51,7 +57,7 @@
 - `M00-M10` 加上 research-ready bootcamp，建立可信的 `P5/P6` 地板。
 - `X01-X07`、反复做 capstone 和作品集累计，才是继续往 `P7/P8` 走的部分。
 
-所以这个项目的北极星是 `P8`，但方法不是喊口号，而是先把每一层地板搭起来。
+所以这个项目的北极星是 `P8`，但方法不是喊口号，而是先把每一层地板搭起来。在严格规则下，只有 `paper-faithful` 和 `method-lab` 状态的条目才算 live code。
 
 ## 两条起跑线
 
@@ -123,34 +129,33 @@
 下面每一行都对应一篇文章和一份 notebook。现在每篇讲义和每本 Colab 也都带有验收题，用来帮助读者检查自己到底学到了什么。
 
 <!-- COURSE_TABLE:START -->
-| ID | 文章 | 日期 | Notebook | Colab | 运行层级 | 你会做什么 |
-|---|---|---|---|---|---|---|
-| `M00` | Zoom In：电路入门 | `2020-03-10` | [打开](notebooks/zh/m00_zoom_in_circuits.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m00_zoom_in_circuits.ipynb) | `warmup` | 用视觉模型建立 feature、circuit 与 intervention 的最初直觉。 |
-| `M01` | Toy Models of Superposition | `2022-09-14` | [打开](notebooks/zh/m01_toy_models_superposition.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m01_toy_models_superposition.ipynb) | `cpu-colab` | 用最小 toy model 理解为什么神经元会混装多个语义。 |
-| `M02` | Towards Monosemanticity | `2023-10-05` | [打开](notebooks/zh/m02_towards_monosemanticity.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m02_towards_monosemanticity.ipynb) | `cpu-colab` | 通过教学版 sparse autoencoder 理解为什么 feature 视角比 neuron 视角更稳。 |
-| `M03` | Mapping the Mind | `2024-05-21` | [打开](notebooks/zh/m03_mapping_the_mind.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m03_mapping_the_mind.ipynb) | `artifact-guided` | 浏览教学版 feature catalog，理解“发现大量特征”到底意味着什么。 |
-| `M04` | Features as Classifiers | `2024-10-16` | [打开](notebooks/zh/m04_features_as_classifiers.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m04_features_as_classifiers.ipynb) | `cpu-colab` | 把 feature 当成分类器输入，理解“读出”能力从哪里来。 |
-| `M05` | Evaluating Feature Steering | `2024-10-25` | [打开](notebooks/zh/m05_evaluating_feature_steering.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m05_evaluating_feature_steering.ipynb) | `cpu-colab` | 扫描 steering 强度，观察 target gain、sweet spot 与 off-target cost 的平衡。 |
-| `M06` | Tracing the Thoughts | `2025-03-27` | [打开](notebooks/zh/m06_tracing_thoughts.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m06_tracing_thoughts.ipynb) | `cpu-colab` | 先在本地跑一个 toy tracing 复现，再用共享 attribution graph 学会阅读一条局部计算路径。 |
-| `M07` | Circuit Tracing Tools | `2025-05-29` | [打开](notebooks/zh/m07_circuit_tracing_tools.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m07_circuit_tracing_tools.ipynb) | `artifact-guided` | 查看 tracing artifact 与工作流拆解，理解工具层如何支撑分析。 |
-| `M08` | Persona Vectors | `2025-08-01` | [打开](notebooks/zh/m08_persona_vectors.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m08_persona_vectors.ipynb) | `cpu-colab` | 先在本地构造一个教学版 persona direction，再用共享 artifact 对比 trait 前后变化。 |
-| `M09` | Signs of Introspection | `2025-10-29` | [打开](notebooks/zh/m09_signs_of_introspection.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m09_signs_of_introspection.ipynb) | `artifact-guided` | 用教学数据对比 self-report 与行为信号，讨论“内省迹象”到底意味着什么。 |
-| `M10` | The Assistant Axis | `2026-01-19` | [打开](notebooks/zh/m10_assistant_axis.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m10_assistant_axis.ipynb) | `artifact-guided` | 把不同 assistant 风格投到同一条轴上，观察 character 稳定化问题。 |
+| ID | 文章 | 日期 | 状态 | Notebook | Colab | 运行层级 | 你会做什么 |
+|---|---|---|---|---|---|---|---|
+| `M00` | Zoom In：电路入门 | `2020-03-10` | `method-lab` | [打开](notebooks/zh/m00_zoom_in_circuits.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m00_zoom_in_circuits.ipynb) | `warmup` | 用视觉模型建立 feature、circuit 与 intervention 的最初直觉。 |
+| `M01` | Toy Models of Superposition | `2022-09-14` | `paper-faithful` | [打开](notebooks/zh/m01_toy_models_superposition.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m01_toy_models_superposition.ipynb) | `cpu-colab` | 用最小 toy model 理解为什么神经元会混装多个语义。 |
+| `M02` | Towards Monosemanticity | `2023-10-05` | `method-lab` | [打开](notebooks/zh/m02_towards_monosemanticity.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m02_towards_monosemanticity.ipynb) | `cpu-colab` | 通过教学版 sparse autoencoder 理解为什么 feature 视角比 neuron 视角更稳。 |
+| `M03` | Mapping the Mind | `2024-05-21` | `reading-only` | 阅读 | - | `reading-only` | 浏览教学版 feature catalog，理解“发现大量特征”到底意味着什么。 |
+| `M04` | Features as Classifiers | `2024-10-16` | `method-lab` | [打开](notebooks/zh/m04_features_as_classifiers.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m04_features_as_classifiers.ipynb) | `cpu-colab` | 把 feature 当成分类器输入，理解“读出”能力从哪里来。 |
+| `M05` | Evaluating Feature Steering | `2024-10-25` | `method-lab` | [打开](notebooks/zh/m05_evaluating_feature_steering.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m05_evaluating_feature_steering.ipynb) | `cpu-colab` | 扫描 steering 强度，观察 target gain、sweet spot 与 off-target cost 的平衡。 |
+| `M06` | Tracing the Thoughts | `2025-03-27` | `reading-only` | 阅读 | - | `reading-only` | 先在本地跑一个 toy tracing 复现，再用共享 attribution graph 学会阅读一条局部计算路径。 |
+| `M07` | Circuit Tracing Tools | `2025-05-29` | `reading-only` | 阅读 | - | `reading-only` | 查看 tracing artifact 与工作流拆解，理解工具层如何支撑分析。 |
+| `M08` | Persona Vectors | `2025-08-01` | `reading-only` | 阅读 | - | `reading-only` | 先在本地构造一个教学版 persona direction，再用共享 artifact 对比 trait 前后变化。 |
+| `M09` | Signs of Introspection | `2025-10-29` | `reading-only` | 阅读 | - | `reading-only` | 用教学数据对比 self-report 与行为信号，讨论“内省迹象”到底意味着什么。 |
+| `M10` | The Assistant Axis | `2026-01-19` | `reading-only` | 阅读 | - | `reading-only` | 把不同 assistant 风格投到同一条轴上，观察 character 稳定化问题。 |
 <!-- COURSE_TABLE:END -->
 
 ## 推荐路径
 
 - `Pre-P4 基础包`：`F00 → F01 → F02 → F03`
-- `基础段`：`M00 → M01 → M02`
-- `feature 段`：`M03 → M04 → M05`
-- `tracing 与 character 段`：`M06 → M07 → M08 → M09 → M10`
-- `扩展复现段`：`X01 → X02 → X03 → X04 → X05 → X06 → X07`
+- `实时主线`：`M00 → M01 → M02 → M04 → M05`
+- `当前只读论文`：`M03`、`M06`、`M07`、`M08`、`M09`、`M10`
+- `扩展方法练习`：`X01 → X02 → X03 → X04 → X05 → X06 → X07`
 
-如果你想先走最短有效路径，建议先做 `F00`、再看 `M00`、`M01`、`M02`、`M05`、`M06`、`X01`。
+如果你想先走最短的严格 live-code 路径，建议先做 `F00`、再看 `M00`、`M01`、`M02`、`M05`、`X01`。
 
 ## Research-Ready Path
 
-如果你的目标不是“看懂”，而是“能在公司研究环境里开始做事”，请把下面这些文件和文章 notebook 一起用：
+如果你的目标不是“看懂”，而是“能以学生研究者或个人研究者的方式开始做事”，请把下面这些文件和文章 notebook 一起用：
 
 - [研究就绪总览](docs/zh/program/research-ready.md)
 - [Colab 优先路径](docs/zh/program/colab-first-path.md)
@@ -158,7 +163,7 @@
 - [12 周训练营](docs/zh/program/week-by-week.md)
 - [研究工作流](docs/zh/program/research-playbook.md)
 - [评估 rubric](docs/zh/program/evaluation-rubric.md)
-- [公司入职模拟](docs/zh/program/company-onramp.md)
+- [独立研究冲刺](docs/zh/program/independent-sprints.md)
 - [参考答案层](docs/zh/program/reference-outputs.md)
 - [扩展论文轨道](docs/zh/program/advanced-extensions.md)
 
@@ -179,31 +184,37 @@
 
 ## 参考答案层
 
-这层不是给你抄，而是给你校准“什么叫一个能交给导师、经理或面试流程看的输出”。进入扩展复现之后，这一层会更重要。
+这层不是给你抄，而是给你校准“什么叫一个能交给导师、研究同伴、协作者或同行评审看的输出”。进入扩展复现之后，这一层会更重要。
 
 <!-- REFERENCE_TABLE:START -->
 | ID | 参考输出 | 文件 | 什么时候用 |
 |---|---|---|---|
-| `R01` | 参考论文简报 | [examples/zh/reference_paper_brief.md](examples/zh/reference_paper_brief.md) | 用在公司模拟任务 T1 或任何 paper reading note 之后的压缩写作。 |
+| `R01` | 参考论文简报 | [examples/zh/reference_paper_brief.md](examples/zh/reference_paper_brief.md) | 用在独立研究冲刺任务 T1 或任何 paper reading note 之后的压缩写作。 |
 | `R02` | 参考实验日志 | [examples/zh/reference_experiment_log.md](examples/zh/reference_experiment_log.md) | 用在任何 sweep、ablation 或 feature-steering notebook 之后。 |
-| `R03` | 参考 Artifact Critique | [examples/zh/reference_artifact_critique.md](examples/zh/reference_artifact_critique.md) | 用在 M03、M07、M09、M10 或公司模拟任务 T3。 |
-| `R04` | 参考两周提案 | [examples/zh/reference_two_week_proposal.md](examples/zh/reference_two_week_proposal.md) | 用在 capstone 或公司模拟任务 T4 之前校准自己的提案密度。 |
+| `R03` | 参考 Artifact Critique | [examples/zh/reference_artifact_critique.md](examples/zh/reference_artifact_critique.md) | 用在 M03、M07、M09、M10 或独立研究冲刺任务 T3。 |
+| `R04` | 参考两周提案 | [examples/zh/reference_two_week_proposal.md](examples/zh/reference_two_week_proposal.md) | 用在 capstone 或独立研究冲刺任务 T4 之前校准自己的提案密度。 |
 <!-- REFERENCE_TABLE:END -->
 
 ## 扩展论文轨道
 
-主线课程故意围绕 Anthropic interpretability 弧线来组织，但如果你的目标是朝 `P8` 方向推进，这还不够。做完主线后，继续用更多 Colab 复现补 transformer circuits、经典行为电路、memory/editing 和 auditing 视角。
+主线课程故意围绕 Anthropic interpretability 弧线来组织，但如果你的目标是朝 `P8` 方向推进，这还不够。做完主线后，继续用更多 Colab 方法练习补 transformer circuits、经典行为电路、memory/editing 和 auditing 视角。
+
+在严格实时规则下，状态列要这样理解：
+
+- `paper-faithful`：可运行，且对论文问题形状是诚实的
+- `method-lab`：可运行，但明确只是 live 方法练习，不冒充完整论文复现
+- `reading-only`：只保留阅读与批判入口，因为否则就会依赖预计算 artifact 或不可公开栈
 
 <!-- EXTENSION_TABLE:START -->
-| ID | 扩展论文 | 链接 | Notebook | Colab | 运行层级 | 为什么现在读 | 你要交什么 |
-|---|---|---|---|---|---|---|---|
-| `X01` | A Mathematical Framework for Transformer Circuits | [原文](https://transformer-circuits.pub/2021/framework/index.html) | [打开](notebooks/extensions/zh/x01_transformer_circuits_framework.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x01_transformer_circuits_framework.ipynb) | `cpu-colab` | 当你已经做完 M06 之后，这篇能把你从“会读一张图”推进到“会说一个一般框架”。 | 在 Colab 里复现一个最小 residual-composition toy，并写 1 页 framework brief，把 M06 里的一个 toy trace 用 residual-stream 与 composition 语言重述。 |
-| `X02` | In-context Learning and Induction Heads | [原文](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html) | [打开](notebooks/extensions/zh/x02_induction_heads.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x02_induction_heads.ipynb) | `cpu-colab` | 它把 attention 读图、circuit 语言和具体行为现象连起来，是进入经典 transformer-circuits 的第一站。 | 在 Colab 里复现一个最小 copying task，并说明 induction head 为什么比单个 attention 热点更像“机制”。 |
-| `X03` | Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 Small | [原文](https://arxiv.org/abs/2211.00593) | [打开](notebooks/extensions/zh/x03_ioi_circuit.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x03_ioi_circuit.ipynb) | `cpu-colab` | 做完 Anthropic 主线后，这篇能逼你处理更脏的行为定义、更多的头和更复杂的证据链。 | 在 Colab 里复现一个教学版 IOI 证据链，并写 1 份 evidence-chain 速记，指出这类行为任务比 M06 toy trace 多了哪些不确定性。 |
-| `X04` | Transformer Feed-Forward Layers Are Key-Value Memories | [原文](https://arxiv.org/abs/2012.14913) | [打开](notebooks/extensions/zh/x04_ffn_key_value_memories.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x04_ffn_key_value_memories.ipynb) | `cpu-colab` | 如果你只会读 attention 电路，不会解释 MLP 存了什么，就很难进一步理解 factual recall 和编辑。 | 在 Colab 里复现一个教学版 key-value memory toy，并写 1 段说明为什么某些事实更像被 MLP 检索而不是被 attention 即时计算。 |
-| `X05` | Knowledge Neurons in Pretrained Transformers | [原文](https://arxiv.org/abs/2104.08696) | [打开](notebooks/extensions/zh/x05_knowledge_neurons.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x05_knowledge_neurons.ipynb) | `cpu-colab` | 这篇能迫使你区分“一个现象可被某些单元预测”与“这个现象真的由这些单元承载”之间的差别。 | 在 Colab 里复现一个教学版 knowledge-neuron 打分与消融实验，并写 1 段说明高分 neuron 为什么仍然不自动等于因果解释。 |
-| `X06` | Locating and Editing Factual Associations in GPT | [原文](https://arxiv.org/abs/2202.05262) | [打开](notebooks/extensions/zh/x06_rome_factual_editing.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x06_rome_factual_editing.ipynb) | `cpu-colab` | 如果终点是公司研究，只会读图不够；你还得能讨论编辑是否稳定、是否局部、是否值得上线。 | 在 Colab 里复现一个教学版 rank-one factual edit，并写 1 份 edit memo，说明 edit success、locality 和 collateral damage 如何一起评估。 |
-| `X07` | Auditing Language Models for Hidden Objectives | [原文](https://www.anthropic.com/research/auditing-hidden-objectives) | [打开](notebooks/extensions/zh/x07_auditing_hidden_objectives.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x07_auditing_hidden_objectives.ipynb) | `cpu-colab` | 如果你的终点是公司研究，这篇能把 feature、tracing、editing 和 safety-facing auditing 放到同一张图里。 | 在 Colab 里复现一个教学版 auditing toy，并写 1 份 memo，说明如果怀疑模型有隐藏目标，你会先看哪些行为信号、哪些内部证据、哪些停机标准。 |
+| ID | 扩展论文 | 链接 | 状态 | Notebook | Colab | 运行层级 | 为什么现在读 | 你要交什么 |
+|---|---|---|---|---|---|---|---|---|
+| `X01` | A Mathematical Framework for Transformer Circuits | [原文](https://transformer-circuits.pub/2021/framework/index.html) | `method-lab` | [打开](notebooks/extensions/zh/x01_transformer_circuits_framework.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x01_transformer_circuits_framework.ipynb) | `cpu-colab` | 当你已经做完 M06 之后，这篇能把你从“会读一张图”推进到“会说一个一般框架”。 | 在 Colab 里复现一个最小 residual-composition toy，并写 1 页 framework brief，把 M06 里的一个 toy trace 用 residual-stream 与 composition 语言重述。 |
+| `X02` | In-context Learning and Induction Heads | [原文](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html) | `method-lab` | [打开](notebooks/extensions/zh/x02_induction_heads.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x02_induction_heads.ipynb) | `cpu-colab` | 它把 attention 读图、circuit 语言和具体行为现象连起来，是进入经典 transformer-circuits 的第一站。 | 在 Colab 里复现一个最小 copying task，并说明 induction head 为什么比单个 attention 热点更像“机制”。 |
+| `X03` | Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 Small | [原文](https://arxiv.org/abs/2211.00593) | `method-lab` | [打开](notebooks/extensions/zh/x03_ioi_circuit.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x03_ioi_circuit.ipynb) | `cpu-colab` | 做完 Anthropic 主线后，这篇能逼你处理更脏的行为定义、更多的头和更复杂的证据链。 | 在 Colab 里复现一个教学版 IOI 证据链，并写 1 份 evidence-chain 速记，指出这类行为任务比 M06 toy trace 多了哪些不确定性。 |
+| `X04` | Transformer Feed-Forward Layers Are Key-Value Memories | [原文](https://arxiv.org/abs/2012.14913) | `method-lab` | [打开](notebooks/extensions/zh/x04_ffn_key_value_memories.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x04_ffn_key_value_memories.ipynb) | `cpu-colab` | 如果你只会读 attention 电路，不会解释 MLP 存了什么，就很难进一步理解 factual recall 和编辑。 | 在 Colab 里复现一个教学版 key-value memory toy，并写 1 段说明为什么某些事实更像被 MLP 检索而不是被 attention 即时计算。 |
+| `X05` | Knowledge Neurons in Pretrained Transformers | [原文](https://arxiv.org/abs/2104.08696) | `method-lab` | [打开](notebooks/extensions/zh/x05_knowledge_neurons.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x05_knowledge_neurons.ipynb) | `cpu-colab` | 这篇能迫使你区分“一个现象可被某些单元预测”与“这个现象真的由这些单元承载”之间的差别。 | 在 Colab 里复现一个教学版 knowledge-neuron 打分与消融实验，并写 1 段说明高分 neuron 为什么仍然不自动等于因果解释。 |
+| `X06` | Locating and Editing Factual Associations in GPT | [原文](https://arxiv.org/abs/2202.05262) | `method-lab` | [打开](notebooks/extensions/zh/x06_rome_factual_editing.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x06_rome_factual_editing.ipynb) | `cpu-colab` | 如果你想从读图走到能做 intervention judgment，只会读图不够；你还得能讨论编辑是否稳定、是否局部、是否值得继续推进。 | 在 Colab 里复现一个教学版 rank-one factual edit，并写 1 份 edit memo，说明 edit success、locality 和 collateral damage 如何一起评估。 |
+| `X07` | Auditing Language Models for Hidden Objectives | [原文](https://www.anthropic.com/research/auditing-hidden-objectives) | `method-lab` | [打开](notebooks/extensions/zh/x07_auditing_hidden_objectives.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x07_auditing_hidden_objectives.ipynb) | `cpu-colab` | 如果你想把 feature、tracing、editing 和 auditing 连成一条自洽研究线，这篇能把它们放到同一张图里。 | 在 Colab 里复现一个教学版 auditing toy，并写 1 份 memo，说明如果怀疑模型有隐藏目标，你会先看哪些行为信号、哪些内部证据、哪些停机标准。 |
 <!-- EXTENSION_TABLE:END -->
 
 ## 快速开始
@@ -219,6 +230,9 @@ python3 scripts/generate_course_notebooks.py
 python3 scripts/validate_course.py
 python3 scripts/check_links.py
 
+# 强制检查 live notebook 不得依赖预计算 artifact
+python3 scripts/audit_realtime_policy.py
+
 # 执行所有生成的 notebook 烟雾测试
 python3 scripts/smoke_notebooks.py
 ```
@@ -233,7 +247,7 @@ python3 scripts/smoke_notebooks.py
 ├── docs/                  # 中英文镜像文章讲义 + 基础包 + 扩展轨道 + 训练营文档
 ├── notebooks/             # 旧版长 notebook + 文章 notebook + foundation labs + 扩展复现
 ├── examples/              # 论文简报、实验日志、critique、proposal 参考样例
-├── artifacts/             # 供文章 notebook 复用的 JSON artifact
+├── artifacts/             # 只读参考数据；严格 live notebook 不允许依赖这里
 ├── scripts/               # notebook 生成与校验脚本
 ├── figures/               # M00 继续复用的视觉电路图片
 └── utils/                 # 原教程留下的绘图辅助函数

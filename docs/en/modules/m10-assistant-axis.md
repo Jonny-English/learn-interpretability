@@ -14,10 +14,11 @@ Study how assistant styles can be placed on a shared axis and why stabilizing th
 - Helpfulness, safety, and warmth do not move independently.
 - Stabilizing character is an interpretability problem and a product problem at the same time.
 
-## Notebook and artifacts
+## Status
 
-- Notebook: `notebooks/en/m10_assistant_axis.ipynb`
-- Shared artifact: `artifacts/m10_assistant_axis.json`
+- `reading-only` under the strict realtime policy
+- This repository does not currently present a live notebook here because it would depend on precomputed assistant-axis artifacts.
+- Shared reference artifact: `artifacts/m10_assistant_axis.json`
 
 ## Self-check questions
 

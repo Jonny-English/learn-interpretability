@@ -49,6 +49,6 @@
 - Baseline:
 - Failure criterion:
 
-## Manager summary
+## Mentor / peer summary
 
-Write 4-6 sentences that a research manager could skim quickly.
+Write 4-6 sentences that a mentor, advisor, or peer could skim quickly.

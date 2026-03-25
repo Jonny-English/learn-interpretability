@@ -2,7 +2,7 @@
 
 ## Goal
 
-Start with one local toy tracing path, then teach readers how to read an attribution graph and explain one computation path from input to answer.
+Learn how to read an attribution graph and explain one computation path from input to answer without pretending that this repository has a fully public real-time tracing stack.
 
 ## Core reference
 
@@ -14,11 +14,11 @@ Start with one local toy tracing path, then teach readers how to read an attribu
 - A useful trace is selective; it does not need the whole model at once.
 - Explaining a route through the model is different from paraphrasing the final answer.
 
-## Notebook and artifacts
+## Status
 
-- Notebook: `notebooks/en/m06_tracing_thoughts.ipynb`
-- Shared artifact: `artifacts/m06_attribution_graph.json`
-- The notebook now runs a local toy trace first and then compares it to the shared graph.
+- `reading-only` under the strict realtime policy
+- This repository does not currently ship a live notebook here because that would depend on precomputed attribution artifacts.
+- Shared reference artifact: `artifacts/m06_attribution_graph.json`
 
 ## Self-check questions
 
@@ -28,4 +28,4 @@ Start with one local toy tracing path, then teach readers how to read an attribu
 
 ## Takeaway
 
-This paper shifts the focus from isolated features to local computation graphs, and the notebook now makes that shift concrete by asking the reader to compute one path before reading the shared graph.
+This paper shifts the focus from isolated features to local computation graphs, and in this repository it is now treated as reading and critique until a public real-time tracing stack exists.

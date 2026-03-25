@@ -2,7 +2,7 @@
 
 ## 目标
 
-用教学数据检查模型“怎么描述自己”和“行为上暴露出什么”之间的差距。
+检查模型“怎么描述自己”和“行为上暴露出什么”之间的差距，但不假装当前仓库已经具备原论文层面的实时实验栈。
 
 ## 核心参考
 
@@ -14,10 +14,11 @@
 - 真正值得盯住的，是那些不一致的案例。
 - “出现内省迹象”更应该扩大问题，而不是过早下结论。
 
-## Notebook 与 artifact
+## 当前状态
 
-- Notebook：`notebooks/zh/m09_signs_of_introspection.ipynb`
-- 共享 artifact：`artifacts/m09_introspection_signals.json`
+- 在严格实时规则下是 `reading-only`
+- 当前仓库不再提供这里的 live notebook，因为那会依赖预计算 introspection-signal artifact。
+- 共享参考 artifact：`artifacts/m09_introspection_signals.json`
 
 ## 验收题
 

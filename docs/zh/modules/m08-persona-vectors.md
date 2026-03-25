@@ -2,7 +2,7 @@
 
 ## 目标
 
-先在本地恢复一个教学版 persona direction，再把 feature 风格的思路接到 character trait 上，把 persona 看成表示空间中的方向。
+把 feature 风格的思路接到 character trait 上，把 persona 看成表示空间中的方向，但不假装当前仓库已经具备公开实时 persona-vectors 栈。
 
 ## 核心参考
 
@@ -14,11 +14,11 @@
 - 干预前后可以比较 trait 的变化。
 - persona vector 是一个有用把手，但不是完整的人格理论。
 
-## Notebook 与 artifact
+## 当前状态
 
-- Notebook：`notebooks/zh/m08_persona_vectors.ipynb`
-- 共享 artifact：`artifacts/m08_persona_vectors.json`
-- notebook 现在会先恢复一个 toy persona direction，再与共享 artifact 对照。
+- 在严格实时规则下是 `reading-only`
+- 当前仓库不再提供这里的 live notebook，因为那会依赖预计算 persona-vector artifact。
+- 共享参考 artifact：`artifacts/m08_persona_vectors.json`
 
 ## 验收题
 
@@ -28,4 +28,4 @@
 
 ## 模块结论
 
-一旦表示方向开始具有行为意义，interpretability 就会碰到模型 character；而 notebook 现在会让你先亲手恢复一个小方向，再去看共享图里的更丰富现象。
+一旦表示方向开始具有行为意义，interpretability 就会碰到模型 character；但当前仓库把这一篇只保留为阅读与批判入口，直到公开实时栈可用。

@@ -2,7 +2,7 @@
 
 ## Goal
 
-Recover a teaching-scale persona direction locally, then connect feature-style thinking to character traits by treating persona as a direction in representation space.
+Connect feature-style thinking to character traits by treating persona as a direction in representation space, without pretending that this repository has a public real-time persona-vectors stack.
 
 ## Core reference
 
@@ -14,11 +14,11 @@ Recover a teaching-scale persona direction locally, then connect feature-style t
 - Trait shifts can be compared before and after intervention.
 - A persona vector is a useful handle, not a complete theory of character.
 
-## Notebook and artifacts
+## Status
 
-- Notebook: `notebooks/en/m08_persona_vectors.ipynb`
-- Shared artifact: `artifacts/m08_persona_vectors.json`
-- The notebook now recovers a toy persona direction first and then compares it to the shared artifact.
+- `reading-only` under the strict realtime policy
+- This repository does not currently ship a live notebook here because that would still depend on precomputed persona-vector artifacts.
+- Shared reference artifact: `artifacts/m08_persona_vectors.json`
 
 ## Self-check questions
 
@@ -28,4 +28,4 @@ Recover a teaching-scale persona direction locally, then connect feature-style t
 
 ## Takeaway
 
-Interpretability starts touching model character once representation directions become behaviorally meaningful, and the notebook now makes that concrete by letting the reader recover one direction before reading the richer shared artifact.
+Interpretability starts touching model character once representation directions become behaviorally meaningful, but in this repository that discussion is now kept in reading-only form until a public live stack exists.

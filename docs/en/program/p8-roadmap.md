@@ -4,7 +4,7 @@
 
 - This repository does not promise "finish 12 weeks and automatically become P8."
 - The more accurate statement is: it is designed as a training system that points toward the long-horizon goal of an Alibaba-style `P8` interpretability researcher.
-- The 12-week core bootcamp is for entry usefulness; P7/P8 requires a longer cycle of extension reproductions, writing, proposals, and independent judgment.
+- The 12-week core bootcamp is for building a serious research floor; P7/P8 requires a longer cycle of extension reproductions, writing, proposals, and independent judgment.
 
 ## The growth arc from P4 to P8
 
@@ -17,7 +17,7 @@
 
 - `F00-F03` mainly serve `Pre-P4 -> P4`.
 - `M00-M10` mainly serve `P4 -> P5/P6`.
-- `X01-X07`, the reference-output layer, the company onramp, and repeated capstones mainly serve `P6 -> P7/P8`.
+- `X01-X07`, the reference-output layer, the independent research sprints, and repeated capstones mainly serve `P6 -> P7/P8`.
 
 ## If your real goal is P8
 
@@ -30,5 +30,5 @@
 
 - Whether you can place multiple papers inside one research language.
 - Whether you can state the evidence boundary of an explanation rather than only restating the author's conclusion.
-- Whether you can propose a two-week plan that a real team could execute.
+- Whether you can propose a two-week plan that you could execute with a mentor, peer, or small study group.
 - Whether you can put interpretability, editing, auditing, and control inside one judgment frame.

@@ -18,6 +18,10 @@
       "legacy-zoom-in-figures",
       "concept-graph"
     ],
+    "delivery_mode": "method-lab",
+    "notebook_enabled": true,
+    "integrity_note_zh": "这是概念热身 lab，不宣称对原文做论文级复现。",
+    "integrity_note_en": "This is a concept warm-up lab and does not claim a paper-faithful reproduction.",
     "runnable_tier": "warmup",
     "web_slug": "zoom-in-circuits"
   },
@@ -41,6 +45,10 @@
     "artifact_refs": [
       "concept-graph"
     ],
+    "delivery_mode": "paper-faithful",
+    "notebook_enabled": true,
+    "integrity_note_zh": "该论文本身就是 toy-model 研究，notebook 的输出在运行时实时生成。",
+    "integrity_note_en": "The paper itself is a toy-model study, and the notebook generates its outputs live at runtime.",
     "runnable_tier": "cpu-colab",
     "web_slug": "toy-models-superposition"
   },
@@ -64,6 +72,10 @@
     "artifact_refs": [
       "concept-graph"
     ],
+    "delivery_mode": "method-lab",
+    "notebook_enabled": true,
+    "integrity_note_zh": "这是公开栈上的方法练习，不宣称完整复现 Anthropic 原文规模与工件。",
+    "integrity_note_en": "This is a public-stack method lab and does not claim a full-scale reproduction of the Anthropic paper and artifacts.",
     "runnable_tier": "cpu-colab",
     "web_slug": "towards-monosemanticity"
   },
@@ -88,7 +100,11 @@
       "concept-graph",
       "m03-feature-catalog"
     ],
-    "runnable_tier": "artifact-guided",
+    "delivery_mode": "reading-only",
+    "notebook_enabled": false,
+    "integrity_note_zh": "当前仓库没有诚实的实时复现版本；这里只保留阅读与方法说明。",
+    "integrity_note_en": "This repository does not currently contain an honest real-time reproduction; this item is retained as reading and method explanation only.",
+    "runnable_tier": "reading-only",
     "web_slug": "mapping-the-mind"
   },
   {
@@ -111,6 +127,10 @@
     "artifact_refs": [
       "concept-graph"
     ],
+    "delivery_mode": "method-lab",
+    "notebook_enabled": true,
+    "integrity_note_zh": "这是公开可跑的特征读出方法练习，不宣称对原论文结果做全文复现。",
+    "integrity_note_en": "This is a publicly runnable feature-readout method lab and does not claim a full reproduction of the paper's reported results.",
     "runnable_tier": "cpu-colab",
     "web_slug": "features-as-classifiers"
   },
@@ -134,6 +154,10 @@
     "artifact_refs": [
       "concept-graph"
     ],
+    "delivery_mode": "method-lab",
+    "notebook_enabled": true,
+    "integrity_note_zh": "这是公开可跑的 steering 方法练习，不把教学设置冒充成原论文结果。",
+    "integrity_note_en": "This is a publicly runnable steering method lab and does not present the teaching setup as the paper's original result.",
     "runnable_tier": "cpu-colab",
     "web_slug": "evaluating-feature-steering"
   },
@@ -159,7 +183,11 @@
       "concept-graph",
       "m06-attribution-graph"
     ],
-    "runnable_tier": "cpu-colab",
+    "delivery_mode": "reading-only",
+    "notebook_enabled": false,
+    "integrity_note_zh": "当前没有不依赖预计算 attribution graph 的公开实时复现版本，因此只保留阅读说明。",
+    "integrity_note_en": "There is no current public real-time reproduction here that avoids precomputed attribution graphs, so this is retained as reading-only.",
+    "runnable_tier": "reading-only",
     "web_slug": "tracing-thoughts"
   },
   {
@@ -184,7 +212,11 @@
       "m06-attribution-graph",
       "m07-tracing-tool-workflow"
     ],
-    "runnable_tier": "artifact-guided",
+    "delivery_mode": "reading-only",
+    "notebook_enabled": false,
+    "integrity_note_zh": "该主题当前依赖预计算工作流工件，本仓库不再把它伪装成实时复现。",
+    "integrity_note_en": "This topic currently depends on precomputed workflow artifacts, and the repository no longer presents it as a live reproduction.",
+    "runnable_tier": "reading-only",
     "web_slug": "circuit-tracing-tools"
   },
   {
@@ -208,7 +240,11 @@
       "concept-graph",
       "m08-persona-vectors"
     ],
-    "runnable_tier": "cpu-colab",
+    "delivery_mode": "reading-only",
+    "notebook_enabled": false,
+    "integrity_note_zh": "当前仓库没有不依赖教学 artifact 的诚实 persona-vectors 实时复现版本。",
+    "integrity_note_en": "The repository does not currently contain an honest persona-vectors live reproduction that avoids teaching artifacts.",
+    "runnable_tier": "reading-only",
     "web_slug": "persona-vectors"
   },
   {
@@ -232,7 +268,11 @@
       "concept-graph",
       "m09-introspection-signals"
     ],
-    "runnable_tier": "artifact-guided",
+    "delivery_mode": "reading-only",
+    "notebook_enabled": false,
+    "integrity_note_zh": "当前仓库没有原论文层面的实时实验栈；这里只保留阅读与批判入口。",
+    "integrity_note_en": "The repository does not contain a paper-level live experiment stack here; this item remains as a reading-and-critique entry only.",
+    "runnable_tier": "reading-only",
     "web_slug": "signs-of-introspection"
   },
   {
@@ -257,7 +297,11 @@
       "concept-graph",
       "m10-assistant-axis"
     ],
-    "runnable_tier": "artifact-guided",
+    "delivery_mode": "reading-only",
+    "notebook_enabled": false,
+    "integrity_note_zh": "当前仓库没有不依赖预计算数据的 assistant-axis 实时复现版本。",
+    "integrity_note_en": "The repository does not currently contain an assistant-axis live reproduction that avoids precomputed data.",
+    "runnable_tier": "reading-only",
     "web_slug": "assistant-axis"
   }
 ]

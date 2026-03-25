@@ -3,12 +3,12 @@
     "id": "R01",
     "title_zh": "参考论文简报",
     "title_en": "Reference Paper Brief",
-    "summary_zh": "一个写给研究经理的 1 页论文简报样例，示范怎样抓问题、最强证据、最大弱点和下一步实验。",
-    "summary_en": "A one-page paper brief written for a research manager, showing how to capture the question, strongest evidence, main weakness, and next experiment.",
+    "summary_zh": "一个写给导师、研究同伴或读书小组成员的 1 页论文简报样例，示范怎样抓问题、最强证据、最大弱点和下一步实验。",
+    "summary_en": "A one-page paper brief written for a mentor, advisor, or peer, showing how to capture the question, strongest evidence, main weakness, and next experiment.",
     "path_zh": "examples/zh/reference_paper_brief.md",
     "path_en": "examples/en/reference_paper_brief.md",
-    "best_for_zh": "用在公司模拟任务 T1 或任何 paper reading note 之后的压缩写作。",
-    "best_for_en": "Use it after company task T1 or any paper reading note that needs to be compressed for a manager."
+    "best_for_zh": "用在独立研究冲刺任务 T1 或任何 paper reading note 之后的压缩写作。",
+    "best_for_en": "Use it after independent sprint T1 or any paper reading note that needs to be compressed for a mentor or peer."
   },
   {
     "id": "R02",
@@ -29,8 +29,8 @@
     "summary_en": "A critique example that separates what an artifact supports, what it does not support, and which evidence chain is still missing.",
     "path_zh": "examples/zh/reference_artifact_critique.md",
     "path_en": "examples/en/reference_artifact_critique.md",
-    "best_for_zh": "用在 M03、M07、M09、M10 或公司模拟任务 T3。",
-    "best_for_en": "Use it for M03, M07, M09, M10, or company task T3."
+    "best_for_zh": "用在 M03、M07、M09、M10 或独立研究冲刺任务 T3。",
+    "best_for_en": "Use it for M03, M07, M09, M10, or independent sprint T3."
   },
   {
     "id": "R04",
@@ -40,7 +40,7 @@
     "summary_en": "A scoped research proposal example with a baseline, budget, risks, and a stop condition.",
     "path_zh": "examples/zh/reference_two_week_proposal.md",
     "path_en": "examples/en/reference_two_week_proposal.md",
-    "best_for_zh": "用在 capstone 或公司模拟任务 T4 之前校准自己的提案密度。",
-    "best_for_en": "Use it before a capstone or company task T4 to calibrate the density of your proposal."
+    "best_for_zh": "用在 capstone 或独立研究冲刺任务 T4 之前校准自己的提案密度。",
+    "best_for_en": "Use it before a capstone or independent sprint T4 to calibrate the density of your proposal."
   }
 ]

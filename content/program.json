@@ -1,6 +1,6 @@
 {
-  "goal_zh": "让有基础 Python/PyTorch、但没有 interpretability 背景的学习者，沿着一条 Colab 优先的论文复现路径成长：先获得公司研究入场能力，再通过扩展复现、研究写作和重复 capstone，朝阿里式 P8 interpretability 研究者的长期目标推进。",
-  "goal_en": "Enable learners with basic Python/PyTorch but no interpretability background to grow along a Colab-first paper-reproduction path: first reach company-entry research usefulness, then push toward the long-horizon goal of an Alibaba-style P8 interpretability researcher through extension reproductions, research writing, and repeated capstones.",
+  "goal_zh": "让有基础 Python/PyTorch、但没有 interpretability 背景的学习者，沿着一条 Colab 优先的论文复现路径成长：先获得作为学生或个人研究者可执行研究的能力，再通过扩展复现、研究写作和重复 capstone，朝阿里式 P8 interpretability 研究者的长期目标推进。",
+  "goal_en": "Enable learners with basic Python/PyTorch but no interpretability background to grow along a Colab-first paper-reproduction path: first become research-productive as a student or independent researcher, then push toward the long-horizon goal of an Alibaba-style P8 interpretability researcher through extension reproductions, research writing, and repeated capstones.",
   "entry_requirements_zh": [
     "会用 Python、NumPy、PyTorch 写和调试小实验。",
     "知道矩阵乘法、点积、范数、概率、logit、cross-entropy 这些基础概念。",
@@ -199,15 +199,15 @@
     {
       "id": "S4",
       "weeks": "Week 11-12",
-      "title_zh": "公司研究模拟",
-      "title_en": "Company Research Simulation",
+      "title_zh": "独立研究冲刺",
+      "title_en": "Independent Research Sprint",
       "focus_zh": [
         "从给定问题出发提出假设、设计实验、产出 memo 和下一步计划。",
-        "练习像研究工程师一样汇报，而不是像课程作业一样复述。"
+        "练习像一个自驱研究者那样汇报，而不是像课程作业一样复述。"
       ],
       "focus_en": [
         "Start from a given question, propose a hypothesis, design experiments, and produce memos plus next steps.",
-        "Practice reporting like a research engineer rather than restating a class assignment."
+        "Practice reporting like a self-directed researcher rather than restating a class assignment."
       ],
       "deliverables_zh": [
         "完成 1 个 capstone。",
@@ -465,12 +465,12 @@
       "activities_zh": [
         "画出 tracing workflow。",
         "分析一个 tooling bottleneck。",
-        "写一份如果你在公司做这条线最想补什么工具的 note。"
+        "写一份如果你要把这条线作为个人研究项目推进，最想补什么工具的 note。"
       ],
       "activities_en": [
         "Draw the tracing workflow.",
         "Analyze one tooling bottleneck.",
-        "Write a note on which tool you would want most if you were working on this line inside a company."
+        "Write a note on which tool you would want most if you were pushing this line as an independent project."
       ],
       "outputs_zh": [
         "1 张 workflow 图。",
@@ -545,8 +545,8 @@
     },
     {
       "id": "W12",
-      "title_zh": "公司研究模拟汇报",
-      "title_en": "Company Research Simulation",
+      "title_zh": "最终研究汇报",
+      "title_en": "Final Research Report",
       "module_ids": ["M08", "M09", "M10"],
       "time_budget_hours": "8-10",
       "activities_zh": [
@@ -573,13 +573,13 @@
       "checkpoint_en": "If you are still repeating course content instead of your own judgment, risks, and next steps, you have not hit the research-report standard."
     }
   ],
-  "company_tasks": [
+  "independent_sprints": [
     {
       "id": "T1",
       "title_zh": "快速论文简报",
       "title_en": "Fast Paper Brief",
-      "brief_zh": "从 M03-M10 中任选一篇，写一页给没读过原文的研究经理看的简报：问题、方法、最强证据、最大弱点、你建议的下一步实验。",
-      "brief_en": "Choose one article from M03-M10 and write a one-page brief for a research manager who has not read it: question, method, strongest evidence, biggest weakness, and your recommended next experiment.",
+      "brief_zh": "从 M03-M10 中任选一篇，写一页给没读过原文的导师、研究同伴或读书小组成员看的简报：问题、方法、最强证据、最大弱点、你建议的下一步实验。",
+      "brief_en": "Choose one article from M03-M10 and write a one-page brief for a mentor, advisor, or peer who has not read it: question, method, strongest evidence, biggest weakness, and your recommended next experiment.",
       "required_outputs_zh": ["1 页 brief", "1 张关键图", "3 个风险点"],
       "required_outputs_en": ["One-page brief", "One key figure", "Three risks"],
       "timebox": "90 minutes"

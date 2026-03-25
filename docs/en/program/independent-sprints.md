@@ -1,6 +1,6 @@
-# Company Onramp Simulation
+# Independent Research Sprints
 
-The point of this file is to simulate task shape. Real company work is rarely "read these three articles and tell me what you learned." It is usually constrained, ambiguous, and output-driven.
+The point of this file is to simulate task shape for students and independent researchers. Serious self-directed research is rarely "read these three articles and tell me what you learned." It is usually constrained, ambiguous, and output-driven.
 
 ## Task 1: Fast paper brief
 
@@ -64,4 +64,4 @@ Use the tasks in this order:
 3. Adversarial artifact reading
 4. Two-week proposal
 
-That order forces the same transition a junior researcher usually needs: understand, reproduce, critique, propose.
+That order forces the same transition an early-stage researcher usually needs: understand, reproduce, critique, propose.

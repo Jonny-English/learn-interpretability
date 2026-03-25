@@ -4,7 +4,7 @@ The core course is intentionally organized around the Anthropic interpretability
 
 ## Why this track matters
 
-- Company interpretability work will not stay inside one company's paper line.
+- Serious interpretability work will not stay inside one paper line or one lab's local framing.
 - You still need a more general transformer-circuits language, a memory/editing problem frame, and an auditing-facing perspective.
 - Most importantly, these extension papers are no longer just a reading list. They are Colab reproduction tasks.
 

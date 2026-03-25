@@ -14,10 +14,11 @@ Expose the workflow and artifact structure behind circuit tracing without preten
 - Intermediate files and scoring stages shape what you can eventually inspect.
 - Tooling decisions affect the fidelity and usability of every downstream graph.
 
-## Notebook and artifacts
+## Status
 
-- Notebook: `notebooks/en/m07_circuit_tracing_tools.ipynb`
-- Shared artifacts: `artifacts/m06_attribution_graph.json` and `artifacts/m07_tracing_tool_workflow.json`
+- `reading-only` under the strict realtime policy
+- This repository does not currently present a live notebook here because the workflow explanation depends on precomputed tool artifacts.
+- Shared reference artifacts: `artifacts/m06_attribution_graph.json` and `artifacts/m07_tracing_tool_workflow.json`
 
 ## Self-check questions
 

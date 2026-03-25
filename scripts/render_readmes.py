@@ -54,16 +54,26 @@ def extension_colab_url(item: dict, language: str) -> str:
 
 
 def build_table(course: list[dict], language: str) -> str:
+    def notebook_cell(module: dict, lang: str) -> str:
+        if not module["notebook_enabled"]:
+            return "阅读" if lang == "zh" else "Reading"
+        return f"[打开]({notebook_path(module, lang)})" if lang == "zh" else f"[Open]({notebook_path(module, lang)})"
+
+    def colab_cell(module: dict, lang: str) -> str:
+        if not module["notebook_enabled"]:
+            return "-"
+        return f"[Colab]({colab_url(module, lang)})"
+
     if language == "zh":
-        header = "| ID | 文章 | 日期 | Notebook | Colab | 运行层级 | 你会做什么 |\n|---|---|---|---|---|---|---|"
+        header = "| ID | 文章 | 日期 | 状态 | Notebook | Colab | 运行层级 | 你会做什么 |\n|---|---|---|---|---|---|---|---|"
         rows = [
-            f"| `{module['id']}` | {module['title_zh']} | `{module['paper_refs'][0]['date']}` | [打开]({notebook_path(module, 'zh')}) | [Colab]({colab_url(module, 'zh')}) | `{module['runnable_tier']}` | {module['summary_zh']} |"
+            f"| `{module['id']}` | {module['title_zh']} | `{module['paper_refs'][0]['date']}` | `{module['delivery_mode']}` | {notebook_cell(module, 'zh')} | {colab_cell(module, 'zh')} | `{module['runnable_tier']}` | {module['summary_zh']} |"
             for module in course
         ]
     else:
-        header = "| ID | Paper | Date | Notebook | Colab | Runnable tier | What you will do |\n|---|---|---|---|---|---|---|"
+        header = "| ID | Paper | Date | Status | Notebook | Colab | Runnable tier | What you will do |\n|---|---|---|---|---|---|---|---|"
         rows = [
-            f"| `{module['id']}` | {module['title_en']} | `{module['paper_refs'][0]['date']}` | [Open]({notebook_path(module, 'en')}) | [Colab]({colab_url(module, 'en')}) | `{module['runnable_tier']}` | {module['summary_en']} |"
+            f"| `{module['id']}` | {module['title_en']} | `{module['paper_refs'][0]['date']}` | `{module['delivery_mode']}` | {notebook_cell(module, 'en')} | {colab_cell(module, 'en')} | `{module['runnable_tier']}` | {module['summary_en']} |"
             for module in course
         ]
     return "\n".join([header, *rows])
@@ -103,15 +113,15 @@ def build_reference_table(items: list[dict], language: str) -> str:
 
 def build_extension_table(items: list[dict], language: str) -> str:
     if language == "zh":
-        header = "| ID | 扩展论文 | 链接 | Notebook | Colab | 运行层级 | 为什么现在读 | 你要交什么 |\n|---|---|---|---|---|---|---|---|"
+        header = "| ID | 扩展论文 | 链接 | 状态 | Notebook | Colab | 运行层级 | 为什么现在读 | 你要交什么 |\n|---|---|---|---|---|---|---|---|---|"
         rows = [
-            f"| `{item['id']}` | {item['title_zh']} | [原文]({item['source_url']}) | [打开]({extension_notebook_path(item, 'zh')}) | [Colab]({extension_colab_url(item, 'zh')}) | `{item['runnable_tier']}` | {item['why_now_zh']} | {item['assignment_zh']} |"
+            f"| `{item['id']}` | {item['title_zh']} | [原文]({item['source_url']}) | `{item['delivery_mode']}` | [打开]({extension_notebook_path(item, 'zh')}) | [Colab]({extension_colab_url(item, 'zh')}) | `{item['runnable_tier']}` | {item['why_now_zh']} | {item['assignment_zh']} |"
             for item in items
         ]
     else:
-        header = "| ID | Extension Paper | Link | Notebook | Colab | Runnable tier | Why now | What to ship |\n|---|---|---|---|---|---|---|---|"
+        header = "| ID | Extension Paper | Link | Status | Notebook | Colab | Runnable tier | Why now | What to ship |\n|---|---|---|---|---|---|---|---|---|"
         rows = [
-            f"| `{item['id']}` | {item['title_en']} | [Source]({item['source_url']}) | [Open]({extension_notebook_path(item, 'en')}) | [Colab]({extension_colab_url(item, 'en')}) | `{item['runnable_tier']}` | {item['why_now_en']} | {item['assignment_en']} |"
+            f"| `{item['id']}` | {item['title_en']} | [Source]({item['source_url']}) | `{item['delivery_mode']}` | [Open]({extension_notebook_path(item, 'en')}) | [Colab]({extension_colab_url(item, 'en')}) | `{item['runnable_tier']}` | {item['why_now_en']} | {item['assignment_en']} |"
             for item in items
         ]
     return "\n".join([header, *rows])

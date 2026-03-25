@@ -2,7 +2,7 @@
 
 ## 任务背景
 
-面向没读过原文的研究经理，在 1 页里说明 `M05 Evaluating Feature Steering` 的问题、最强证据、最大弱点和下一步实验。
+面向没读过原文的导师、研究同伴或读书小组成员，在 1 页里说明 `M05 Evaluating Feature Steering` 的问题、最强证据、最大弱点和下一步实验。
 
 ## 摘要
 

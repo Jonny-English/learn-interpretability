@@ -14,6 +14,9 @@
     "prereqs": [
       "M06"
     ],
+    "delivery_mode": "method-lab",
+    "integrity_note_zh": "这是实时生成的机制练习，不宣称完整复现原论文实验规模。",
+    "integrity_note_en": "This is a live-generated mechanism drill and does not claim a full-scale reproduction of the original paper.",
     "notebook_slug": "transformer_circuits_framework",
     "runnable_tier": "cpu-colab",
     "questions_zh": [
@@ -43,6 +46,9 @@
       "X01",
       "M06"
     ],
+    "delivery_mode": "method-lab",
+    "integrity_note_zh": "这是实时生成的机制练习，不把教学任务包装成原论文完整结果。",
+    "integrity_note_en": "This is a live-generated mechanism drill and does not package the teaching task as the paper's full result.",
     "notebook_slug": "induction_heads",
     "runnable_tier": "cpu-colab",
     "questions_zh": [
@@ -72,6 +78,9 @@
       "X02",
       "M06"
     ],
+    "delivery_mode": "method-lab",
+    "integrity_note_zh": "这是实时生成的方法练习，用来训练证据链思维，不宣称完整 IOI 论文复现。",
+    "integrity_note_en": "This is a live-generated method drill for evidence-chain thinking and does not claim a full IOI-paper reproduction.",
     "notebook_slug": "ioi_circuit",
     "runnable_tier": "cpu-colab",
     "questions_zh": [
@@ -101,6 +110,9 @@
       "X01",
       "M02"
     ],
+    "delivery_mode": "method-lab",
+    "integrity_note_zh": "这是实时生成的 memory 方法练习，不把简化设置伪装成原论文实验。",
+    "integrity_note_en": "This is a live-generated memory-method drill and does not present the simplified setup as the paper's original experiment.",
     "notebook_slug": "ffn_key_value_memories",
     "runnable_tier": "cpu-colab",
     "questions_zh": [
@@ -130,6 +142,9 @@
       "X04",
       "M04"
     ],
+    "delivery_mode": "method-lab",
+    "integrity_note_zh": "这是实时生成的局部化练习，不宣称完整复现原论文栈。",
+    "integrity_note_en": "This is a live-generated localization drill and does not claim a full reproduction of the paper stack.",
     "notebook_slug": "knowledge_neurons",
     "runnable_tier": "cpu-colab",
     "questions_zh": [
@@ -151,8 +166,8 @@
     "source_url": "https://arxiv.org/abs/2202.05262",
     "summary_zh": "ROME 把“解释”推进到“可控编辑”，要求你面对定位、因果和副作用三件事能否同时成立。",
     "summary_en": "ROME pushes the path from 'explanation' into 'controllable editing' and forces you to ask whether localization, causality, and side effects can hold at once.",
-    "why_now_zh": "如果终点是公司研究，只会读图不够；你还得能讨论编辑是否稳定、是否局部、是否值得上线。",
-    "why_now_en": "If company research is the goal, reading graphs is not enough; you also need to discuss whether an edit is stable, local, and worth shipping.",
+    "why_now_zh": "如果你想从读图走到能做 intervention judgment，只会读图不够；你还得能讨论编辑是否稳定、是否局部、是否值得继续推进。",
+    "why_now_en": "If you want to move from graph reading to intervention judgment, reading graphs is not enough; you also need to discuss whether an edit is stable, local, and worth pursuing.",
     "assignment_zh": "在 Colab 里复现一个教学版 rank-one factual edit，并写 1 份 edit memo，说明 edit success、locality 和 collateral damage 如何一起评估。",
     "assignment_en": "Reproduce a teaching-scale rank-one factual edit in Colab, then write one edit memo describing how to evaluate edit success, locality, and collateral damage together.",
     "prereqs": [
@@ -160,6 +175,9 @@
       "X05",
       "M05"
     ],
+    "delivery_mode": "method-lab",
+    "integrity_note_zh": "这是实时生成的 editing 方法练习，不把教学版 rank-one update 冒充成全文复现。",
+    "integrity_note_en": "This is a live-generated editing-method drill and does not present the teaching rank-one update as a full-paper reproduction.",
     "notebook_slug": "rome_factual_editing",
     "runnable_tier": "cpu-colab",
     "questions_zh": [
@@ -181,8 +199,8 @@
     "source_url": "https://www.anthropic.com/research/auditing-hidden-objectives",
     "summary_zh": "把 interpretability、behavior evaluation 和 auditing 连起来，提醒你研究目标不只是“看懂”，还包括找出模型隐藏优化目标。",
     "summary_en": "Connects interpretability, behavior evaluation, and auditing, and reminds you that the goal is not only to understand but also to detect hidden optimization targets.",
-    "why_now_zh": "如果你的终点是公司研究，这篇能把 feature、tracing、editing 和 safety-facing auditing 放到同一张图里。",
-    "why_now_en": "If company research is the goal, this puts features, tracing, editing, and safety-facing auditing into one frame.",
+    "why_now_zh": "如果你想把 feature、tracing、editing 和 auditing 连成一条自洽研究线，这篇能把它们放到同一张图里。",
+    "why_now_en": "If you want one coherent frame that connects features, tracing, editing, and auditing, this paper puts them into one view.",
     "assignment_zh": "在 Colab 里复现一个教学版 auditing toy，并写 1 份 memo，说明如果怀疑模型有隐藏目标，你会先看哪些行为信号、哪些内部证据、哪些停机标准。",
     "assignment_en": "Reproduce a teaching-scale auditing toy in Colab, then write one memo describing which behavioral signals, internal evidence, and stop conditions you would inspect first if you suspected a hidden objective.",
     "prereqs": [
@@ -190,6 +208,9 @@
       "X06",
       "M09"
     ],
+    "delivery_mode": "method-lab",
+    "integrity_note_zh": "这是实时生成的 auditing 方法练习，不宣称完整复现原论文实验设置。",
+    "integrity_note_en": "This is a live-generated auditing-method drill and does not claim a full reproduction of the paper's original setup.",
     "notebook_slug": "auditing_hidden_objectives",
     "runnable_tier": "cpu-colab",
     "questions_zh": [

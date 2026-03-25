@@ -14,10 +14,11 @@ Move from “features exist” to “many features can be cataloged, grouped, an
 - A catalog is not just a list of neurons; it is a searchable index of recurring behaviors.
 - Coverage matters: discovering many features changes how you think about model analysis.
 
-## Notebook and artifacts
+## Status
 
-- Notebook: `notebooks/en/m03_mapping_the_mind.ipynb`
-- Shared artifact: `artifacts/m03_feature_catalog.json`
+- `reading-only` under the strict realtime policy
+- This repository does not currently present a live notebook here because doing so would depend on precomputed catalog artifacts.
+- Shared reference artifact: `artifacts/m03_feature_catalog.json`
 
 ## Self-check questions
 
@@ -27,4 +28,4 @@ Move from “features exist” to “many features can be cataloged, grouped, an
 
 ## Takeaway
 
-The paper shifts interpretability from isolated anecdotes toward a broader feature atlas.
+The paper shifts interpretability from isolated anecdotes toward a broader feature atlas, but in this repository it is now treated as reading and critique rather than runnable reproduction.

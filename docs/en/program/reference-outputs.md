@@ -1,6 +1,6 @@
 # Reference-Output Layer
 
-This layer does not exist so you can copy templates. It exists so you can calibrate what a deliverable looks like when it is ready to hand to a mentor, manager, or hiring loop.
+This layer does not exist so you can copy templates. It exists so you can calibrate what a deliverable looks like when it is ready to hand to a mentor, advisor, collaborator, or peer reviewer.
 
 ## What problem this layer solves
 
@@ -23,6 +23,6 @@ This layer does not exist so you can copy templates. It exists so you can calibr
 
 ## When you most need it
 
-- Before the first company-style simulation task.
+- Before the first independent research sprint.
 - Before the first serious memo submission.
 - Whenever you feel you "wrote a lot" but another reader still cannot see your judgment.

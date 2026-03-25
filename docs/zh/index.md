@@ -1,6 +1,6 @@
 # From Circuits to Claude
 
-这门课现在是 Colab 优先的论文复现结构：核心路径里的每一篇论文，都有自己独立的讲义、notebook 和验收题。
+这门课现在是带严格诚实规则的 Colab 优先结构：只有在运行时实时产生输出的 notebook，才算可运行内容；凡是仍然依赖预计算 artifact 的部分，一律按阅读材料处理。
 
 ## Pre-P4 基础包
 
@@ -29,8 +29,8 @@
 ## 推荐使用方式
 
 - 先读对应文章讲义。
-- 再运行匹配 notebook，或者直接用 Colab。
-- 如果这一篇是 artifact-guided，就顺手看 `artifacts/` 中对应的 JSON。
+- 如果状态是 `paper-faithful` 或 `method-lab`，再运行匹配 notebook，或者直接用 Colab。
+- 如果状态是 `reading-only`，就把它当阅读与批判入口，不再把它算成复现。
 - 做完后回答讲义和 notebook 末尾的验收题，而不是只看完图就结束。
 - 把每一次复现都写成 reading note、experiment log 和短 memo，而不是只保留在脑子里。
 
@@ -42,7 +42,7 @@
 - [12 周训练营](program/week-by-week.md)
 - [研究工作流](program/research-playbook.md)
 - [评估 rubric](program/evaluation-rubric.md)
-- [公司入职模拟](program/company-onramp.md)
+- [独立研究冲刺](program/independent-sprints.md)
 - [参考答案层](program/reference-outputs.md)
 - [扩展论文轨道](program/advanced-extensions.md)
 
@@ -52,12 +52,12 @@
 2. 再按 12 周计划推进。
 3. 一边做文章，一边使用 playbook 和模板。
 4. 在第 7 周和第 12 周用 rubric 自评。
-5. 最后完成一个公司模拟任务和一个 capstone proposal。
+5. 最后完成一个独立研究冲刺任务和一个 capstone proposal。
 
 ## 使用约束
 
-- `M00-M05` 设计目标是 CPU 或免费 Colab 可跑。
-- `M06` 和 `M08` 现在包含轻量本地复现；`M03`、`M07`、`M09`、`M10` 仍然主要是 artifact-guided 教学复现。
-- `X01-X07` 是更长的 Colab 复现轨道，用来把主线能力继续往 P7/P8 所需的广度和 rigor 上推进。
+- 在严格实时规则下，当前可跑主线是 `M00`、`M01`、`M02`、`M04`、`M05`；`M03` 和 `M06-M10` 因为会依赖预计算 artifact，所以目前降级为阅读材料。
+- `X01-X07` 仍然可跑，但它们属于方法练习，不再宣称是原论文级全文复现。
+- 生成 notebook 后可运行 `python3 scripts/audit_realtime_policy.py`，用脚本强制检查“不得依赖预计算 artifact”。
 - 中英内容必须结构镜像。如果一边新增文章讲义，另一边也要新增。
-- 如果目标是进入公司研究环境，最重要的是输出质量，而不是完成数量。
+- 如果目标是严肃地进入研究状态，最重要的是输出质量，而不是完成数量。

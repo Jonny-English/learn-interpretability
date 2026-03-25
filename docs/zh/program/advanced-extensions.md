@@ -4,7 +4,7 @@
 
 ## 这条轨道为什么重要
 
-- 公司里的 interpretability 研究不会只围绕一家公司的一条论文线展开。
+- 严肃的 interpretability 研究不会只围绕一条论文线或一个实验室的局部叙事展开。
 - 你需要补上更通用的 transformer circuits 语言、memory/editing 问题形状和 auditing 视角。
 - 更重要的是：这些扩展论文现在不是“阅读列表”，而是一组要在 Colab 里亲手复现的训练任务。
 

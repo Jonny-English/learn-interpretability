@@ -14,10 +14,11 @@
 - catalog 不是神经元清单，而是行为模式的可搜索索引。
 - 覆盖率一旦提升，你对模型分析的默认视角也会改变。
 
-## Notebook 与 artifact
+## 当前状态
 
-- Notebook：`notebooks/zh/m03_mapping_the_mind.ipynb`
-- 共享 artifact：`artifacts/m03_feature_catalog.json`
+- 在严格实时规则下是 `reading-only`
+- 当前仓库不再提供这里的 live notebook，因为那会依赖预计算 catalog artifact。
+- 共享参考 artifact：`artifacts/m03_feature_catalog.json`
 
 ## 验收题
 
@@ -27,4 +28,4 @@
 
 ## 模块结论
 
-这篇论文把 interpretability 从零散轶事推进到 feature 地图。
+这篇论文把 interpretability 从零散轶事推进到 feature 地图，但在当前仓库里它只保留为阅读与批判入口。

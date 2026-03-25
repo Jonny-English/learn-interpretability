@@ -117,7 +117,7 @@ Treat this as a 12-week apprenticeship, not a playlist. Each week ends with a ga
 ## Week 9: Tracing tooling
 
 - Modules: `M07`
-- Goal: understand that tools shape the questions a team can ask
+- Goal: understand that tools shape the questions a researcher can ask
 - Core work:
   - draw the workflow
   - analyze one tooling bottleneck
@@ -126,7 +126,7 @@ Treat this as a 12-week apprenticeship, not a playlist. Each week ends with a ga
   - one workflow diagram
   - one bottleneck analysis
   - one tooling-needs note
-- Gate: you can explain how the tooling layer constrains or enables research
+- Gate: you can explain how the tooling layer constrains or enables a line of research
 
 ## Week 10: Character and self-modeling
 
@@ -156,10 +156,10 @@ Treat this as a 12-week apprenticeship, not a playlist. Each week ends with a ga
   - one risk list
 - Gate: your proposal is small enough to run in two weeks and specific enough to fail
 
-## Week 12: Company-style report
+## Week 12: Final research report
 
 - Modules: `M08`, `M09`, `M10`
-- Goal: report like a junior research engineer, not like a student
+- Goal: report like an early-stage researcher, not like someone repeating course notes
 - Core work:
   - write the final memo
   - prepare a 10-minute spoken presentation

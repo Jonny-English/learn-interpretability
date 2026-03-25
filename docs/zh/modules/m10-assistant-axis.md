@@ -14,10 +14,11 @@
 - helpfulness、safety 和 warmth 并不是彼此独立移动的。
 - 稳定 character 既是 interpretability 问题，也是产品问题。
 
-## Notebook 与 artifact
+## 当前状态
 
-- Notebook：`notebooks/zh/m10_assistant_axis.ipynb`
-- 共享 artifact：`artifacts/m10_assistant_axis.json`
+- 在严格实时规则下是 `reading-only`
+- 当前仓库不再提供这里的 live notebook，因为那会依赖预计算 assistant-axis artifact。
+- 共享参考 artifact：`artifacts/m10_assistant_axis.json`
 
 ## 验收题
 

@@ -2,7 +2,7 @@
 
 ## Goal
 
-Use small teaching data to inspect the gap between what a model says about itself and what its behavior reveals.
+Inspect the gap between what a model says about itself and what its behavior reveals, without pretending that this repository has the full live experiment stack behind the paper.
 
 ## Core reference
 
@@ -14,10 +14,11 @@ Use small teaching data to inspect the gap between what a model says about itsel
 - The interesting cases are the mismatches, not only the agreements.
 - “Signs of introspection” should raise questions, not settle them.
 
-## Notebook and artifacts
+## Status
 
-- Notebook: `notebooks/en/m09_signs_of_introspection.ipynb`
-- Shared artifact: `artifacts/m09_introspection_signals.json`
+- `reading-only` under the strict realtime policy
+- This repository does not currently present a live notebook here because it would depend on precomputed introspection-signal artifacts.
+- Shared reference artifact: `artifacts/m09_introspection_signals.json`
 
 ## Self-check questions
 

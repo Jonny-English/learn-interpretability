@@ -12,7 +12,7 @@ Use this rubric at Week 7 and Week 12. Score yourself with evidence, not with vi
   - notices at least one limitation
 - Ready:
   - can explain question, method, evidence, limitation, and next experiment in 30 minutes
-  - can tell a manager which figure matters most and why
+  - can tell a mentor or peer which figure matters most and why
 - Hard evidence:
   - one strong paper reading note
   - one brief that survives follow-up questions
