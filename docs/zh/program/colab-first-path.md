@@ -1,0 +1,33 @@
+# Colab 优先路径
+
+## 为什么把项目做成 Colab 优先
+
+- 小白和基础者最常见的失败，不是“完全不懂概念”，而是环境不稳、复现断掉、结果写不出来。
+- Colab 让你把注意力优先放在论文复现、图表解释和实验判断上，而不是先被本地工程细节卡死。
+- 对 interpretability 来说，真正重要的是你能不能把一篇论文拆成一个可运行、可批判、可复盘的最小实验。
+
+## 这条路径的基本原则
+
+- 一篇论文，对应一份讲义和一本 Colab notebook。
+- 每次复现都至少留下 reading note、experiment log 和短 memo。
+- 先做最小教学版复现，再讨论真实论文里的规模差异和外推风险。
+- 只在确实需要时才引入更重的本地栈；默认先用 CPU 或免费 Colab 建立研究手感。
+
+## 三段式使用方法
+
+1. 先用 `F00-F03` 把环境、图表、几何和实验纪律补稳。
+2. 再用 `M00-M10` 建立 Anthropic interpretability 主线。
+3. 最后用 `X01-X07` 把 transformer circuits、memory/editing 和 auditing 也做成 Colab 复现。
+
+## 什么时候说明你真的在用对这条路径
+
+- 你不只是点开 notebook，而是在运行前写预测，运行后写 observation / inference / speculation。
+- 你会记录 baseline、variant、失败点和 stop condition。
+- 你会把“这次复现仍然不能证明什么”写出来。
+- 你会把主线论文和扩展论文互相重述，而不是各看各的。
+
+## 不要误解这条路径
+
+- Colab 优先，不等于只做玩具。
+- 教学版复现，不等于放弃 rigor。
+- 轻量 notebook 的作用，是让你先学会提出好问题、设计最小证据链，再进入更重的研究栈。

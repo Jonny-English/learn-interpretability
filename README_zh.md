@@ -3,31 +3,31 @@
 [**English README**](README.md) ·
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
-[![Next.js Static Export](https://img.shields.io/badge/web-next.js-black.svg)](web/)
 
-`From Circuits to Claude` 是一个面向初学者的双语 interpretability 教程。仓库现在改成了“文章优先”结构：核心路径里的每一篇论文，都有一份同步讲义和一份独立 Colab notebook。
+`From Circuits to Claude` 是一个面向初学者的双语、Colab 优先 interpretability 训练项目。仓库现在改成了“论文复现优先”结构：核心路径里的每一篇论文，都有一份同步讲义和一份独立 Colab notebook。
 
-仓库由三层同步组成：
+仓库由三层核心同步层组成：
 
 - `content/course.json`：顺序、先修关系、论文链接和 artifact 引用的唯一真相源。
 - `docs/zh` 与 `docs/en`：结构完全镜像的文章讲义。
-- `notebooks/zh` 与 `notebooks/en`：结构完全镜像的文章 notebook，`web/` 则把同一份元数据渲染成静态课程站。
+- `notebooks/zh` 与 `notebooks/en`：结构完全镜像的文章 notebook，整个主线都可以在 Colab 或本地运行。
 
-现在仓库还多了三层强化内容：
+现在仓库还多了四层强化内容：
 
 - `Pre-P4 基础包`：补环境、attention 形状感、向量几何和实验纪律。
 - `research-ready path`：12 周训练营、memo 模板、rubric 和公司研究模拟任务。
-- `参考答案层 + 扩展论文轨道`：用样例校准输出密度，并把视野扩到 Anthropic 主线之外。
+- `参考答案层`：用样例校准输出密度。
+- `扩展论文复现轨道`：用更多 Colab 复现，把视野扩到 Anthropic 主线之外。
 
-这一层的目的，是避免自学里最常见的失败模式：内容看完了，但研究习惯没有建立起来。
+这些层的目的，是避免自学里最常见的失败模式：内容看完了，但复现习惯、写作习惯和研究判断都没有建立起来。
 
 ## 这个项目适合谁
 
 - 适合有基础 Python / PyTorch，但几乎没有 mechanistic interpretability 背景的小白。
-- 适合想从“能看懂一点论文”升级到“能在公司里承担明确研究任务”的读者。
+- 适合想从“能看懂一点论文”升级到“能在 Colab 里复现论文、批判论文，并最终承担一条明确 interpretability 研究线”的读者。
 - 不适合把它当成纯浏览型科普。它要求你写 reading note、experiment log 和 memo。
 
-这个项目的目标产出不是“看过很多论文的人”，而是一个更接近阿里技术序列里 `P6` 能力密度的大模型研究型工程师起步者。
+这个项目的目标产出不是“看过很多论文的人”，而是一条朝阿里技术序列里 `P8` 级 interpretability 研究者长期推进的成长路径。
 
 这里直接改成更接近阿里巴巴技术岗常见理解的 `P4-P12` 说法：
 
@@ -35,17 +35,23 @@
 |---|---|
 | `P4` | 校招生 / 初级工程师水平：能在明确指导下完成环境搭建、跑通 notebook、复述概念，但独立研究判断还很弱。 |
 | `P5` | 工程师水平：能独立完成小范围复现、记录实验、比较 baseline 与 variant，并写出基本结论。 |
-| `**P6**` | 高级工程师 / 资深 IC 起步水平：能在给定方向下承担明确研究任务，完成读论文、复现、批判、提出下一步实验。 |
+| `P6` | 高级工程师 / 资深 IC 起步水平：能在给定方向下承担明确研究任务，完成读论文、复现、批判、提出下一步实验。 |
 | `P7` | 专家水平：能独立定义一个小方向、设计两周级研究计划，并把实验、工具和汇报串成闭环。 |
-| `P8` | 高级专家水平：能负责一个研究子方向或工具线，对多名研究工程师形成稳定技术带动。 |
+| `**P8**` | 高级专家水平：能负责一个研究子方向或工具线，对多名研究工程师形成稳定技术带动。 |
 | `P9` | 资深专家 / Principal 水平：能定义中期研究主题，影响多个团队的判断、方法和协作方式。 |
 | `P10` | 研究 Fellow / 组织级专家水平：能主导组织级研究方向，决定关键方法路线，并影响产品与安全策略。 |
 | `P11` | 公司级顶层技术负责人水平：能定义长期 agenda、技术标准和人才体系。 |
 | `P12` | 行业级顶尖人物水平：能显著改变整个行业对技术路线和问题框架的理解。 |
 
-如果按这个尺度说，任何单个教学项目都不应该声称“学完就到 `P10`”。`P10` 在阿里语境里已经是非常高的组织级专家。
+如果按这个尺度说，任何单个教学项目都不应该声称“12 周结束就到 `P10`”。`P10` 在阿里语境里已经是非常高的组织级专家。
 
-这门课更可信的目标是：把一个“还没进入阿里式 `P4` 状态”的小白，推进到接近 `P5`，高质量完成者可以开始摸到 `P6` 的门槛。它是研究职业路径的起点，不是终点。
+更准确的理解应该是分阶段推进：
+
+- `F00-F03` 加早期主线，把“还没进入 `P4` 状态”的小白推进到 `P4/P5`。
+- `M00-M10` 加上 research-ready bootcamp，建立可信的 `P5/P6` 地板。
+- `X01-X07`、反复做 capstone 和作品集累计，才是继续往 `P7/P8` 走的部分。
+
+所以这个项目的北极星是 `P8`，但方法不是喊口号，而是先把每一层地板搭起来。
 
 ## 两条起跑线
 
@@ -55,15 +61,15 @@
 
 - 适合：会一点 Python，但环境、数学、实验记录都还不稳定的人。
 - 进入信号：你还不能稳定跑 notebook、看懂基础图表，或者还说不清 baseline 是什么。
-- 建议走法：先完成 `F00-F03` 和 `M00`、`M01`，把 reading note 和 experiment log 模板用熟，再进入完整课程。
-- 目标：先把自己推进到接近阿里式 `P4`，再继续冲击 `P5`。
+- 建议走法：先完成 `F00-F03` 和 `M00`、`M01`，把 reading note 和 experiment log 模板用熟，再进入完整课程和后续扩展复现。
+- 目标：先把自己推进到接近阿里式 `P4`，再借助主线和扩展轨道进入 `P5/P6` 地板，继续朝 `P7/P8` 推进。
 
 ### 基础者起跑线
 
 - 适合：已经能跑 notebook、会基本 PyTorch、能看懂常见图表，但还没有系统 interpretability 路线的人。
 - 进入信号：你已经能独立做简单复现、写基础笔记，只是缺一条完整主线。
-- 建议走法：按 `M00 → M05` 快速锁定基础，再尽早进入 research-ready 模式，开始写 memo 和 failure analysis。
-- 目标：直接朝接近阿里式 `P5` 推进，高质量完成者开始摸到 `P6`。
+- 建议走法：按 `M00 → M06` 快速锁定基础，再尽早进入 research-ready 模式，开始写 memo、failure analysis 和扩展复现。
+- 目标：直接进入 `P5/P6` 主干，再用扩展论文、提案和 capstone 朝 `P7/P8` 推进。
 
 ## 为什么要学这个
 
@@ -97,7 +103,7 @@
 - 这一层封装隐藏了什么机制
 - 我们怎样理解、使用、调试和控制这一层封装
 
-这也是为什么这个项目既讲论文，也讲实验、artifact、steering、tracing 和研究写作。
+这也是为什么这个项目既讲论文，也讲 Colab 复现、实验、artifact、steering、tracing、editing、auditing 和研究写作。
 
 ## Pre-P4 基础包
 
@@ -138,14 +144,17 @@
 - `基础段`：`M00 → M01 → M02`
 - `feature 段`：`M03 → M04 → M05`
 - `tracing 与 character 段`：`M06 → M07 → M08 → M09 → M10`
+- `扩展复现段`：`X01 → X02 → X03 → X04 → X05 → X06 → X07`
 
-如果你想先走最短有效路径，建议先做 `F00`、再看 `M00`、`M01`、`M02`、`M05`、`M06`。
+如果你想先走最短有效路径，建议先做 `F00`、再看 `M00`、`M01`、`M02`、`M05`、`M06`、`X01`。
 
 ## Research-Ready Path
 
 如果你的目标不是“看懂”，而是“能在公司研究环境里开始做事”，请把下面这些文件和文章 notebook 一起用：
 
 - [研究就绪总览](docs/zh/program/research-ready.md)
+- [Colab 优先路径](docs/zh/program/colab-first-path.md)
+- [P8 路线图](docs/zh/program/p8-roadmap.md)
 - [12 周训练营](docs/zh/program/week-by-week.md)
 - [研究工作流](docs/zh/program/research-playbook.md)
 - [评估 rubric](docs/zh/program/evaluation-rubric.md)
@@ -159,7 +168,7 @@
 - [Experiment log](templates/experiment_log_zh.md)
 - [Research memo](templates/research_memo_zh.md)
 
-内部训练阶段现在统一用 `S0-S4` 命名，和上面的阿里式 `P4-P12` 能力映射分开，避免把“课程阶段”误读成“公司职级”。
+内部训练阶段现在统一用 `S0-S4` 命名，和上面的阿里式 `P4-P12` 能力映射分开，避免把“课程阶段”误读成“公司职级”。`S0-S4` 是搭地板的核心段，不是完整 `P8` 路径的全部。
 
 把 research-ready path 当成一套工作系统，而不是额外阅读：
 
@@ -170,7 +179,7 @@
 
 ## 参考答案层
 
-这层不是给你抄，而是给你校准“什么叫一个能交给导师、经理或面试流程看的输出”。
+这层不是给你抄，而是给你校准“什么叫一个能交给导师、经理或面试流程看的输出”。进入扩展复现之后，这一层会更重要。
 
 <!-- REFERENCE_TABLE:START -->
 | ID | 参考输出 | 文件 | 什么时候用 |
@@ -183,15 +192,18 @@
 
 ## 扩展论文轨道
 
-主线课程故意围绕 Anthropic interpretability 弧线来组织，但如果你的目标是进入公司研究，这还不够。做完主线后，继续补 transformer circuits、经典行为电路和 auditing 视角。
+主线课程故意围绕 Anthropic interpretability 弧线来组织，但如果你的目标是朝 `P8` 方向推进，这还不够。做完主线后，继续用更多 Colab 复现补 transformer circuits、经典行为电路、memory/editing 和 auditing 视角。
 
 <!-- EXTENSION_TABLE:START -->
-| ID | 扩展论文 | 链接 | 为什么现在读 | 你要交什么 |
-|---|---|---|---|---|
-| `X01` | A Mathematical Framework for Transformer Circuits | [原文](https://transformer-circuits.pub/2021/framework/index.html) | 当你已经做完 M06 之后，这篇能把你从“会读一张图”推进到“会说一个一般框架”。 | 写 1 页 framework brief，并把 M06 里的一个 toy trace 用 residual-stream 与 composition 语言重述。 |
-| `X02` | In-context Learning and Induction Heads | [原文](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html) | 它把 attention 读图、circuit 语言和具体行为现象连起来，是进入经典 transformer circuits 的第一站。 | 做一个最小复制任务的阅读笔记，并说明 induction head 为什么比单个 attention 热点更像“机制”。 |
-| `X03` | Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 Small | [原文](https://arxiv.org/abs/2211.00593) | 做完 Anthropic 主线后，这篇能逼你处理更脏的行为定义、更多的头和更复杂的证据链。 | 写 1 份 IOI evidence chain 速记，指出这类行为任务比 M06 toy trace 多了哪些不确定性。 |
-| `X04` | Auditing Language Models for Hidden Objectives | [原文](https://www.anthropic.com/research/auditing-hidden-objectives) | 如果你的终点是公司研究，这篇能把 feature、tracing 和 safety 研究的接口放到同一张图里。 | 写 1 份 auditing memo，说明如果怀疑模型有隐藏目标，你会先看哪些行为信号、哪些内部证据、哪些停机标准。 |
+| ID | 扩展论文 | 链接 | Notebook | Colab | 运行层级 | 为什么现在读 | 你要交什么 |
+|---|---|---|---|---|---|---|---|
+| `X01` | A Mathematical Framework for Transformer Circuits | [原文](https://transformer-circuits.pub/2021/framework/index.html) | [打开](notebooks/extensions/zh/x01_transformer_circuits_framework.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x01_transformer_circuits_framework.ipynb) | `cpu-colab` | 当你已经做完 M06 之后，这篇能把你从“会读一张图”推进到“会说一个一般框架”。 | 在 Colab 里复现一个最小 residual-composition toy，并写 1 页 framework brief，把 M06 里的一个 toy trace 用 residual-stream 与 composition 语言重述。 |
+| `X02` | In-context Learning and Induction Heads | [原文](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html) | [打开](notebooks/extensions/zh/x02_induction_heads.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x02_induction_heads.ipynb) | `cpu-colab` | 它把 attention 读图、circuit 语言和具体行为现象连起来，是进入经典 transformer-circuits 的第一站。 | 在 Colab 里复现一个最小 copying task，并说明 induction head 为什么比单个 attention 热点更像“机制”。 |
+| `X03` | Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 Small | [原文](https://arxiv.org/abs/2211.00593) | [打开](notebooks/extensions/zh/x03_ioi_circuit.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x03_ioi_circuit.ipynb) | `cpu-colab` | 做完 Anthropic 主线后，这篇能逼你处理更脏的行为定义、更多的头和更复杂的证据链。 | 在 Colab 里复现一个教学版 IOI 证据链，并写 1 份 evidence-chain 速记，指出这类行为任务比 M06 toy trace 多了哪些不确定性。 |
+| `X04` | Transformer Feed-Forward Layers Are Key-Value Memories | [原文](https://arxiv.org/abs/2012.14913) | [打开](notebooks/extensions/zh/x04_ffn_key_value_memories.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x04_ffn_key_value_memories.ipynb) | `cpu-colab` | 如果你只会读 attention 电路，不会解释 MLP 存了什么，就很难进一步理解 factual recall 和编辑。 | 在 Colab 里复现一个教学版 key-value memory toy，并写 1 段说明为什么某些事实更像被 MLP 检索而不是被 attention 即时计算。 |
+| `X05` | Knowledge Neurons in Pretrained Transformers | [原文](https://arxiv.org/abs/2104.08696) | [打开](notebooks/extensions/zh/x05_knowledge_neurons.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x05_knowledge_neurons.ipynb) | `cpu-colab` | 这篇能迫使你区分“一个现象可被某些单元预测”与“这个现象真的由这些单元承载”之间的差别。 | 在 Colab 里复现一个教学版 knowledge-neuron 打分与消融实验，并写 1 段说明高分 neuron 为什么仍然不自动等于因果解释。 |
+| `X06` | Locating and Editing Factual Associations in GPT | [原文](https://arxiv.org/abs/2202.05262) | [打开](notebooks/extensions/zh/x06_rome_factual_editing.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x06_rome_factual_editing.ipynb) | `cpu-colab` | 如果终点是公司研究，只会读图不够；你还得能讨论编辑是否稳定、是否局部、是否值得上线。 | 在 Colab 里复现一个教学版 rank-one factual edit，并写 1 份 edit memo，说明 edit success、locality 和 collateral damage 如何一起评估。 |
+| `X07` | Auditing Language Models for Hidden Objectives | [原文](https://www.anthropic.com/research/auditing-hidden-objectives) | [打开](notebooks/extensions/zh/x07_auditing_hidden_objectives.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/extensions/zh/x07_auditing_hidden_objectives.ipynb) | `cpu-colab` | 如果你的终点是公司研究，这篇能把 feature、tracing、editing 和 safety-facing auditing 放到同一张图里。 | 在 Colab 里复现一个教学版 auditing toy，并写 1 份 memo，说明如果怀疑模型有隐藏目标，你会先看哪些行为信号、哪些内部证据、哪些停机标准。 |
 <!-- EXTENSION_TABLE:END -->
 
 ## 快速开始
@@ -211,26 +223,17 @@ python3 scripts/check_links.py
 python3 scripts/smoke_notebooks.py
 ```
 
-构建静态站：
-
-```bash
-cd web
-npm install
-npm run build
-```
-
-如果你更喜欢浏览器工作流，直接点上表里的 Colab 链接即可。
+如果你想走最轻量的路径，直接点上表里的 Colab 链接即可，先不要把注意力花在本地工程栈上。
 
 ## 仓库结构
 
 ```text
 .
 ├── content/               # 课程元数据与术语表
-├── docs/                  # 中英文镜像文章讲义 + 基础包 + 训练营文档
-├── notebooks/             # 旧版长 notebook + 文章 notebook + foundation labs
+├── docs/                  # 中英文镜像文章讲义 + 基础包 + 扩展轨道 + 训练营文档
+├── notebooks/             # 旧版长 notebook + 文章 notebook + foundation labs + 扩展复现
 ├── examples/              # 论文简报、实验日志、critique、proposal 参考样例
-├── artifacts/             # 供 notebook / web 共享的 JSON artifact
-├── web/                   # 静态 Next.js 课程站
+├── artifacts/             # 供文章 notebook 复用的 JSON artifact
 ├── scripts/               # notebook 生成与校验脚本
 ├── figures/               # M00 继续复用的视觉电路图片
 └── utils/                 # 原教程留下的绘图辅助函数

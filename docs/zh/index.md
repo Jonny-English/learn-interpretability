@@ -1,6 +1,6 @@
 # From Circuits to Claude
 
-这门课改成了文章优先结构：核心路径里的每一篇论文，都有自己独立的讲义、notebook 和时间线位置。
+这门课现在是 Colab 优先的论文复现结构：核心路径里的每一篇论文，都有自己独立的讲义、notebook 和验收题。
 
 ## Pre-P4 基础包
 
@@ -21,17 +21,24 @@
 10. [M09 Signs of Introspection](modules/m09-signs-of-introspection.md)
 11. [M10 The Assistant Axis](modules/m10-assistant-axis.md)
 
+## 扩展复现轨道
+
+- [扩展论文总览](extensions/index.md)
+- 当你做完主线后，不要停在“看过 Anthropic 主线”，继续把经典 transformer circuits、memory/editing 和 auditing 论文也做成 Colab 复现。
+
 ## 推荐使用方式
 
 - 先读对应文章讲义。
 - 再运行匹配 notebook，或者直接用 Colab。
 - 如果这一篇是 artifact-guided，就顺手看 `artifacts/` 中对应的 JSON。
 - 做完后回答讲义和 notebook 末尾的验收题，而不是只看完图就结束。
-- 想看时间线、概念图、术语卡片和预览图时，再打开 `web/`。
+- 把每一次复现都写成 reading note、experiment log 和短 memo，而不是只保留在脑子里。
 
 ## 研究就绪路径
 
 - [研究就绪总览](program/research-ready.md)
+- [Colab 优先路径](program/colab-first-path.md)
+- [P8 路线图](program/p8-roadmap.md)
 - [12 周训练营](program/week-by-week.md)
 - [研究工作流](program/research-playbook.md)
 - [评估 rubric](program/evaluation-rubric.md)
@@ -51,5 +58,6 @@
 
 - `M00-M05` 设计目标是 CPU 或免费 Colab 可跑。
 - `M06` 和 `M08` 现在包含轻量本地复现；`M03`、`M07`、`M09`、`M10` 仍然主要是 artifact-guided 教学复现。
+- `X01-X07` 是更长的 Colab 复现轨道，用来把主线能力继续往 P7/P8 所需的广度和 rigor 上推进。
 - 中英内容必须结构镜像。如果一边新增文章讲义，另一边也要新增。
 - 如果目标是进入公司研究环境，最重要的是输出质量，而不是完成数量。

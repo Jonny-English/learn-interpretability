@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 COURSE_PATH = ROOT / "content" / "course.json"
 FOUNDATIONS_PATH = ROOT / "content" / "foundations.json"
+EXTENSIONS_PATH = ROOT / "content" / "extensions.json"
 SELF_CHECKS_PATH = ROOT / "content" / "self_checks.json"
 OUTPUT_ROOT = ROOT / "notebooks"
 
@@ -435,6 +436,8 @@ SELF_CHECKS = {
 }
 FOUNDATIONS = json.loads(FOUNDATIONS_PATH.read_text())
 FOUNDATION_LOOKUP = {entry["id"]: entry for entry in FOUNDATIONS}
+EXTENSIONS = json.loads(EXTENSIONS_PATH.read_text())
+EXTENSION_LOOKUP = {entry["id"]: entry for entry in EXTENSIONS}
 
 
 def bullet_block(heading: str, items: list[str]) -> str:
@@ -504,6 +507,85 @@ def foundation_self_check_cells(foundation_id: str, language: str) -> list[dict]
         "If you cannot answer at least two questions without reopening the notebook, stay here before moving to the article track."
         if language == "en"
         else "如果你不能在不重开 notebook 的情况下独立答出至少 2 题，就先不要进入文章主线。"
+    )
+    return [markdown_cell(bullet_block(heading, questions + [pass_line]))]
+
+
+def extension_context_cells(extension_id: str, language: str) -> list[dict]:
+    entry = EXTENSION_LOOKUP[extension_id]
+    goal_heading = "## Goal" if language == "en" else "## 目标"
+    why_heading = "## Why this paper matters now" if language == "en" else "## 为什么现在学这篇"
+    notebook_heading = "## Notebook and deliverable" if language == "en" else "## Notebook 与交付"
+    prereq_label = "Prereqs" if language == "en" else "先修"
+    source_label = "Source" if language == "en" else "原文"
+    summary = entry["summary_en"] if language == "en" else entry["summary_zh"]
+    why_now = entry["why_now_en"] if language == "en" else entry["why_now_zh"]
+    assignment = entry["assignment_en"] if language == "en" else entry["assignment_zh"]
+    notebook_path = f"notebooks/extensions/{language}/{entry['id'].lower()}_{entry['notebook_slug']}.ipynb"
+    source_block = bullet_block(
+        notebook_heading,
+        [
+            f"{source_label}: {entry['source_url']}",
+            f"Notebook: `{notebook_path}`" if language == "en" else f"Notebook：`{notebook_path}`",
+            f"{prereq_label}: {', '.join(entry['prereqs'])}",
+            assignment,
+        ],
+    )
+    return [
+        markdown_cell(f"{goal_heading}\n\n{summary}"),
+        markdown_cell(f"{why_heading}\n\n{why_now}"),
+        markdown_cell(source_block),
+    ]
+
+
+def extension_workflow_cells(extension_id: str, language: str) -> list[dict]:
+    title = "## Colab-first replication workflow" if language == "en" else "## Colab 优先的复现流程"
+    before = [
+        "Write one prediction about the mechanism before you run the cells.",
+        "Name the baseline you are comparing against.",
+        "Decide what result would count as a failure of your favorite story.",
+    ] if language == "en" else [
+        "在运行前先写 1 条你对机制的预测。",
+        "先写清你要对比的 baseline 是什么。",
+        "先决定什么结果会推翻你最喜欢的解释。",
+    ]
+    after = [
+        "Separate observation from inference in your notes.",
+        "Mark one ambiguity that still remains after the reproduction.",
+        "Write one next experiment that would reduce that ambiguity.",
+    ] if language == "en" else [
+        "在笔记里把 observation 和 inference 分开。",
+        "标出复现之后仍然存在的 1 个歧义。",
+        "写 1 个能降低该歧义的下一步实验。",
+    ]
+    ship = [
+        EXTENSION_LOOKUP[extension_id]["assignment_en"],
+        "One experiment log with the exact settings you changed.",
+        "One paragraph called 'what this reproduction still does not prove'.",
+    ] if language == "en" else [
+        EXTENSION_LOOKUP[extension_id]["assignment_zh"],
+        "1 份 experiment log，写清你改了哪些设置。",
+        "1 段“这次复现仍然不能证明什么”。",
+    ]
+    before_heading = "### Before you run" if language == "en" else "### 运行前"
+    after_heading = "### After you run" if language == "en" else "### 运行后"
+    ship_heading = "### Ship these outputs" if language == "en" else "### 最后交付这些产物"
+    return [
+        markdown_cell(title),
+        markdown_cell(bullet_block(before_heading, before)),
+        markdown_cell(bullet_block(after_heading, after)),
+        markdown_cell(bullet_block(ship_heading, ship)),
+    ]
+
+
+def extension_self_check_cells(extension_id: str, language: str) -> list[dict]:
+    entry = EXTENSION_LOOKUP[extension_id]
+    questions = entry["questions_en"] if language == "en" else entry["questions_zh"]
+    heading = "## Self-check questions" if language == "en" else "## 验收题"
+    pass_line = (
+        "If you cannot answer at least two questions without reopening the notebook, rerun the reproduction and rewrite the memo."
+        if language == "en"
+        else "如果你不能在不重开 notebook 的情况下独立答出至少 2 题，就回去重跑复现并重写 memo。"
     )
     return [markdown_cell(bullet_block(heading, questions + [pass_line]))]
 
@@ -1529,6 +1611,371 @@ Stabilizing character means controlling a whole style manifold, not only one loc
     return [markdown_cell(intro), markdown_cell(context), code_cell(code), markdown_cell(takeaway)]
 
 
+def x01(language: str) -> list[dict]:
+    intro = """
+# X01 A Mathematical Framework for Transformer Circuits
+""" if language == "en" else """
+# X01 Transformer Circuits 的数学框架
+"""
+    code = repo_root_snippet() + """
+import matplotlib.pyplot as plt
+import numpy as np
+
+tokens = ["subject", "verb", "object"]
+residual = np.array([
+    [1.0, 0.2, 0.0],
+    [0.3, 1.0, 0.1],
+    [0.0, 0.4, 1.0],
+])
+attention_map = np.array([
+    [0.0, 0.5, 0.0],
+    [0.0, 0.0, 0.8],
+    [0.7, 0.0, 0.0],
+])
+mlp_map = np.array([
+    [0.2, 0.0, 0.1],
+    [0.1, 0.3, 0.0],
+    [0.0, 0.2, 0.4],
+])
+readout = np.array([
+    [1.0, 0.2],
+    [0.1, 0.9],
+    [0.6, 0.4],
+])
+
+after_attention = residual + attention_map @ residual
+after_mlp = after_attention + after_attention @ mlp_map
+logits = after_mlp @ readout
+composition_gain = logits - residual @ readout
+
+fig, axes = plt.subplots(1, 3, figsize=(13, 4))
+axes[0].imshow(residual, cmap="Blues")
+axes[0].set_title("Residual stream")
+axes[1].imshow(after_attention, cmap="Blues")
+axes[1].set_title("After attention composition")
+axes[2].imshow(after_mlp, cmap="Blues")
+axes[2].set_title("After MLP composition")
+for ax in axes:
+    ax.set_xticks(range(3), tokens)
+    ax.set_yticks(range(3), tokens)
+plt.tight_layout()
+
+print("Readout before composition:\\n", np.round(residual @ readout, 3))
+print("Readout after composition:\\n", np.round(logits, 3))
+print("Gain from composition:\\n", np.round(composition_gain, 3))
+"""
+    takeaway = """
+## Takeaway
+
+The point of the framework is not to list parts. It is to describe how information composes through the residual stream.
+""" if language == "en" else """
+## 小结
+
+这篇的关键不是给部件起名字，而是学会用 residual stream 语言描述信息如何组合起来。
+"""
+    return [markdown_cell(intro), *extension_context_cells("X01", language), code_cell(code), markdown_cell(takeaway)]
+
+
+def x02(language: str) -> list[dict]:
+    intro = """
+# X02 In-context Learning and Induction Heads
+""" if language == "en" else """
+# X02 In-context Learning 与 Induction Heads
+"""
+    code = repo_root_snippet() + """
+import math
+import matplotlib.pyplot as plt
+import numpy as np
+
+tokens = ["A", "B", "C", "A", "B", "?"]
+prev_tokens = ["<bos>", "A", "B", "C", "A", "B"]
+vocab = {"<bos>": [0, 0, 0], "A": [1, 0, 0], "B": [0, 1, 0], "C": [0, 0, 1]}
+keys = np.array([vocab[token] for token in prev_tokens[:-1]], dtype=float)
+values = np.array([vocab[token] for token in tokens[:-1]], dtype=float)
+query = np.array(vocab[prev_tokens[-1]], dtype=float)
+
+scores = 5.0 * (keys @ query) / math.sqrt(query.shape[0])
+weights = np.exp(scores - scores.max())
+weights = weights / weights.sum()
+prediction = weights @ values
+winner = ["A", "B", "C"][int(np.argmax(prediction))]
+
+fig, ax = plt.subplots(figsize=(8, 3.5))
+ax.bar(range(len(weights)), weights, color="#1f5f8b")
+ax.set_xticks(range(len(weights)), [f"pos {i}:{token}" for i, token in enumerate(tokens[:-1])], rotation=20)
+ax.set_ylabel("attention weight")
+ax.set_title("Final query attends to earlier positions")
+plt.tight_layout()
+
+print("Final previous-token query:", prev_tokens[-1])
+print("Predicted next-token vector:", np.round(prediction, 3))
+print("Recovered token:", winner)
+"""
+    takeaway = """
+## Takeaway
+
+An induction pattern is more than a bright attention edge. It is a copy mechanism anchored to repeated context.
+""" if language == "en" else """
+## 小结
+
+Induction 不只是“注意力亮了一下”，而是一个依赖重复上下文的复制机制。
+"""
+    return [markdown_cell(intro), *extension_context_cells("X02", language), code_cell(code), markdown_cell(takeaway)]
+
+
+def x03(language: str) -> list[dict]:
+    intro = """
+# X03 IOI Circuit
+""" if language == "en" else """
+# X03 IOI 电路
+"""
+    code = repo_root_snippet() + """
+import matplotlib.pyplot as plt
+import numpy as np
+
+roles = np.array([
+    [1.0, 0.0],  # subject = Alice
+    [0.0, 1.0],  # indirect object = Bob
+])
+name_labels = ["Alice", "Bob"]
+duplicate_head = np.array([[0.0, 0.2], [0.1, 0.0]])
+name_mover = np.array([[0.2, 0.0], [0.0, 1.3]])
+subject_suppressor = np.array([[1.0, 0.0], [0.0, 0.1]])
+
+baseline_scores = np.array([0.5, 0.5])
+full_scores = baseline_scores + roles[1] @ name_mover - roles[0] @ subject_suppressor + roles[1] @ duplicate_head
+ablations = {
+    "full": full_scores,
+    "without name mover": baseline_scores - roles[0] @ subject_suppressor + roles[1] @ duplicate_head,
+    "without subject suppressor": baseline_scores + roles[1] @ name_mover + roles[1] @ duplicate_head,
+    "without duplicate head": baseline_scores + roles[1] @ name_mover - roles[0] @ subject_suppressor,
+}
+
+fig, ax = plt.subplots(figsize=(9, 4))
+positions = np.arange(len(ablations))
+width = 0.35
+for idx, name in enumerate(name_labels):
+    ax.bar(
+        positions + (idx - 0.5) * width,
+        [scores[idx] for scores in ablations.values()],
+        width=width,
+        label=name,
+    )
+ax.set_xticks(positions, list(ablations.keys()), rotation=15)
+ax.set_ylabel("final logit score")
+ax.set_title("Teaching-scale IOI evidence chain")
+ax.legend()
+plt.tight_layout()
+
+for label, scores in ablations.items():
+    winner = name_labels[int(np.argmax(scores))]
+    print(label, "->", winner, np.round(scores, 3))
+"""
+    takeaway = """
+## Takeaway
+
+Behavior-level circuit claims require ablations, not only one pretty path diagram.
+""" if language == "en" else """
+## 小结
+
+到了行为层面的电路分析，不能只靠一张漂亮的路径图，还要靠消融来补证据。
+"""
+    return [markdown_cell(intro), *extension_context_cells("X03", language), code_cell(code), markdown_cell(takeaway)]
+
+
+def x04(language: str) -> list[dict]:
+    intro = """
+# X04 Transformer Feed-Forward Layers Are Key-Value Memories
+""" if language == "en" else """
+# X04 Transformer Feed-Forward Layers Are Key-Value Memories
+"""
+    code = repo_root_snippet() + """
+import matplotlib.pyplot as plt
+import numpy as np
+
+countries = ["France", "Germany", "Japan"]
+cities = ["Paris", "Berlin", "Tokyo"]
+keys = np.eye(3)
+values = np.array([
+    [1.0, 0.0, 0.0],
+    [0.0, 1.0, 0.0],
+    [0.0, 0.0, 1.0],
+])
+query = np.array([1.0, 0.1, 0.0])
+weights = np.exp(keys @ query)
+weights = weights / weights.sum()
+recalled = weights @ values
+
+ablated_values = values.copy()
+ablated_values[0] = 0.0
+recalled_after_ablation = weights @ ablated_values
+
+fig, axes = plt.subplots(1, 2, figsize=(10, 4))
+axes[0].bar(countries, weights, color="#1f5f8b")
+axes[0].set_title("Key match weights")
+axes[1].bar(cities, recalled, color="#c96a28", alpha=0.85, label="full")
+axes[1].bar(cities, recalled_after_ablation, color="#5d8c63", alpha=0.65, label="ablate France value")
+axes[1].set_title("Recalled value distribution")
+axes[1].legend()
+plt.tight_layout()
+
+print("Top recalled city before ablation:", cities[int(np.argmax(recalled))])
+print("Top recalled city after ablation:", cities[int(np.argmax(recalled_after_ablation))])
+"""
+    takeaway = """
+## Takeaway
+
+The MLP-memory picture lets you ask where a fact is stored, not only which route carries it.
+""" if language == "en" else """
+## 小结
+
+MLP memory 视角让你能问“事实存在哪里”，而不是只问“信息从哪条路流过去”。
+"""
+    return [markdown_cell(intro), *extension_context_cells("X04", language), code_cell(code), markdown_cell(takeaway)]
+
+
+def x05(language: str) -> list[dict]:
+    intro = """
+# X05 Knowledge Neurons
+""" if language == "en" else """
+# X05 Knowledge Neurons
+"""
+    code = repo_root_snippet() + """
+import torch
+from torch import nn
+
+prompts = torch.eye(4)
+probe = prompts[0:1].clone().requires_grad_(True)
+model = nn.Sequential(
+    nn.Linear(4, 6),
+    nn.ReLU(),
+    nn.Linear(6, 4),
+)
+with torch.no_grad():
+    model[0].weight.zero_()
+    model[0].bias.zero_()
+    model[0].weight[0, 0] = 4.0
+    model[0].weight[1, 1] = 4.0
+    model[0].weight[2, 2] = 4.0
+    model[0].weight[3, 3] = 4.0
+    model[2].weight.zero_()
+    model[2].bias.zero_()
+    model[2].weight[0, 0] = 2.5
+    model[2].weight[1, 1] = 2.5
+    model[2].weight[2, 2] = 2.5
+    model[2].weight[3, 3] = 2.5
+    model[2].weight[0, 4] = 0.4
+    model[2].weight[1, 5] = 0.4
+
+hidden = model[1](model[0](probe))
+logits = model[2](hidden)
+target_logit = logits[0, 0]
+grads = torch.autograd.grad(target_logit, hidden)[0]
+scores = (hidden * grads).detach().flatten()
+top_idx = int(scores.abs().argmax())
+
+with torch.no_grad():
+    original = model(prompts[0:1]).softmax(dim=-1).flatten()
+    hidden_ablated = hidden.detach().clone()
+    hidden_ablated[0, top_idx] = 0.0
+    ablated = model[2](hidden_ablated).softmax(dim=-1).flatten()
+
+print("Knowledge-neuron scores:", [round(float(x), 4) for x in scores])
+print("Top-scoring hidden unit:", top_idx)
+print("Original distribution:", [round(float(x), 4) for x in original])
+print("After ablating top unit:", [round(float(x), 4) for x in ablated])
+"""
+    takeaway = """
+## Takeaway
+
+A high-scoring neuron is evidence worth testing, not a free pass to a causal story.
+""" if language == "en" else """
+## 小结
+
+高分 neuron 是值得继续检验的线索，不是自动成立的因果解释。
+"""
+    return [markdown_cell(intro), *extension_context_cells("X05", language), code_cell(code), markdown_cell(takeaway)]
+
+
+def x06(language: str) -> list[dict]:
+    intro = """
+# X06 Locating and Editing Factual Associations in GPT
+""" if language == "en" else """
+# X06 Locating and Editing Factual Associations in GPT
+"""
+    code = repo_root_snippet() + """
+import numpy as np
+
+keys = np.eye(3)
+cities = ["Paris", "Berlin", "Tokyo"]
+W = np.eye(3)
+france = keys[:, 0:1]
+new_value = np.array([[0.0], [1.0], [0.0]])  # edit France -> Berlin in the toy
+current_value = W @ france
+delta = (new_value - current_value) @ (france.T / (france.T @ france).item())
+W_edit = W + delta
+
+for idx, country in enumerate(["France", "Germany", "Japan"]):
+    query = keys[:, idx:idx+1]
+    before = (W @ query).flatten()
+    after = (W_edit @ query).flatten()
+    print(country)
+    print("  before:", {cities[i]: round(float(before[i]), 3) for i in range(3)})
+    print("  after :", {cities[i]: round(float(after[i]), 3) for i in range(3)})
+"""
+    takeaway = """
+## Takeaway
+
+Editing is only interesting when you measure both success on the target and damage off the target.
+""" if language == "en" else """
+## 小结
+
+只有同时衡量目标成功和非目标损伤，编辑实验才真正有研究价值。
+"""
+    return [markdown_cell(intro), *extension_context_cells("X06", language), code_cell(code), markdown_cell(takeaway)]
+
+
+def x07(language: str) -> list[dict]:
+    intro = """
+# X07 Auditing Language Models for Hidden Objectives
+""" if language == "en" else """
+# X07 Auditing Language Models for Hidden Objectives
+"""
+    code = repo_root_snippet() + """
+import matplotlib.pyplot as plt
+import numpy as np
+
+cases = ["harmless", "rewarding", "secret-risk", "high-pressure"]
+helpfulness = np.array([0.8, 0.9, 0.5, 0.6])
+hidden_objective = np.array([0.1, 0.2, 0.9, 0.8])
+behavior_score = 0.7 * helpfulness - 0.4 * hidden_objective
+internal_audit_signal = 0.2 * helpfulness + 0.9 * hidden_objective
+
+fig, axes = plt.subplots(1, 2, figsize=(11, 4))
+axes[0].bar(cases, behavior_score, color="#1f5f8b")
+axes[0].set_title("Behavior metric")
+axes[0].tick_params(axis="x", rotation=20)
+axes[1].bar(cases, internal_audit_signal, color="#c96a28")
+axes[1].set_title("Internal audit signal")
+axes[1].tick_params(axis="x", rotation=20)
+plt.tight_layout()
+
+flagged = [case for case, signal in zip(cases, internal_audit_signal) if signal > 0.7]
+print("Flagged by internal signal:", flagged)
+print("Largest behavior drop case:", cases[int(np.argmin(behavior_score))])
+"""
+    takeaway = """
+## Takeaway
+
+Auditing becomes stronger when behavior evidence and internal evidence point at the same risk story.
+""" if language == "en" else """
+## 小结
+
+当行为证据和内部证据指向同一个风险故事时，auditing 才真正形成闭环。
+"""
+    return [markdown_cell(intro), *extension_context_cells("X07", language), code_cell(code), markdown_cell(takeaway)]
+
+
 NOTEBOOK_BUILDERS = {
     "M00": m00,
     "M01": m01,
@@ -1550,6 +1997,16 @@ FOUNDATION_BUILDERS = {
     "F03": f03,
 }
 
+EXTENSION_BUILDERS = {
+    "X01": x01,
+    "X02": x02,
+    "X03": x03,
+    "X04": x04,
+    "X05": x05,
+    "X06": x06,
+    "X07": x07,
+}
+
 
 def write_notebook(path: Path, cells: list[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -1565,6 +2022,10 @@ def clean_generated_notebooks() -> None:
         foundations_root = OUTPUT_ROOT / "foundations" / language
         foundations_root.mkdir(parents=True, exist_ok=True)
         for path in foundations_root.glob("f*.ipynb"):
+            path.unlink()
+        extensions_root = OUTPUT_ROOT / "extensions" / language
+        extensions_root.mkdir(parents=True, exist_ok=True)
+        for path in extensions_root.glob("x*.ipynb"):
             path.unlink()
 
 
@@ -1585,6 +2046,18 @@ def main() -> None:
         for language in ("en", "zh"):
             path = OUTPUT_ROOT / "foundations" / language / filename
             cells = builder(language) + foundation_self_check_cells(foundation["id"], language)
+            write_notebook(path, cells)
+            print(f"wrote {path.relative_to(ROOT)}")
+    for extension in EXTENSIONS:
+        builder = EXTENSION_BUILDERS[extension["id"]]
+        filename = f"{extension['id'].lower()}_{extension['notebook_slug']}.ipynb"
+        for language in ("en", "zh"):
+            path = OUTPUT_ROOT / "extensions" / language / filename
+            cells = (
+                builder(language)
+                + extension_workflow_cells(extension["id"], language)
+                + extension_self_check_cells(extension["id"], language)
+            )
             write_notebook(path, cells)
             print(f"wrote {path.relative_to(ROOT)}")
 

@@ -40,12 +40,16 @@ def discover_paths(modules: set[str] | None, languages: set[str] | None) -> list
             if modules and path.stem.split("_", maxsplit=1)[0].upper() not in modules:
                 continue
             paths.append(path)
+        for path in sorted((NOTEBOOKS_ROOT / "extensions" / language).glob("x*.ipynb")):
+            if modules and path.stem.split("_", maxsplit=1)[0].upper() not in modules:
+                continue
+            paths.append(path)
     return paths
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--module", action="append", dest="modules", help="Module ID such as M01 or F01")
+    parser.add_argument("--module", action="append", dest="modules", help="Module ID such as M01, F01, or X01")
     parser.add_argument("--lang", action="append", dest="languages", choices=["en", "zh"])
     args = parser.parse_args()
 

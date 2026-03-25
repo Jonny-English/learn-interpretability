@@ -52,6 +52,8 @@ PROGRAM_REQUIRED_FIELDS = {
 
 EXPECTED_PROGRAM_DOCS = {
     "research-ready.md",
+    "colab-first-path.md",
+    "p8-roadmap.md",
     "week-by-week.md",
     "research-playbook.md",
     "evaluation-rubric.md",
@@ -101,6 +103,7 @@ REFERENCE_OUTPUT_REQUIRED_FIELDS = {
 
 EXTENSION_REQUIRED_FIELDS = {
     "id",
+    "order",
     "title_zh",
     "title_en",
     "source_url",
@@ -110,6 +113,11 @@ EXTENSION_REQUIRED_FIELDS = {
     "why_now_en",
     "assignment_zh",
     "assignment_en",
+    "prereqs",
+    "notebook_slug",
+    "runnable_tier",
+    "questions_zh",
+    "questions_en",
 }
 
 
@@ -170,6 +178,8 @@ def main() -> None:
     expected_notebooks = {"en": set(), "zh": set()}
     expected_foundation_docs = {"en": set(), "zh": set()}
     expected_foundation_notebooks = {"en": set(), "zh": set()}
+    expected_extension_docs = {"en": set(), "zh": set()}
+    expected_extension_notebooks = {"en": set(), "zh": set()}
 
     for artifact in artifacts:
         if "path" in artifact:
@@ -239,10 +249,24 @@ def main() -> None:
     extension_ids = [entry["id"] for entry in extensions]
     if len(extension_ids) != len(set(extension_ids)):
         fail("extension IDs must be unique")
+    extension_orders = [entry["order"] for entry in extensions]
+    if extension_orders != sorted(extension_orders):
+        fail("extension order must be sorted")
     for entry in extensions:
         missing = EXTENSION_REQUIRED_FIELDS - set(entry)
         if missing:
             fail(f"extension {entry.get('id', '<missing>')} missing fields: {sorted(missing)}")
+        for prereq in entry["prereqs"]:
+            if prereq not in module_ids and prereq not in extension_ids:
+                fail(f"extension {entry['id']} references unknown prerequisite {prereq}")
+        if len(entry["questions_zh"]) < 2 or len(entry["questions_en"]) < 2:
+            fail(f"extension {entry['id']} must contain at least two questions per language")
+        doc_name = f"{entry['id'].lower()}-{entry['notebook_slug'].replace('_', '-')}.md"
+        notebook_name = f"{entry['id'].lower()}_{entry['notebook_slug']}.ipynb"
+        expected_extension_docs["en"].add(doc_name)
+        expected_extension_docs["zh"].add(doc_name)
+        expected_extension_notebooks["en"].add(notebook_name)
+        expected_extension_notebooks["zh"].add(notebook_name)
 
     missing_program = PROGRAM_REQUIRED_FIELDS - set(program)
     if missing_program:
@@ -332,6 +356,22 @@ def main() -> None:
                 f"{language} foundation notebooks mismatch. expected={sorted(expected_foundation_notebooks[language])}, actual={sorted(actual_foundation_notebooks)}"
             )
 
+        extensions_index = DOCS_ROOT / language / "extensions" / "index.md"
+        assert_exists(extensions_index, f"missing extensions index for {language}")
+        extensions_dir = DOCS_ROOT / language / "extensions"
+        actual_extension_docs = {path.name for path in extensions_dir.glob("x*.md")}
+        if actual_extension_docs != expected_extension_docs[language]:
+            fail(
+                f"{language} extension docs mismatch. expected={sorted(expected_extension_docs[language])}, actual={sorted(actual_extension_docs)}"
+            )
+
+        extension_notebooks_dir = NOTEBOOKS_ROOT / "extensions" / language
+        actual_extension_notebooks = {path.name for path in extension_notebooks_dir.glob("x*.ipynb")}
+        if actual_extension_notebooks != expected_extension_notebooks[language]:
+            fail(
+                f"{language} extension notebooks mismatch. expected={sorted(expected_extension_notebooks[language])}, actual={sorted(actual_extension_notebooks)}"
+            )
+
     for module in course:
         zh_path = DOCS_ROOT / "zh" / "modules" / f"{module['id'].lower()}-{module['web_slug']}.md"
         en_path = DOCS_ROOT / "en" / "modules" / f"{module['id'].lower()}-{module['web_slug']}.md"
@@ -343,6 +383,13 @@ def main() -> None:
         en_path = DOCS_ROOT / "en" / "foundations" / f"{foundation['id'].lower()}-{foundation['web_slug']}.md"
         if markdown_shape(zh_path) != markdown_shape(en_path):
             fail(f"foundation markdown structure mismatch for {foundation['id']}")
+
+    for entry in extensions:
+        doc_name = f"{entry['id'].lower()}-{entry['notebook_slug'].replace('_', '-')}.md"
+        zh_path = DOCS_ROOT / "zh" / "extensions" / doc_name
+        en_path = DOCS_ROOT / "en" / "extensions" / doc_name
+        if markdown_shape(zh_path) != markdown_shape(en_path):
+            fail(f"extension markdown structure mismatch for {entry['id']}")
 
     for entry in reference_outputs:
         zh_path = ROOT / entry["path_zh"]

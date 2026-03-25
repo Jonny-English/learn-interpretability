@@ -41,6 +41,18 @@ def foundation_colab_url(lab: dict, language: str) -> str:
     )
 
 
+def extension_notebook_path(item: dict, language: str) -> str:
+    filename = f"{item['id'].lower()}_{item['notebook_slug']}.ipynb"
+    return f"notebooks/extensions/{language}/{filename}"
+
+
+def extension_colab_url(item: dict, language: str) -> str:
+    return (
+        "https://colab.research.google.com/github/"
+        f"{REPO_SLUG}/blob/main/{extension_notebook_path(item, language)}"
+    )
+
+
 def build_table(course: list[dict], language: str) -> str:
     if language == "zh":
         header = "| ID | 文章 | 日期 | Notebook | Colab | 运行层级 | 你会做什么 |\n|---|---|---|---|---|---|---|"
@@ -91,15 +103,15 @@ def build_reference_table(items: list[dict], language: str) -> str:
 
 def build_extension_table(items: list[dict], language: str) -> str:
     if language == "zh":
-        header = "| ID | 扩展论文 | 链接 | 为什么现在读 | 你要交什么 |\n|---|---|---|---|---|"
+        header = "| ID | 扩展论文 | 链接 | Notebook | Colab | 运行层级 | 为什么现在读 | 你要交什么 |\n|---|---|---|---|---|---|---|---|"
         rows = [
-            f"| `{item['id']}` | {item['title_zh']} | [原文]({item['source_url']}) | {item['why_now_zh']} | {item['assignment_zh']} |"
+            f"| `{item['id']}` | {item['title_zh']} | [原文]({item['source_url']}) | [打开]({extension_notebook_path(item, 'zh')}) | [Colab]({extension_colab_url(item, 'zh')}) | `{item['runnable_tier']}` | {item['why_now_zh']} | {item['assignment_zh']} |"
             for item in items
         ]
     else:
-        header = "| ID | Extension Paper | Link | Why now | What to ship |\n|---|---|---|---|---|"
+        header = "| ID | Extension Paper | Link | Notebook | Colab | Runnable tier | Why now | What to ship |\n|---|---|---|---|---|---|---|---|"
         rows = [
-            f"| `{item['id']}` | {item['title_en']} | [Source]({item['source_url']}) | {item['why_now_en']} | {item['assignment_en']} |"
+            f"| `{item['id']}` | {item['title_en']} | [Source]({item['source_url']}) | [Open]({extension_notebook_path(item, 'en')}) | [Colab]({extension_colab_url(item, 'en')}) | `{item['runnable_tier']}` | {item['why_now_en']} | {item['assignment_en']} |"
             for item in items
         ]
     return "\n".join([header, *rows])

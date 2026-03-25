@@ -1,27 +1,37 @@
 # Advanced Extension Track
 
-The core course is intentionally organized around the Anthropic interpretability arc because that makes the main path legible. But if company research is the goal, the core path still needs a broader extension track afterward.
+The core course is intentionally organized around the Anthropic interpretability arc because that makes the path legible. But if the goal is to grow toward `P8`, the core is the floor rather than the finish line.
 
 ## Why this track matters
 
-- Mechanistic-interpretability work inside companies will not stay inside one company's paper line.
-- You still need a more general transformer-circuits language, canonical circuit case studies, and an auditing-facing perspective.
-- The goal of the extension track is not to reproduce everything. The goal is to widen your view from "this path" to "the kinds of problem shapes that recur in the field."
+- Company interpretability work will not stay inside one company's paper line.
+- You still need a more general transformer-circuits language, a memory/editing problem frame, and an auditing-facing perspective.
+- Most importantly, these extension papers are no longer just a reading list. They are Colab reproduction tasks.
 
-## How to use it
+## How to use the track
 
-- Do not read everything at once. Add one extension paper when the core path reaches the matching stage.
-- Every extension should still leave behind one output such as a framework brief, an evidence-chain note, or an auditing memo.
-- If time is short, choose the extension that re-explains a core module you just finished rather than the trendiest paper.
+- Do not do everything at once. Insert one extension reproduction whenever you finish a matching segment of the core.
+- Every extension paper should leave behind four outputs: a Colab reproduction, an experiment log, a short memo, and a next experiment.
+- If time is short, choose the extension that can reinterpret the core module you just finished.
 
 ## Recommended order
 
 1. `X01` for the general transformer-circuits language.
 2. `X02` for induction heads and a concrete mechanism behind attention patterns.
-3. `X03` for a natural-language behavior circuit.
-4. `X04` for connecting interpretability to auditing hidden objectives.
+3. `X03` for pushing circuit analysis into natural-language behavior.
+4. `X04-X06` for memory, knowledge localization, and factual editing.
+5. `X07` for connecting interpretability, editing, and auditing hidden objectives.
 
-## What counts as completion
+## What counts as finishing one extension paper
 
 - Not "I read it."
-- But "I can use it to reinterpret one core module or propose a new research question."
+- Not even "I ran the notebook."
+- But "I reproduced a smallest teaching-scale experiment in Colab and can state what it supports, what it does not support, and what should happen next."
+
+## Why this track matters for a P8 trajectory
+
+- `P5/P6` usually require reproduction, writing, and critique.
+- `P7` starts requiring that you can place different papers inside one research language.
+- `P8` requires turning those papers into a direction, tooling needs, and a research cadence for a sub-area.
+
+So the real role of the extension track is not only to expose you to more papers. It is to force the transition from single-paper understanding to direction-level understanding.

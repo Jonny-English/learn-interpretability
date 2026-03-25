@@ -1,6 +1,6 @@
 {
-  "goal_zh": "让有基础 Python/PyTorch、但没有 interpretability 背景的学习者，在完成课程后具备进入公司 mechanistic interpretability / model behavior / alignment 研究组做入门研究工作的能力。",
-  "goal_en": "Enable learners with basic Python/PyTorch but no interpretability background to become ready for entry-level research work in mechanistic interpretability, model behavior, or alignment teams.",
+  "goal_zh": "让有基础 Python/PyTorch、但没有 interpretability 背景的学习者，沿着一条 Colab 优先的论文复现路径成长：先获得公司研究入场能力，再通过扩展复现、研究写作和重复 capstone，朝阿里式 P8 interpretability 研究者的长期目标推进。",
+  "goal_en": "Enable learners with basic Python/PyTorch but no interpretability background to grow along a Colab-first paper-reproduction path: first reach company-entry research usefulness, then push toward the long-horizon goal of an Alibaba-style P8 interpretability researcher through extension reproductions, research writing, and repeated capstones.",
   "entry_requirements_zh": [
     "会用 Python、NumPy、PyTorch 写和调试小实验。",
     "知道矩阵乘法、点积、范数、概率、logit、cross-entropy 这些基础概念。",
@@ -52,8 +52,8 @@
         "Make the paper-reading-note and experiment-log templates feel routine.",
         "Aim first to reach something close to P4 before entering the full research path."
       ],
-      "target_zh": "目标：从“完全新手”推进到接近阿里式 P4，再去冲击 P5。",
-      "target_en": "Target: move from a true beginner state toward something close to Alibaba-style P4, then continue toward P5."
+      "target_zh": "目标：先从“完全新手”推进到接近阿里式 P4，再通过主线复现进入 P5/P6 路径，后续再接扩展复现与 capstone 朝 P7/P8 发展。",
+      "target_en": "Target: move from a true beginner state toward something close to Alibaba-style P4, then use the core reproductions to enter a P5/P6 path before extension reproductions and capstones push toward P7/P8."
     },
     {
       "id": "T1",
@@ -66,30 +66,30 @@
       "first_steps_zh": [
         "按 M00 → M05 快速完成 foundations 和 feature 主线。",
         "尽早进入 research-ready 模式，开始写 memo 和 failure analysis。",
-        "把目标直接放在接近 P5，并尝试摸到 P6 门槛。"
+        "把目标直接放在 P5/P6 主线，并为后续的扩展复现和 capstone 留出节奏。"
       ],
       "first_steps_en": [
         "Move quickly through M00 → M05 to lock in the foundations and feature track.",
         "Switch into research-ready mode early and start writing memos plus failure analysis.",
-        "Aim directly at P5 readiness and start touching the lower edge of P6."
+        "Aim directly at the P5/P6 core track and leave room for later extension reproductions and capstones."
       ],
-      "target_zh": "目标：从“有基础但没体系”推进到接近阿里式 P5，高质量完成者开始摸到 P6。",
-      "target_en": "Target: move from 'some foundation but no system' toward Alibaba-style P5, with strong completers beginning to touch P6."
+      "target_zh": "目标：从“有基础但没体系”推进到阿里式 P5/P6 主干，再用扩展论文复现、memo 和独立提案朝 P7/P8 推进。",
+      "target_en": "Target: move from 'some foundation but no system' into an Alibaba-style P5/P6 core, then advance toward P7/P8 through extension reproductions, memos, and independent proposals."
     }
   ],
   "exit_portfolio_zh": [
-    "至少 6 份 paper reading notes，覆盖 foundations、features、tracing、character 四个阶段。",
-    "至少 6 份 experiment logs，其中至少 3 份包含参数 sweep 或失败分析。",
-    "至少 3 份短 research memos，其中 1 份是中期复盘，1 份是最终汇报。",
-    "1 份 graph walkthrough 或 artifact critique，展示你能读图、拆证据、指出歧义。",
-    "1 个可在 2 周内执行的 capstone 研究提案，包含问题、假设、baseline、预算、停止条件。"
+    "至少 10 份 paper reading notes，覆盖 foundations、features、tracing、editing、auditing 五个阶段。",
+    "至少 10 份 experiment logs，其中至少 5 份包含 sweep、ablation 或明确 failure analysis。",
+    "至少 6 份短 research memos，其中至少 2 份来自扩展论文复现，1 份是中期复盘，1 份是最终汇报。",
+    "至少 2 份 graph walkthrough / artifact critique / edit critique，展示你能读图、拆证据、指出歧义与副作用。",
+    "至少 2 个可在 2 周内执行的 capstone 研究提案，且其中 1 个必须连接 interpretability 与 control / auditing 问题。"
   ],
   "exit_portfolio_en": [
-    "At least six paper reading notes spanning foundations, features, tracing, and character.",
-    "At least six experiment logs, with at least three containing a sweep or explicit failure analysis.",
-    "At least three short research memos, including one midpoint review and one final report.",
-    "One graph walkthrough or artifact critique that shows you can read evidence and point out ambiguity.",
-    "One capstone proposal that could realistically run in two weeks, with question, hypothesis, baseline, budget, and stop condition."
+    "At least ten paper reading notes spanning foundations, features, tracing, editing, and auditing.",
+    "At least ten experiment logs, with at least five containing a sweep, ablation, or explicit failure analysis.",
+    "At least six short research memos, with at least two coming from extension-paper reproductions, plus one midpoint review and one final report.",
+    "At least two graph walkthroughs, artifact critiques, or edit critiques showing you can read evidence, point out ambiguity, and discuss side effects.",
+    "At least two capstone proposals that could realistically run in two weeks, with one explicitly connecting interpretability to control or auditing."
   ],
   "phases": [
     {

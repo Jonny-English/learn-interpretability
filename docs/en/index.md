@@ -1,6 +1,6 @@
 # From Circuits to Claude
 
-This course is article-first: every paper in the core path has its own note, its own notebook, and its own position in the learning sequence.
+This course is now Colab-first and paper-reproduction-first: every paper in the core path has its own note, its own notebook, and its own self-check.
 
 ## Pre-P4 foundation pack
 
@@ -21,17 +21,24 @@ This course is article-first: every paper in the core path has its own note, its
 10. [M09 Signs of Introspection in Large Language Models](modules/m09-signs-of-introspection.md)
 11. [M10 The Assistant Axis](modules/m10-assistant-axis.md)
 
+## Extension reproduction track
+
+- [Extension-paper overview](extensions/index.md)
+- After the core, do not stop at "I finished the Anthropic arc." Continue with classic transformer-circuits, memory/editing, and auditing papers as Colab reproductions.
+
 ## How to use the repo
 
 - Read the note first.
 - Open the paired notebook locally or in Colab.
 - Inspect the JSON artifact when the article is artifact-guided.
 - Answer the self-check questions at the end of the note and notebook rather than stopping at the plots.
-- Use `web/` for the timeline, concept graph, glossary cards, and preview widgets.
+- Turn each reproduction into a reading note, an experiment log, and a short memo rather than keeping it only in your head.
 
 ## Research-ready track
 
 - [Research-ready overview](program/research-ready.md)
+- [Colab-first path](program/colab-first-path.md)
+- [P8 roadmap](program/p8-roadmap.md)
 - [12-week bootcamp](program/week-by-week.md)
 - [Research playbook](program/research-playbook.md)
 - [Evaluation rubric](program/evaluation-rubric.md)
@@ -51,5 +58,6 @@ Use the track in this order:
 
 - `M00-M05` are runnable on CPU or free Colab.
 - `M06` and `M08` now include lightweight local reproductions; `M03`, `M07`, `M09`, and `M10` still remain primarily artifact-guided teaching reconstructions.
+- `X01-X07` are the longer Colab reproduction track used to keep pushing the path toward the breadth and rigor needed for P7/P8-level growth.
 - Chinese and English stay structurally mirrored. If you add an article note in one language, add it in the other.
 - If your goal is company research readiness, output quality matters more than completion counts.
