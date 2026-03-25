@@ -1,0 +1,34 @@
+[
+  {
+    "id": "legacy-zoom-in-figures",
+    "kind": "figure-set",
+    "path": "figures",
+    "title_zh": "原始视觉电路图组",
+    "title_en": "Legacy visual-circuit figures",
+    "module_ids": ["M00"]
+  },
+  {
+    "id": "concept-graph",
+    "kind": "json",
+    "path": "artifacts/concept_graph.json",
+    "title_zh": "课程概念依赖图",
+    "title_en": "Course concept dependency graph",
+    "module_ids": ["M00", "M01", "M02", "M03", "M04", "M05"]
+  },
+  {
+    "id": "m04-attribution-graph",
+    "kind": "json",
+    "path": "artifacts/m04_attribution_graph.json",
+    "title_zh": "Circuit tracing 教学图",
+    "title_en": "Teaching attribution graph for circuit tracing",
+    "module_ids": ["M04"]
+  },
+  {
+    "id": "m05-persona-vectors",
+    "kind": "json",
+    "path": "artifacts/m05_persona_vectors.json",
+    "title_zh": "Persona 向量教学数据",
+    "title_en": "Teaching persona-vector data",
+    "module_ids": ["M05"]
+  }
+]

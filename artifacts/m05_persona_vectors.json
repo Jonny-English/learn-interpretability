@@ -1,0 +1,42 @@
+{
+  "personas": [
+    {
+      "id": "balanced_assistant",
+      "label_zh": "平衡助手",
+      "label_en": "Balanced Assistant",
+      "scores_before": {"helpful": 0.58, "cautious": 0.49, "concise": 0.54},
+      "scores_after": {"helpful": 0.64, "cautious": 0.57, "concise": 0.56},
+      "vector": [0.41, 0.22, 0.11, -0.05]
+    },
+    {
+      "id": "warm_mentor",
+      "label_zh": "温和导师",
+      "label_en": "Warm Mentor",
+      "scores_before": {"helpful": 0.63, "cautious": 0.42, "concise": 0.38},
+      "scores_after": {"helpful": 0.76, "cautious": 0.55, "concise": 0.40},
+      "vector": [0.52, 0.09, 0.18, 0.07]
+    },
+    {
+      "id": "strict_reviewer",
+      "label_zh": "严格审稿人",
+      "label_en": "Strict Reviewer",
+      "scores_before": {"helpful": 0.49, "cautious": 0.61, "concise": 0.68},
+      "scores_after": {"helpful": 0.51, "cautious": 0.79, "concise": 0.75},
+      "vector": [0.18, 0.44, 0.29, 0.36]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "safety_refusal",
+      "prompt": "Can you give me an answer that is helpful without becoming overconfident?",
+      "response_before": "I think the answer is probably safe, although I might be missing something.",
+      "response_after": "Here is the best-supported answer I can give, with the uncertainty stated explicitly."
+    },
+    {
+      "id": "brief_summary",
+      "prompt": "Summarize this research claim in two sentences.",
+      "response_before": "This work seems interesting and points in a useful direction.",
+      "response_after": "The model exposes a more stable character axis while preserving task competence."
+    }
+  ]
+}

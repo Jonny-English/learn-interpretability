@@ -1,29 +1,47 @@
 # Contributing
 
-Thank you for considering a contribution. This project is small and opinionated, but there is plenty of room for it to grow.
+This project is now a bilingual interpretability course with three synced layers:
 
-## Ways to contribute
+1. `content/course.json` as the source of truth
+2. mirrored `docs/zh` and `docs/en`
+3. mirrored `notebooks/zh` and `notebooks/en`, plus a static `web/` explorer
 
-**Report problems.** If something in the notebook is wrong — a misattributed claim, a broken cell, a confusing explanation — [open an issue](https://github.com/Jonny-English/circuits-zoom-in/issues). Even a one-sentence description helps.
+If you touch one layer, make sure the others still line up.
 
-**Translate.** The notebook currently exists in Chinese and English. If you'd like to translate it into another language, that would extend its reach in a way that no amount of code improvement can.
+## High-value contributions
 
-**Add experiments.** The most natural extensions are deeper circuit analyses (more layers, more models), higher-resolution dataset validation (ImageNet subsets instead of CIFAR-10), and — the big one — a companion tutorial on circuits in Transformer language models.
+**Fix conceptual mistakes.** If a claim about superposition, dictionary learning, circuit tracing, or persona control is wrong or too hand-wavy, open an issue or patch it directly.
 
-**Improve visualizations.** The plots work, but they could be clearer, more interactive, or simply more beautiful.
+**Improve bilingual parity.** Chinese and English should stay structurally identical. Better wording is welcome; mismatched structure is not.
 
-## How to submit changes
+**Strengthen runnable labs.** `M00-M03` should stay CPU-friendly and Colab-friendly. Better toy datasets, clearer plots, and faster smoke execution are especially useful.
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b my-feature`
-3. Make your changes
-4. Verify the notebook runs end-to-end: `jupyter nbconvert --execute notebooks/circuits_zoom_in_zh.ipynb`
-5. Push and open a Pull Request
+**Improve artifacts and visualizations.** `M04-M05` rely on precomputed artifacts. Clearer attribution-graph views, better glossary cards, and more readable persona plots are good contributions.
 
-## A note on Chinese variable names
+## Development workflow
 
-Please keep them. In the Chinese notebook, variables are named in Chinese. In the English notebook, the same Chinese names are preserved with English annotations. This is intentional and should not be "fixed." If you are adding new code to the Chinese notebook, follow the same convention.
+1. Create a branch from `main`.
+2. Make your changes.
+3. Regenerate derived content if you changed metadata:
+   `python3 scripts/render_readmes.py`
+   `python3 scripts/generate_course_notebooks.py`
+4. Run validation:
+   `python3 scripts/validate_course.py`
+   `python3 scripts/smoke_notebooks.py`
+   `python3 scripts/check_links.py`
+5. If you changed the web app, also run:
+   `cd web && npm install && npm run build`
+
+## Structural rules
+
+**Treat `content/course.json` as authoritative.** Module IDs, order, titles, prerequisites, paper links, and artifact references should be edited there first.
+
+**Keep docs mirrored.** `docs/zh` and `docs/en` must expose the same modules and the same section structure.
+
+**Keep notebooks mirrored.** `notebooks/zh` and `notebooks/en` must keep the same module IDs and execution shape. Language can differ; structure should not.
+
+**Do not turn the course into a heavy compute project.** Core labs should remain runnable on CPU or free Colab. Heavy model tracing belongs in optional extensions, not in the required path.
 
 ## Questions
 
-Open an issue. I will do my best to respond.
+Open an issue or PR with the specific module ID you are changing. That makes review much faster.

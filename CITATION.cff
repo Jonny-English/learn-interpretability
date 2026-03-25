@@ -1,15 +1,17 @@
 cff-version: 1.2.0
-message: "If you use this tutorial, please cite it as below."
-title: "Circuits: Zoom In — A Hands-On Tutorial"
+message: "If you use this course, please cite it as below."
+title: "From Circuits to Claude: A Bilingual Interpretability Course"
 type: software
 authors:
   - name: "Jonny-English"
 license: MIT
-repository-code: "https://github.com/Jonny-English/circuits-zoom-in"
+repository-code: "https://github.com/Jonny-English/circuits-zoom-in-fresh-20260325"
 keywords:
   - mechanistic interpretability
-  - neural circuits
-  - feature visualization
+  - neural circuits education
+  - superposition
+  - sparse autoencoders
+  - circuit tracing
   - AI safety education
 references:
   - type: article
@@ -30,3 +32,17 @@ references:
     journal: "Distill"
     year: 2020
     doi: "10.23915/distill.00024.001"
+  - type: article
+    authors:
+      - family-names: Anthropic
+        given-names: ""
+    title: "Toy Models of Superposition"
+    year: 2022
+    url: "https://www.anthropic.com/research/toy-models-of-superposition"
+  - type: article
+    authors:
+      - family-names: Anthropic
+        given-names: ""
+    title: "Towards Monosemanticity: Decomposing Language Models With Dictionary Learning"
+    year: 2023
+    url: "https://www.anthropic.com/research/towards-monosemanticity-decomposing-language-models-with-dictionary-learning"
