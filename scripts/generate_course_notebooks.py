@@ -90,29 +90,31 @@ WORKSHEETS = {
         "title_zh": "研究工作单",
         "before_en": [
             "Name the three terms you want to leave with: feature, circuit, intervention.",
-            "Pick one figure and predict what later papers will complicate or break.",
+            "Predict which live section will change your intuition most: feature visualization, CIFAR validation, orientation tuning, or circuit tracing.",
             "Open the paper-reading-note template before you run the notebook.",
         ],
         "before_zh": [
             "先写下你这篇要带走的 3 个词：feature、circuit、intervention。",
-            "挑一张图，预测后续论文会在哪个地方把它复杂化或打破。",
+            "先预测哪一段 live 实验最会改变你的直觉：feature visualization、CIFAR 验证、方向调谐还是 circuit tracing。",
             "运行前先打开 paper-reading-note 模板。",
         ],
         "after_en": [
-            "Write one paragraph on what this visual picture explains well and what it cannot explain in language models.",
-            "List the first ambiguity that appears when you try to generalize this intuition.",
+            "Write one paragraph on which output was actually measured live and which claims still rely on interpretation.",
+            "List the first ambiguity that appears when you try to generalize this visual result to language models.",
         ],
         "after_zh": [
-            "写一段话说明这套视觉图像擅长解释什么，又解释不了语言模型里的什么。",
-            "列出当你把这套直觉推广出去时，最先出现的一个歧义点。",
+            "写一段话说明这次 notebook 里哪些结果是实时测出来的，哪些结论仍然带有解释成分。",
+            "列出当你把这套视觉结果推广到语言模型时，最先出现的一个歧义点。",
         ],
         "ship_en": [
             "One reading note with a mentor/peer-summary paragraph.",
+            "One experiment log covering at least one measured activation sweep.",
             "One glossary list of unclear terms.",
             "One next-question list for M01.",
         ],
         "ship_zh": [
             "1 份带导师/同伴摘要的 reading note。",
+            "1 份至少覆盖一次激活测量的 experiment log。",
             "1 份不懂术语清单。",
             "1 份通往 M01 的 next-question list。",
         ],
@@ -891,55 +893,264 @@ def m00(language: str) -> list[dict]:
     intro = """
 # M00 Zoom In: An Introduction to Circuits
 
-Start with the cleanest picture in the course: visible neurons, visible motifs, visible circuits.
+Run a live visual-circuits reproduction on a public InceptionV1 model.
 """ if language == "en" else """
 # M00 Zoom In：电路入门
 
-先从整门课里最干净的图像开始：可见的神经元、可见的模式、可见的局部电路。
+在公开可用的 InceptionV1 上跑一遍 live 视觉电路复现。
 """
     context = """
 ## What this notebook does
 
-- Revisits the four key figures from the original tutorial.
-- Uses them to define feature, circuit, and universality.
-- Establishes the intuition that later papers will complicate.
+- Loads a public pretrained vision model.
+- Generates feature visualizations with activation maximization.
+- Validates one neuron on real CIFAR-10 images.
+- Measures orientation tuning on synthetic arc stimuli.
+- Traces one small circuit by following learned weights upstream.
 """ if language == "en" else """
 ## 本 notebook 会做什么
 
-- 重看原始教程最关键的 4 张图。
-- 用它们定义 feature、circuit 和 universality。
-- 先建立一个后续论文会不断打破和修正的直觉。
+- 加载一个公开可用的预训练视觉模型。
+- 用激活最大化实时生成 feature visualization。
+- 在真实 CIFAR-10 图片上验证一个神经元。
+- 用合成弧线刺激测量方向调谐。
+- 通过真实权重往上追一条小型 circuit。
 """
-    code = repo_root_snippet() + """
-import matplotlib.pyplot as plt
-from PIL import Image
+    setup = """
+import subprocess
+import sys
+from pathlib import Path
 
-figure_specs = [
-    ("feature_viz_grid.png", "Feature visualization"),
-    ("polar_tuning.png", "Orientation tuning"),
-    ("circuit_diagram.png", "Circuit composition"),
-    ("universality_comparison.png", "Universality"),
+if "google.colab" in sys.modules:
+    subprocess.run(
+        [sys.executable, "-m", "pip", "install", "-q", "torchvision", "torch-lucent", "matplotlib", "numpy", "Pillow"],
+        check=True,
+    )
+
+import matplotlib.pyplot as plt
+import numpy as np
+import torch
+import torchvision
+from lucent.modelzoo import inceptionv1
+from lucent.optvis import objectives, render
+from PIL import Image, ImageDraw
+from torch.utils.data import DataLoader
+from torchvision import transforms as T
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+torch.manual_seed(0)
+
+model = inceptionv1(pretrained=True).to(device).eval()
+imagenet_mean = [0.485, 0.456, 0.406]
+imagenet_std = [0.229, 0.224, 0.225]
+transform = T.Compose([
+    T.Resize(224),
+    T.ToTensor(),
+    T.Normalize(imagenet_mean, imagenet_std),
+])
+render_cache = {}
+
+def denormalize(image_tensor):
+    mean = torch.tensor(imagenet_mean).view(3, 1, 1)
+    std = torch.tensor(imagenet_std).view(3, 1, 1)
+    restored = (image_tensor.cpu() * std + mean).clamp(0.0, 1.0)
+    return restored.permute(1, 2, 0).numpy()
+
+def layer_mean_activation(layer_name, channel, batch):
+    capture = {}
+
+    def hook_fn(_module, _inputs, output):
+        capture["value"] = output[:, channel].mean(dim=(1, 2)).detach().cpu()
+
+    hook = dict(model.named_modules())[layer_name].register_forward_hook(hook_fn)
+    with torch.no_grad():
+        model(batch.to(device))
+    hook.remove()
+    return capture["value"]
+
+def render_neuron(layer_name, channel, steps=12):
+    key = (layer_name, channel, steps)
+    if key not in render_cache:
+        images = render.render_vis(
+            model,
+            objectives.channel(layer_name, channel),
+            thresholds=(steps,),
+            show_inline=False,
+            progress=False,
+        )
+        render_cache[key] = images[0][0]
+    return render_cache[key]
+
+print("Loaded InceptionV1 on", device)
+"""
+    feature_viz = """
+representative_neurons = [
+    ("conv2d0", 0, "early edge / color"),
+    ("mixed3a", 0, "edge bundle"),
+    ("mixed3b", 379, "curve detector"),
 ]
 
-fig, axes = plt.subplots(2, 2, figsize=(10, 8))
-for ax, (filename, title) in zip(axes.flatten(), figure_specs):
-    image = Image.open(root / "figures" / filename)
+fig, axes = plt.subplots(1, len(representative_neurons), figsize=(11, 3.6))
+for ax, (layer_name, channel, label) in zip(axes, representative_neurons):
+    image = render_neuron(layer_name, channel, steps=12)
     ax.imshow(image)
-    ax.set_title(title)
+    ax.axis("off")
+    ax.set_title(f"{layer_name}:{channel}\\n{label}", fontsize=9)
+plt.suptitle("Live feature visualizations from a pretrained vision model", fontsize=11)
+plt.tight_layout()
+
+noise_batch = torch.randn(8, 3, 224, 224)
+print("Mean activation on random noise:")
+for layer_name, channel, label in representative_neurons:
+    score = float(layer_mean_activation(layer_name, channel, noise_batch).mean())
+    print(f"  {layer_name}:{channel:>3} ({label}) -> {score:.4f}")
+"""
+    validation = """
+data_root = Path.cwd() / ".learn_interpretability_data" / "cifar10"
+dataset = torchvision.datasets.CIFAR10(
+    data_root,
+    train=False,
+    download=True,
+    transform=transform,
+)
+loader = DataLoader(dataset, batch_size=64, shuffle=False, num_workers=0)
+
+def top_activating_images(layer_name, channel, top_k=6, max_batches=3):
+    score_chunks = []
+    image_chunks = []
+    label_chunks = []
+    for batch_index, (images, labels) in enumerate(loader):
+        if batch_index >= max_batches:
+            break
+        score_chunks.append(layer_mean_activation(layer_name, channel, images))
+        image_chunks.append(images)
+        label_chunks.append(labels)
+    scores = torch.cat(score_chunks)
+    images = torch.cat(image_chunks)
+    labels = torch.cat(label_chunks)
+    values, indices = torch.topk(scores, k=top_k)
+    return images[indices], labels[indices], values
+
+target_layer = "mixed3b"
+target_channel = 379
+synthetic = render_neuron(target_layer, target_channel, steps=12)
+real_images, real_labels, real_scores = top_activating_images(target_layer, target_channel)
+
+fig, axes = plt.subplots(2, 4, figsize=(11, 5.5))
+axes[0, 0].imshow(synthetic)
+axes[0, 0].axis("off")
+axes[0, 0].set_title("Synthetic preference", fontsize=9)
+for ax in axes.flatten()[1:]:
     ax.axis("off")
 
+for index in range(6):
+    row = index // 3
+    col = (index % 3) + 1
+    axes[row, col].imshow(denormalize(real_images[index]))
+    axes[row, col].axis("off")
+    axes[row, col].set_title(
+        f"{dataset.classes[int(real_labels[index])]}\\nscore={float(real_scores[index]):.3f}",
+        fontsize=8,
+    )
+
+plt.suptitle("Live validation on real CIFAR-10 images", fontsize=11)
 plt.tight_layout()
+print("Top CIFAR-10 labels:", [dataset.classes[int(label)] for label in real_labels])
+"""
+    tuning = """
+def make_arc_batch(angle_degrees, image_size=224, radius=60, line_width=5):
+    image = Image.new("RGB", (image_size, image_size), (128, 128, 128))
+    draw = ImageDraw.Draw(image)
+    center_x = image_size // 2
+    center_y = image_size // 2
+    box = [center_x - radius, center_y - radius, center_x + radius, center_y + radius]
+    draw.arc(box, start=float(angle_degrees) - 60.0, end=float(angle_degrees) + 60.0, fill=(255, 255, 255), width=line_width)
+    return transform(image).unsqueeze(0), image
+
+angles = np.linspace(0.0, 345.0, 24)
+responses = []
+preview_angles = [0.0, 60.0, 120.0]
+
+fig = plt.figure(figsize=(12, 3.8))
+grid = fig.add_gridspec(1, 4, width_ratios=[1.0, 1.0, 1.0, 1.6])
+preview_axes = [fig.add_subplot(grid[0, index]) for index in range(3)]
+polar_ax = fig.add_subplot(grid[0, 3], projection="polar")
+
+for ax, angle in zip(preview_axes, preview_angles):
+    batch, preview = make_arc_batch(angle)
+    ax.imshow(preview)
+    ax.axis("off")
+    ax.set_title(f"{int(angle)} deg", fontsize=9)
+
+for angle in angles:
+    batch, _ = make_arc_batch(angle)
+    responses.append(float(layer_mean_activation(target_layer, target_channel, batch)[0]))
+
+responses = np.array(responses)
+closed_angles = np.deg2rad(np.append(angles, angles[0]))
+closed_responses = np.append(responses, responses[0])
+polar_ax.plot(closed_angles, closed_responses, marker="o", color="#c96a28")
+polar_ax.set_title("Orientation tuning for mixed3b:379", fontsize=10)
+polar_ax.set_theta_zero_location("N")
+polar_ax.set_theta_direction(-1)
+plt.tight_layout()
+
+preferred_angle = float(angles[int(np.argmax(responses))])
+print("Preferred orientation:", round(preferred_angle, 1), "degrees")
+print("Peak response:", round(float(responses.max()), 4))
+"""
+    circuit = """
+target_channel = 379
+branch_index = target_channel - 320
+weights_bottleneck = model.mixed3b_5x5_bottleneck_pre_relu_conv.weight.detach().cpu().squeeze(-1).squeeze(-1)
+weights_5x5 = model.mixed3b_5x5_pre_relu_conv.weight.detach().cpu()
+
+target_filter = weights_5x5[branch_index]
+bottleneck_importance = target_filter.abs().sum(dim=(1, 2))
+upstream_importance = (bottleneck_importance[:, None] * weights_bottleneck.abs()).sum(dim=0)
+top_values, top_indices = torch.topk(upstream_importance, k=6)
+display_channels = top_indices[:2].tolist()
+
+fig, axes = plt.subplots(1, 4, figsize=(12, 3.6))
+for ax, channel in zip(axes[:2], display_channels):
+    ax.imshow(render_neuron("mixed3a", int(channel), steps=10))
+    ax.axis("off")
+    ax.set_title(f"mixed3a:{channel}", fontsize=9)
+
+axes[2].bar(range(len(top_values)), top_values.tolist(), color="#1f5f8b")
+axes[2].set_xticks(range(len(top_values)), [str(int(index)) for index in top_indices.tolist()], rotation=30)
+axes[2].set_title("Top upstream channels", fontsize=10)
+axes[2].set_xlabel("mixed3a channel")
+
+axes[3].imshow(render_neuron("mixed3b", target_channel, steps=10))
+axes[3].axis("off")
+axes[3].set_title(f"mixed3b:{target_channel}", fontsize=9)
+plt.suptitle("Tracing a small circuit through learned weights", fontsize=11)
+plt.tight_layout()
+
+print("Top upstream channels for mixed3b:379:")
+for channel, value in zip(top_indices.tolist(), top_values.tolist()):
+    print(f"  mixed3a:{int(channel):>3} -> importance {float(value):.3f}")
 """
     takeaway = """
 ## Takeaway
 
-Visual circuits are a warm-up, not the final destination. Keep this picture in mind when the next notebook shows why neurons stop behaving so cleanly.
+This notebook now earns the basic visual-circuits story live: a neuron preference, a real-image check, a tuning curve, and an upstream-weight trace. The picture is still cleaner than language-model interpretability, but it is no longer a slideshow.
 """ if language == "en" else """
 ## 小结
 
-视觉电路只是热身，不是终点。后面一旦开始谈 superposition，这幅干净图像就会被重新解释。
+这本 notebook 现在是把视觉电路故事真正跑出来：神经元偏好、真实图片验证、方向调谐曲线，以及一条上游权重 trace。它依然比语言模型里的情况干净，但已经不是幻灯片式讲解了。
 """
-    return [markdown_cell(intro), markdown_cell(context), code_cell(code), markdown_cell(takeaway)]
+    return [
+        markdown_cell(intro),
+        markdown_cell(context),
+        code_cell(setup),
+        code_cell(feature_viz),
+        code_cell(validation),
+        code_cell(tuning),
+        code_cell(circuit),
+        markdown_cell(takeaway),
+    ]
 
 
 def m01(language: str) -> list[dict]:

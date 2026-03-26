@@ -4,9 +4,21 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) ·
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
-`Learn Interpretability` 是一个面向有基础 Python / PyTorch 读者的双语、Colab 优先 interpretability 训练仓库。项目按“论文复现优先”来组织：每篇主线论文都有镜像讲义，凡是能诚实实时复现的条目，都配一份独立 Colab notebook。
+`Learn Interpretability` 是一个面向有基础 Python / PyTorch 读者的双语、Colab 优先 interpretability 训练仓库。项目按“论文驱动、live code 优先”来组织：每篇主线论文都有镜像讲义，凡是能诚实实时运行的条目，都配一份独立 Colab notebook。
 
 如果这个仓库确实帮你节省了时间、给了清晰路径，或者让你不再随机跳论文，就给它一个 star。
+
+## 序言
+
+这个项目从一个很简单的拒绝开始：
+我们不愿意在大模型时代，只做那些自己并不真正理解之物的被动使用者。
+
+这个时代最重要的技术，正在变得更强、更像行动者，也更深地嵌进研究、软件和决策流程里。如果我们学到的只是在外面调用它、消费它、绕着它做工作流，那我们始终站在真正问题的下游。真正的问题是：这些模型内部到底表示了什么、依靠了什么机制、会在什么地方失效，以及人类怎样才能仍然有资格去理解它、干预它、控制它。
+
+所以这个仓库不是单纯的论文目录，也不是一堆 notebook 的堆砌。它是一块训练场。它写给那些不满足于站在黑箱外面惊叹的人，写给那些愿意亲手打开它、复现它、追踪它、记录判断，并把零散好奇心压成研究能力的人。
+
+你不需要一开始就是专家。
+但你需要从一开始就认真。
 
 ## 从这里开始
 
@@ -50,7 +62,7 @@
 <!-- COURSE_TABLE:START -->
 | ID | 文章 | 日期 | 状态 | Notebook | Colab | 运行层级 | 你会做什么 |
 |---|---|---|---|---|---|---|---|
-| `M00` | Zoom In：电路入门 | `2020-03-10` | `method-lab` | [打开](notebooks/zh/m00_zoom_in_circuits.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/m00_zoom_in_circuits.ipynb) | `warmup` | 用视觉模型建立 feature、circuit 与 intervention 的最初直觉。 |
+| `M00` | Zoom In：电路入门 | `2020-03-10` | `method-lab` | [打开](notebooks/zh/m00_zoom_in_circuits.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/m00_zoom_in_circuits.ipynb) | `cpu-colab` | 在公开 InceptionV1 上实时生成 feature visualization、真实图片验证、方向调谐与小型 circuit trace。 |
 | `M01` | Toy Models of Superposition | `2022-09-14` | `paper-faithful` | [打开](notebooks/zh/m01_toy_models_superposition.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/m01_toy_models_superposition.ipynb) | `cpu-colab` | 用最小 toy model 理解为什么神经元会混装多个语义。 |
 | `M02` | Towards Monosemanticity | `2023-10-05` | `method-lab` | [打开](notebooks/zh/m02_towards_monosemanticity.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/m02_towards_monosemanticity.ipynb) | `cpu-colab` | 通过教学版 sparse autoencoder 理解为什么 feature 视角比 neuron 视角更稳。 |
 | `M03` | Mapping the Mind | `2024-05-21` | `reading-only` | 阅读 | - | `reading-only` | 浏览教学版 feature catalog，理解“发现大量特征”到底意味着什么。 |

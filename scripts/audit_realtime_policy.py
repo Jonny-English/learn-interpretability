@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 COURSE_PATH = ROOT / "content" / "course.json"
 EXTENSIONS_PATH = ROOT / "content" / "extensions.json"
 NOTEBOOKS_ROOT = ROOT / "notebooks"
-ARTIFACT_TOKEN = "artifacts"
+BANNED_TOKENS = ("artifacts", "figures")
 
 
 def fail(message: str) -> None:
@@ -29,14 +29,17 @@ def notebook_cells(path: Path) -> list[tuple[int, str]]:
     return cells
 
 
-def source_mentions_artifacts(source: str) -> bool:
+def source_mentions_precomputed_repo_data(source: str) -> bool:
     try:
         tokens = tokenize.generate_tokens(io.StringIO(source).readline)
         for token in tokens:
-            if token.type in (tokenize.NAME, tokenize.STRING) and ARTIFACT_TOKEN in token.string.lower():
-                return True
+            if token.type in (tokenize.NAME, tokenize.STRING):
+                token_value = token.string.lower()
+                if any(banned in token_value for banned in BANNED_TOKENS):
+                    return True
     except tokenize.TokenError:
-        return ARTIFACT_TOKEN in source.lower()
+        lowered = source.lower()
+        return any(banned in lowered for banned in BANNED_TOKENS)
     return False
 
 
@@ -68,8 +71,8 @@ def resolve_local_import(module_name: str) -> Path | None:
 
 
 def audit_source(label: str, source: str, visited: set[Path]) -> None:
-    if source_mentions_artifacts(source):
-        fail(f"live code references precomputed artifacts: {label}")
+    if source_mentions_precomputed_repo_data(source):
+        fail(f"live code references precomputed repository data: {label}")
     for module_name in local_imports(source):
         local_path = resolve_local_import(module_name)
         if not local_path or local_path in visited:

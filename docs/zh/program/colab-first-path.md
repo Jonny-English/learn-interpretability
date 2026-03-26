@@ -8,8 +8,8 @@
 
 ## 这条路径的基本原则
 
-- 一篇论文，对应一份讲义和一本 Colab notebook。
-- 每次复现都至少留下 reading note、experiment log 和短 memo。
+- 一篇论文，对应一份讲义；每个诚实可跑的条目，对应一本 Colab notebook。
+- 每次 live run 或复现都至少留下 reading note、experiment log 和短 memo。
 - 先做最小教学版复现，再讨论真实论文里的规模差异和外推风险。
 - 只在确实需要时才引入更重的本地栈；默认先用 CPU 或免费 Colab 建立研究手感。
 
@@ -17,7 +17,7 @@
 
 1. 先用 `F00-F03` 把环境、图表、几何和实验纪律补稳。
 2. 再用可运行的 `M00-M05` 建立 live 主线，并把 `M03` 和 `M06-M10` 当成阅读与批判模块。
-3. 最后用 `X01-X07` 把 transformer circuits、memory/editing 和 auditing 也做成 Colab 复现。
+3. 最后用 `X01-X07` 在 Colab 里继续做 transformer circuits、memory/editing 和 auditing 的方法练习。
 
 ## 什么时候说明你真的在用对这条路径
 
@@ -28,6 +28,6 @@
 
 ## 不要误解这条路径
 
-- Colab 优先，不等于只做玩具。
+- Colab 优先，不等于看静态图或预存结果。
 - 教学版复现，不等于放弃 rigor。
 - 轻量 notebook 的作用，是让你先学会提出好问题、设计最小证据链，再进入更重的研究栈。

@@ -4,9 +4,20 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) ·
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 
-`Learn Interpretability` is a bilingual, Colab-first training repo for readers who know basic Python and PyTorch but are new to mechanistic interpretability. The project is paper-reproduction-first: every core paper has a mirrored note, and every honestly runnable item has a paired Colab notebook.
+`Learn Interpretability` is a bilingual, Colab-first training repo for readers who know basic Python and PyTorch but are new to mechanistic interpretability. The project is paper-guided and live-code-first: every core paper has a mirrored note, and every honestly runnable item has a paired Colab notebook.
 
 If the repository saves you time, gives you a usable path, or helps you stop random paper-hopping, star it.
+
+## Preface
+
+This repository starts from a simple refusal:
+we do not want to spend the large-model era as passive users of systems we do not understand.
+
+The most important technology of our time is becoming more capable, more agentic, and more deeply woven into research, software, and decision-making. If we only learn how to prompt it, consume it, or route around it, we stay downstream from the real question. The real question is what these models are representing, what mechanisms they are actually using, where they break, and how human beings can still earn the right to understand, steer, and control them.
+
+That is why this project is not just a reading list and not just a notebook collection. It is a training ground. It is for readers who are willing to stop admiring the black box from the outside and start opening it, reproducing its behaviors, tracing its internals, writing down their judgments, and turning scattered curiosity into disciplined research work.
+
+You do not need to begin as an expert. You do need to begin seriously.
 
 ## Start Here
 
@@ -50,7 +61,7 @@ This is the main article path. `reading-only` means the note stays in the repo, 
 <!-- COURSE_TABLE:START -->
 | ID | Paper | Date | Status | Notebook | Colab | Runnable tier | What you will do |
 |---|---|---|---|---|---|---|---|
-| `M00` | Zoom In: An Introduction to Circuits | `2020-03-10` | `method-lab` | [Open](notebooks/en/m00_zoom_in_circuits.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/m00_zoom_in_circuits.ipynb) | `warmup` | Build first-pass intuition for features, circuits, and interventions in a visual model. |
+| `M00` | Zoom In: An Introduction to Circuits | `2020-03-10` | `method-lab` | [Open](notebooks/en/m00_zoom_in_circuits.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/m00_zoom_in_circuits.ipynb) | `cpu-colab` | Run live feature visualization, real-image validation, orientation tuning, and a small circuit trace on public InceptionV1. |
 | `M01` | Toy Models of Superposition | `2022-09-14` | `paper-faithful` | [Open](notebooks/en/m01_toy_models_superposition.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/m01_toy_models_superposition.ipynb) | `cpu-colab` | Use a minimal toy model to see why neurons can mix multiple semantics. |
 | `M02` | Towards Monosemanticity | `2023-10-05` | `method-lab` | [Open](notebooks/en/m02_towards_monosemanticity.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/m02_towards_monosemanticity.ipynb) | `cpu-colab` | Use a teaching-scale sparse autoencoder to see why a feature view can be cleaner than a neuron view. |
 | `M03` | Mapping the Mind of a Large Language Model | `2024-05-21` | `reading-only` | Reading | - | `reading-only` | Browse a teaching-scale feature catalog to understand what it means to discover many reusable features. |

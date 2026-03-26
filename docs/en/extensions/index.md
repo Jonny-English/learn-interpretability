@@ -1,6 +1,6 @@
 # Extension Reproduction Track
 
-These notes and notebooks widen the project beyond the Anthropic core arc into a more general interpretability research language. Every paper below has its own Colab reproduction.
+These notes and notebooks widen the project beyond the Anthropic core arc into a more general interpretability research language. Every paper below has its own Colab method lab.
 
 ## Recommended order
 

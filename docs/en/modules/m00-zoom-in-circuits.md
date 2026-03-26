@@ -2,7 +2,7 @@
 
 ## Goal
 
-Use the original visual-circuits story as the warm-up for the whole course.
+Run a live, teaching-scale visual-circuits reproduction on a public InceptionV1 model.
 
 ## Core reference
 
@@ -10,14 +10,15 @@ Use the original visual-circuits story as the warm-up for the whole course.
 
 ## What to look for
 
-- A single neuron can align with a recognizable visual pattern.
-- Several neurons can compose into a circuit that is still readable by eye.
-- This story is powerful, but much cleaner than what later language-model papers will show.
+- A single neuron can align with a recognizable visual pattern under live activation maximization.
+- That same neuron can be checked against real images instead of only a synthetic visualization.
+- Orientation tuning can be measured directly rather than asserted from a static figure.
+- A small circuit story can be grounded in learned weights instead of a hand-drawn diagram.
 
 ## Notebook and artifacts
 
 - Notebook: `notebooks/en/m00_zoom_in_circuits.ipynb`
-- Shared artifacts: legacy figures and the concept graph
+- The notebook generates its own feature visualizations, CIFAR validation panels, tuning curves, and upstream-weight trace
 - Extended background: `notebooks/circuits_zoom_in_en.ipynb`
 
 ## Self-check questions
@@ -28,4 +29,4 @@ Use the original visual-circuits story as the warm-up for the whole course.
 
 ## Takeaway
 
-This paper gives readers a stable visual picture before superposition and feature discovery complicate the story.
+This notebook now earns the visual-circuits intuition live. The picture is still cleaner than language-model interpretability, but it is no longer just a static walkthrough.

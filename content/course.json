@@ -4,8 +4,8 @@
     "order": 0,
     "title_zh": "Zoom In：电路入门",
     "title_en": "Zoom In: An Introduction to Circuits",
-    "summary_zh": "用视觉模型建立 feature、circuit 与 intervention 的最初直觉。",
-    "summary_en": "Build first-pass intuition for features, circuits, and interventions in a visual model.",
+    "summary_zh": "在公开 InceptionV1 上实时生成 feature visualization、真实图片验证、方向调谐与小型 circuit trace。",
+    "summary_en": "Run live feature visualization, real-image validation, orientation tuning, and a small circuit trace on public InceptionV1.",
     "prereqs": [],
     "paper_refs": [
       {
@@ -15,14 +15,13 @@
       }
     ],
     "artifact_refs": [
-      "legacy-zoom-in-figures",
       "concept-graph"
     ],
     "delivery_mode": "method-lab",
     "notebook_enabled": true,
-    "integrity_note_zh": "这是概念热身 lab，不宣称对原文做论文级复现。",
-    "integrity_note_en": "This is a concept warm-up lab and does not claim a paper-faithful reproduction.",
-    "runnable_tier": "warmup",
+    "integrity_note_zh": "这是公开栈上的 live 视觉电路练习：结果在运行时实时生成，但不宣称重建 Distill 原文的全部手工工件。",
+    "integrity_note_en": "This is a public-stack live visual-circuits lab: outputs are generated at runtime, but it does not claim to recreate every hand-crafted artifact from the Distill article.",
+    "runnable_tier": "cpu-colab",
     "web_slug": "zoom-in-circuits"
   },
   {

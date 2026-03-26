@@ -1,6 +1,6 @@
 # 扩展论文复现轨道
 
-这组讲义和 notebooks 用来把项目从 Anthropic 主线扩到更通用的 interpretability 研究语言。每一篇都配一份独立的 Colab 复现。
+这组讲义和 notebooks 用来把项目从 Anthropic 主线扩到更通用的 interpretability 研究语言。每一篇都配一份独立的 Colab 方法练习。
 
 ## 推荐顺序
 

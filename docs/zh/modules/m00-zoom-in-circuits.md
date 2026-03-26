@@ -2,7 +2,7 @@
 
 ## 目标
 
-把原始视觉电路故事作为整门课的热身材料。
+在公开 InceptionV1 上跑一遍教学尺度的 live 视觉电路复现。
 
 ## 核心参考
 
@@ -10,14 +10,15 @@
 
 ## 重点观察
 
-- 单个神经元就可能对可识别的视觉模式有稳定偏好。
-- 多个神经元可以组合成肉眼可读的局部电路。
-- 这套故事非常有用，但比后面的语言模型论文要干净得多。
+- 单个神经元可以在实时激活最大化里表现出稳定视觉偏好。
+- 同一个神经元可以再用真实图片去交叉验证，而不是只看合成图。
+- 方向调谐可以被真实测出来，而不是从静态图里倒推。
+- 一条小型 circuit 可以由真实学到的权重往上追出来，而不是手画示意图。
 
 ## Notebook 与 artifact
 
 - Notebook：`notebooks/zh/m00_zoom_in_circuits.ipynb`
-- 共享 artifact：原始视觉图和概念依赖图
+- 这本 notebook 会自己生成 feature visualization、CIFAR 验证面板、调谐曲线和上游权重 trace
 - 延伸背景：`notebooks/circuits_zoom_in_zh.ipynb`
 
 ## 验收题
@@ -28,4 +29,4 @@
 
 ## 模块结论
 
-这篇文章先给读者一个稳定的图像，后面的 superposition 和 feature discovery 会把这个图像变复杂。
+这本 notebook 现在是把视觉电路直觉真正跑出来。它依然比语言模型 interpretability 更干净，但已经不再只是看图热身。
