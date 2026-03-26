@@ -1,6 +1,8 @@
 {
-  "goal_zh": "让有基础 Python/PyTorch、但没有 interpretability 背景的学习者，沿着一条 Colab 优先的论文复现路径成长：先获得作为学生或个人研究者可执行研究的能力，再通过扩展复现、研究写作和重复 capstone，朝阿里式 P8 interpretability 研究者的长期目标推进。",
-  "goal_en": "Enable learners with basic Python/PyTorch but no interpretability background to grow along a Colab-first paper-reproduction path: first become research-productive as a student or independent researcher, then push toward the long-horizon goal of an Alibaba-style P8 interpretability researcher through extension reproductions, research writing, and repeated capstones.",
+  "goal_zh": "让有基础 Python/PyTorch、但没有 interpretability 背景的学习者，沿着一条 Colab 优先的论文复现路径成长：把普通本科生或个人研究者推进到可信的 P6-ready / 早期 P6 状态，也就是能承担明确研究任务、批判证据并提出下一步实验。",
+  "goal_en": "Enable learners with basic Python/PyTorch but no interpretability background to grow along a Colab-first paper-reproduction path: push an ordinary undergraduate or independent learner into a credible P6-ready / early P6 state, meaning they can take a clearly scoped research task, critique evidence, and propose the next experiment.",
+  "program_time_budget_zh": "如果把目标定义成 P6-ready，建议按 180-250 小时来规划：12 周训练营每周 8-12 小时，再加 4-8 周完成扩展复现、dossier 和 proposal 打磨。",
+  "program_time_budget_en": "If the target is P6-ready, plan for roughly 180-250 focused hours: 12 weeks of bootcamp at 8-12 hours per week, plus 4-8 more weeks for extension reproductions, dossier work, and proposal refinement.",
   "entry_requirements_zh": [
     "会用 Python、NumPy、PyTorch 写和调试小实验。",
     "知道矩阵乘法、点积、范数、概率、logit、cross-entropy 这些基础概念。",
@@ -33,6 +35,22 @@
     "Do not skip writing. People who cannot write short memos are usually not yet doing clear research.",
     "Do not treat a plot as a conclusion. A plot is evidence, not the entire judgment."
   ],
+  "p6_decision_rule_zh": "只有当学习者完成 live 主线、阅读与批判层、至少 3 篇指定分组的扩展复现，并拿出通过 rubric 的 dossier、memo、critique 和 proposal 时，才适合把结果叫做 P6-ready。",
+  "p6_decision_rule_en": "Call the result P6-ready only if the learner completes the live core, the reading-and-critique layer, at least three extension reproductions across the required buckets, and a rubric-passing dossier, memo, critique, and proposal.",
+  "p6_requirements_zh": [
+    "完成 M00、M01、M02、M04、M05 的 live 复现。",
+    "完成 M03、M06、M07、M08、M09、M10 的阅读与批判输出。",
+    "至少完成 3 篇扩展复现：X01-X03 至少 1 篇，X04-X06 至少 1 篇，外加 X07。",
+    "完成 1 次独立研究冲刺，并产出 1 份 scoped research-task dossier。",
+    "rubric 四个维度全部至少达到“就绪”，且没有维度停留在“未就绪”。"
+  ],
+  "p6_requirements_en": [
+    "Finish the live reproductions for M00, M01, M02, M04, and M05.",
+    "Finish the reading-and-critique outputs for M03, M06, M07, M08, M09, and M10.",
+    "Finish at least three extension reproductions: at least one from X01-X03, at least one from X04-X06, plus X07.",
+    "Finish one independent research sprint and produce one scoped research-task dossier.",
+    "Reach at least 'ready' on all four rubric dimensions, with no dimension still at 'not ready'."
+  ],
   "start_tracks": [
     {
       "id": "T0",
@@ -52,8 +70,8 @@
         "Make the paper-reading-note and experiment-log templates feel routine.",
         "Aim first to reach something close to P4 before entering the full research path."
       ],
-      "target_zh": "目标：先从“完全新手”推进到接近阿里式 P4，再通过主线复现进入 P5/P6 路径，后续再接扩展复现与 capstone 朝 P7/P8 发展。",
-      "target_en": "Target: move from a true beginner state toward something close to Alibaba-style P4, then use the core reproductions to enter a P5/P6 path before extension reproductions and capstones push toward P7/P8."
+      "target_zh": "目标：先从“完全新手”推进到接近阿里式 P4，再通过主线复现、bootcamp 和扩展复现建立可信的 P6-ready 状态。",
+      "target_en": "Target: move from a true beginner state toward something close to Alibaba-style P4, then use the core reproductions, the bootcamp, and the extension reproductions to build a credible P6-ready state."
     },
     {
       "id": "T1",
@@ -73,8 +91,8 @@
         "Switch into research-ready mode early and start writing memos plus failure analysis.",
         "Aim directly at the P5/P6 core track and leave room for later extension reproductions and capstones."
       ],
-      "target_zh": "目标：从“有基础但没体系”推进到阿里式 P5/P6 主干，再用扩展论文复现、memo 和独立提案朝 P7/P8 推进。",
-      "target_en": "Target: move from 'some foundation but no system' into an Alibaba-style P5/P6 core, then advance toward P7/P8 through extension reproductions, memos, and independent proposals."
+      "target_zh": "目标：从“有基础但没体系”推进到阿里式 P6-ready / 早期 P6 状态，并通过扩展论文复现、memo、dossier 和独立提案把这块地板真正做实。",
+      "target_en": "Target: move from 'some foundation but no system' into an Alibaba-style P6-ready / early P6 state and make that floor real through extension reproductions, memos, a dossier, and independent proposals."
     }
   ],
   "exit_portfolio_zh": [
@@ -82,14 +100,16 @@
     "至少 10 份 experiment logs，其中至少 5 份包含 sweep、ablation 或明确 failure analysis。",
     "至少 6 份短 research memos，其中至少 2 份来自扩展论文复现，1 份是中期复盘，1 份是最终汇报。",
     "至少 2 份 graph walkthrough / artifact critique / edit critique，展示你能读图、拆证据、指出歧义与副作用。",
-    "至少 2 个可在 2 周内执行的 capstone 研究提案，且其中 1 个必须连接 interpretability 与 control / auditing 问题。"
+    "至少 2 个可在 2 周内执行的 capstone 研究提案，且其中 1 个必须连接 interpretability 与 control / auditing 问题。",
+    "至少 1 份完整的 scoped research task dossier：包含 baseline、受限 sweep 或 ablation、failure-analysis、两页 memo 和下一步实验。"
   ],
   "exit_portfolio_en": [
     "At least ten paper reading notes spanning foundations, features, tracing, editing, and auditing.",
     "At least ten experiment logs, with at least five containing a sweep, ablation, or explicit failure analysis.",
     "At least six short research memos, with at least two coming from extension-paper reproductions, plus one midpoint review and one final report.",
     "At least two graph walkthroughs, artifact critiques, or edit critiques showing you can read evidence, point out ambiguity, and discuss side effects.",
-    "At least two capstone proposals that could realistically run in two weeks, with one explicitly connecting interpretability to control or auditing."
+    "At least two capstone proposals that could realistically run in two weeks, with one explicitly connecting interpretability to control or auditing.",
+    "At least one full scoped research task dossier containing a baseline, one constrained sweep or ablation, a failure-analysis section, a two-page memo, and a next experiment."
   ],
   "phases": [
     {

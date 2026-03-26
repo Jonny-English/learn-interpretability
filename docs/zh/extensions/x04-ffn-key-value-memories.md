@@ -8,7 +8,7 @@
 
 - [Transformer Feed-Forward Layers Are Key-Value Memories](https://arxiv.org/abs/2012.14913)
 
-## 为什么它对 P8 路径重要
+## 为什么它对扎实的 P6 成长重要
 
 - 如果你不会解释 MLP 存了什么，就很难进入 factual recall、editing 和 memory localization。
 - 这会把你的研究语言从“注意力电路”推进到“模型内部存储”。

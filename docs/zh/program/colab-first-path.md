@@ -16,7 +16,7 @@
 ## 三段式使用方法
 
 1. 先用 `F00-F03` 把环境、图表、几何和实验纪律补稳。
-2. 再用 `M00-M10` 建立 Anthropic interpretability 主线。
+2. 再用可运行的 `M00-M05` 建立 live 主线，并把 `M03` 和 `M06-M10` 当成阅读与批判模块。
 3. 最后用 `X01-X07` 把 transformer circuits、memory/editing 和 auditing 也做成 Colab 复现。
 
 ## 什么时候说明你真的在用对这条路径

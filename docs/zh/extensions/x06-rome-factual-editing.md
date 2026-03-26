@@ -8,7 +8,7 @@
 
 - [Locating and Editing Factual Associations in GPT](https://arxiv.org/abs/2202.05262)
 
-## 为什么它对 P8 路径重要
+## 为什么它对扎实的 P6 成长重要
 
 - 只会读图还不够，真正的研究还要能讨论编辑是否稳定、是否局部、是否值得上线。
 - 这篇会把 interpretability 拉向 intervention 与 product-facing judgment。

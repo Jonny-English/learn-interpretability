@@ -8,10 +8,10 @@
 
 - [In-context Learning and Induction Heads](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html)
 
-## 为什么它对 P8 路径重要
+## 为什么它对方向级成长重要
 
 - 这篇会强迫你区分“热点图案”和“机制”。
-- 对 P7/P8 级成长来说，能不能把 pattern 说成 mechanism，是很关键的分水岭。
+- 对真正超出单篇复述的成长来说，能不能把 pattern 说成 mechanism，是很关键的分水岭。
 
 ## Notebook 与交付
 

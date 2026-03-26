@@ -1,12 +1,13 @@
 # Advanced Extension Track
 
-The core course is intentionally organized around the Anthropic interpretability arc because that makes the path legible. But if the goal is to grow toward `P8`, the core is the floor rather than the finish line.
+The core course is intentionally organized around the Anthropic interpretability arc because that makes the path legible. But if the goal is a robust `P6` result rather than a shallow one, the core is the floor rather than the finish line.
 
 ## Why this track matters
 
 - Serious interpretability work will not stay inside one paper line or one lab's local framing.
 - You still need a more general transformer-circuits language, a memory/editing problem frame, and an auditing-facing perspective.
 - Most importantly, these extension papers are no longer just a reading list. They are Colab reproduction tasks.
+- For the repository's direct `P6-ready` claim, at least three of these reproductions are mandatory rather than optional.
 
 ## How to use the track
 
@@ -28,10 +29,10 @@ The core course is intentionally organized around the Anthropic interpretability
 - Not even "I ran the notebook."
 - But "I reproduced a smallest teaching-scale experiment in Colab and can state what it supports, what it does not support, and what should happen next."
 
-## Why this track matters for a P8 trajectory
+## Why this track matters for a serious P6 result
 
-- `P5/P6` usually require reproduction, writing, and critique.
-- `P7` starts requiring that you can place different papers inside one research language.
-- `P8` requires turning those papers into a direction, tooling needs, and a research cadence for a sub-area.
+- `P6` requires reproduction, writing, critique, and the ability to restate one paper through another.
+- A shallow `P6` claim collapses if the learner only stays inside one paper line.
+- The extension track is what makes the `P6` result more transferable and less local to one research arc.
 
 So the real role of the extension track is not only to expose you to more papers. It is to force the transition from single-paper understanding to direction-level understanding.

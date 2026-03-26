@@ -8,7 +8,7 @@
 
 - [A Mathematical Framework for Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html)
 
-## 为什么它对 P8 路径重要
+## 为什么它对扎实的 P6 成长重要
 
 - 这篇会把你从“我会读某一张图”推进到“我能描述一整类机制如何组合”。
 - 如果没有这套语言，后面很多解释都会停在部件罗列，而无法进入方向级判断。

@@ -71,4 +71,6 @@ You are close to research-ready when:
 - at least three skills are at "ready"
 - your portfolio contains evidence for the ready scores
 
+For an ordinary undergraduate, calling the outcome `P6-ready` is reasonable only if the portfolio also contains one full scoped research-task dossier, at least three extension reproductions across the required buckets, and no rubric dimension remains below "ready". The dossier must contain a baseline, a constrained sweep or ablation, failure analysis, a two-page memo, and a next experiment.
+
 If the writing is weak, do not call yourself ready just because the notebook runs. Most beginners underestimate how important written judgment is in real research environments.

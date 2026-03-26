@@ -55,6 +55,19 @@
   - baseline 存在吗？
   - 如果信号很弱，有真正的停止理由吗？
 
+## 任务 5：P6 门槛 dossier
+
+- 时间预算：1 天
+- 输入：把 1 次受限复现、1 次 critique 和 1 个 capstone 方向合并起来
+- 必须产出：
+  - 1 份 scoped research-task dossier
+  - 1 份两页 memo
+  - 1 个下一步实验
+- 评审问题：
+  - 这份 dossier 有没有真正做出研究判断，而不只是复述课程内容？
+  - 里面是否包含 baseline、1 个受限改动和 1 段 failure-analysis？
+  - 导师或研究同伴看完后，会不会合理地把下一个 scoped task 交给你？
+
 ## 推荐顺序
 
 建议按这个顺序做：
@@ -63,5 +76,6 @@
 2. 受限复现
 3. Artifact 反驳式阅读
 4. 两周提案
+5. P6 门槛 dossier
 
 这个顺序强迫你完成 early-stage researcher 最常见的转变：理解、复现、批判、提出计划。

@@ -33,7 +33,7 @@ Strict rule from this point on:
 - It is for readers who want to move from "I can follow a few papers" to "I can reproduce papers in Colab, critique them, and eventually own a scoped line of interpretability work."
 - It is not designed as passive popularization. You are expected to write reading notes, experiment logs, and short memos.
 
-The target output of this repository is not "a person who has seen many papers." The north-star target is a long-horizon path toward the capability density of an Alibaba-style `P8` interpretability researcher.
+The target output of this repository is not "a person who has seen many papers." The direct goal is to help a serious undergraduate or independent learner reach the repository's described Alibaba-style `P6`: someone who can take a clearly scoped research task, critique evidence, and propose the next experiment.
 
 To reduce ambiguity, the ladder below is rewritten to match the public, commonly used understanding of Alibaba-style `P4-P12` technical levels:
 
@@ -49,15 +49,17 @@ To reduce ambiguity, the ladder below is rewritten to match the public, commonly
 | `P11` | Company-level top technical leader: can define long-term agenda, standards, and talent systems. |
 | `P12` | Industry-shaping figure: can significantly change how the field frames the technology and its control problems. |
 
-On that scale, no single teaching project should claim "finish 12 weeks and become `P10`." In Alibaba-style language, `P10` is already a very high organization-level expert bar.
+On that scale, the rows above `P6` are context, not this repository's direct completion promise. The honest claim is not "finish 12 weeks and become `P10`" or "`P8`." The honest claim is: if an ordinary undergraduate finishes the full program seriously, including the extension reproductions and the evidence gates, calling the result `P6-ready` is plausible.
 
 The correct framing is staged:
 
 - `F00-F03` plus the early core move a true beginner from below `P4` toward `P4/P5`.
-- `M00-M10` plus the research-ready bootcamp build a credible `P5/P6` floor.
-- `X01-X07`, repeated capstones, and portfolio work are what continue the path toward `P7/P8`.
+- `M00-M10` plus the research-ready bootcamp build the core apprenticeship segment of the `P6-ready` path.
+- at least three extension reproductions plus the dossier, memo, critique, and proposal gates are required before the repository should call the outcome `P6-ready`
+- `X01-X07` beyond that deepen the `P6` floor and help strong learners start moving toward early `P7`.
+- `P8` still requires multi-year original work and collaborator leverage outside this repository's direct promise.
 
-So the repository is `P8`-oriented in its north star, but it gets there by building floors rather than by pretending one pass through the material equals a senior-expert title. Under the strict policy, only `paper-faithful` and `method-lab` items count as live code.
+So this repository should be judged by whether it can honestly build `P6-ready` behavior for an ordinary undergraduate across the full program, not only the 12-week bootcamp. `P7` and `P8` are included only as context for what lies beyond one repository and one bootcamp. Under the strict policy, only `paper-faithful` and `method-lab` items count as live code.
 
 ## Two Starting Lines
 
@@ -68,14 +70,14 @@ To serve both true beginners and readers with some prior foundation, the reposit
 - Best for: readers who know some Python but still have unstable environment setup, math fluency, and experiment discipline.
 - Entry signal: you still cannot run notebooks reliably, read basic plots comfortably, or explain what a baseline is.
 - Recommended path: finish `F00-F03` plus `M00` and `M01`, make the reading-note and experiment-log templates feel routine, then enter the full course and later the extension reproductions.
-- Target: first move toward something close to Alibaba-style `P4`, then use the core and extension tracks to enter the `P5/P6` floor and eventually the `P7/P8` path.
+- Target: first move toward something close to Alibaba-style `P4`, then use the core, bootcamp, and extension tracks to enter a credible `P6-ready` state.
 
 ### Prepared Runway
 
 - Best for: readers who can already run notebooks, use basic PyTorch, and read common plots, but lack a systematic interpretability roadmap.
 - Entry signal: you can already do simple reproductions and keep basic notes, but you do not yet have a coherent research path.
 - Recommended path: move quickly through the runnable `M00 → M05` core, then insert `M03` and `M06-M10` as reading-and-critique tasks, switch into research-ready mode early, and continue into the extension reproductions.
-- Target: move directly into a `P5/P6` core and use the extension track, proposals, and capstones to keep growing toward `P7/P8`.
+- Target: move directly into the full `P6-ready` path rather than stopping at notebook completion.
 
 ## Why Learn This
 
@@ -159,7 +161,8 @@ If your goal is not just understanding but becoming effective as a student resea
 
 - [Research-ready overview](docs/en/program/research-ready.md)
 - [Colab-first path](docs/en/program/colab-first-path.md)
-- [P8 roadmap](docs/en/program/p8-roadmap.md)
+- [Capability arc and P6 evidence gates](docs/en/program/capability-arc.md)
+- [P6 graduation checklist](docs/en/program/p6-graduation-checklist.md)
 - [12-week bootcamp](docs/en/program/week-by-week.md)
 - [Research playbook](docs/en/program/research-playbook.md)
 - [Evaluation rubric](docs/en/program/evaluation-rubric.md)
@@ -173,7 +176,7 @@ Templates:
 - [Experiment log](templates/experiment_log_en.md)
 - [Research memo](templates/research_memo_en.md)
 
-Internal training stages now use `S0-S4` so they stay clearly separate from the Alibaba-style `P4-P12` capability mapping above. The `S0-S4` bootcamp is the core floor-building segment, not the whole `P8` journey.
+Internal training stages now use `S0-S4` so they stay clearly separate from the Alibaba-style `P4-P12` capability mapping above. The `S0-S4` bootcamp is the core floor-building segment, not the whole long-horizon growth arc.
 
 Use the research-ready track as an operating system, not as extra reading:
 
@@ -181,6 +184,7 @@ Use the research-ready track as an operating system, not as extra reading:
 - The weekly path assumes `8-12` focused hours per week.
 - You should finish with a real portfolio: notes, logs, memos, an artifact critique, and a two-week capstone proposal.
 - The bar is not "I followed the notebooks." The bar is "I can read, reproduce, critique, and propose the next experiment."
+- The bootcamp alone is not the `P6-ready` claim; that claim starts only after you also clear the P6 graduation checklist.
 
 ## Reference-Output Layer
 
@@ -197,7 +201,7 @@ This layer is not for copying. It is for calibrating what a deliverable looks li
 
 ## Extension-Paper Track
 
-The core course is intentionally organized around the Anthropic interpretability arc, but that is still not broad enough for a `P8`-oriented research path. After the core, widen out into transformer circuits, behavior circuits, memory/editing, and auditing-facing work through more Colab reproductions.
+The core course is intentionally organized around the Anthropic interpretability arc, but that is still not broad enough if your goal is an honest `P6-ready` claim or anything beyond it. After the core apprenticeship segment, widen out into transformer circuits, behavior circuits, memory/editing, and auditing-facing work through more Colab reproductions.
 
 Under the strict realtime policy, the status column matters:
 

@@ -16,7 +16,7 @@
 ## Three-step usage pattern
 
 1. Use `F00-F03` to stabilize environment setup, plot reading, geometry, and experiment discipline.
-2. Use `M00-M10` to build the Anthropic interpretability core arc.
+2. Use the runnable `M00-M05` modules to build the live core, and use `M03` plus `M06-M10` as reading-and-critique modules.
 3. Use `X01-X07` to reproduce transformer-circuits, memory/editing, and auditing papers in Colab too.
 
 ## What shows you are actually using the path correctly

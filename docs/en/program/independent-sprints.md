@@ -55,6 +55,19 @@ The point of this file is to simulate task shape for students and independent re
   - is there a baseline?
   - is there a real reason to stop if the signal is weak?
 
+## Task 5: P6 gate dossier
+
+- Timebox: 1 day
+- Input: combine one constrained reproduction, one critique, and one capstone direction
+- Required output:
+  - one scoped research-task dossier
+  - one two-page memo
+  - one next experiment
+- Review questions:
+  - does the dossier make a real research judgment rather than only retell the course?
+  - is there a baseline, one constrained change, and one failure-analysis section?
+  - could a mentor or peer plausibly hand you the next scoped task after reading it?
+
 ## Recommended order
 
 Use the tasks in this order:
@@ -63,5 +76,6 @@ Use the tasks in this order:
 2. Constrained reproduction
 3. Adversarial artifact reading
 4. Two-week proposal
+5. P6 gate dossier
 
 That order forces the same transition an early-stage researcher usually needs: understand, reproduce, critique, propose.

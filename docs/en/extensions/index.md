@@ -16,4 +16,4 @@ These notes and notebooks widen the project beyond the Anthropic core arc into a
 
 - Read the note first, then open the paired Colab notebook.
 - Every paper should leave behind an experiment log, a memo, and a next experiment.
-- Do not treat the extension track as optional reading; if the goal is P7/P8 growth, it is the required segment after the core.
+- Do not treat the extension track as optional reading; if the goal is a robust `P6` rather than a shallow one, it is the required segment after the core.

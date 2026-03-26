@@ -8,7 +8,7 @@ Treat the MLP layer as a key-value memory and understand why factual recall is n
 
 - [Transformer Feed-Forward Layers Are Key-Value Memories](https://arxiv.org/abs/2012.14913)
 
-## Why it matters for the P8 path
+## Why it matters for robust P6 growth
 
 - If you cannot explain what an MLP stores, it is hard to move into factual recall, editing, and memory localization.
 - This expands your research language from "attention circuits" into "internal storage."

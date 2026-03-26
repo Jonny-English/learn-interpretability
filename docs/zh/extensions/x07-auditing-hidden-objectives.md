@@ -8,7 +8,7 @@
 
 - [Auditing Language Models for Hidden Objectives](https://www.anthropic.com/research/auditing-hidden-objectives)
 
-## 为什么它对 P8 路径重要
+## 为什么它对扎实的 P6 成长重要
 
 - 这篇会把“看懂模型”推进到“判断模型可能在偷偷优化什么”。
 - 如果你想从 interpretability 阅读走到面向风险的研究判断，这篇是最清晰的过渡点之一。

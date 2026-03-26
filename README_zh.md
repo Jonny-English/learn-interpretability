@@ -33,7 +33,7 @@
 - 适合想从“能看懂一点论文”升级到“能在 Colab 里复现论文、批判论文，并最终承担一条明确 interpretability 研究线”的读者。
 - 不适合把它当成纯浏览型科普。它要求你写 reading note、experiment log 和 memo。
 
-这个项目的目标产出不是“看过很多论文的人”，而是一条朝阿里技术序列里 `P8` 级 interpretability 研究者长期推进的成长路径。
+这个项目的目标产出不是“看过很多论文的人”，而是帮助一个认真完成它的本科生或个人研究者达到这里描述的阿里式 `P6`：能承担明确研究任务、批判证据，并提出下一步实验。
 
 这里直接改成更接近阿里巴巴技术岗常见理解的 `P4-P12` 说法：
 
@@ -49,15 +49,17 @@
 | `P11` | 公司级顶层技术负责人水平：能定义长期 agenda、技术标准和人才体系。 |
 | `P12` | 行业级顶尖人物水平：能显著改变整个行业对技术路线和问题框架的理解。 |
 
-如果按这个尺度说，任何单个教学项目都不应该声称“12 周结束就到 `P10`”。`P10` 在阿里语境里已经是非常高的组织级专家。
+如果按这个尺度说，`P6` 以上的行更多是背景参照，不是这个仓库的直接完成承诺。更诚实的说法是：如果一个普通本科生认真完成整套项目，包括扩展复现和证据门槛，把结果描述成 `P6-ready` 是合理的。
 
 更准确的理解应该是分阶段推进：
 
 - `F00-F03` 加早期主线，把“还没进入 `P4` 状态”的小白推进到 `P4/P5`。
-- `M00-M10` 加上 research-ready bootcamp，建立可信的 `P5/P6` 地板。
-- `X01-X07`、反复做 capstone 和作品集累计，才是继续往 `P7/P8` 走的部分。
+- `M00-M10` 加上 research-ready bootcamp，构成 `P6-ready` 路径里的核心学徒阶段。
+- 至少 3 篇扩展复现，再加 dossier、memo、critique 和 proposal 这些门槛，才足以让仓库把结果叫做 `P6-ready`。
+- `X01-X07` 的完整轨道、反复做 capstone、接受外部反馈和累计作品集，则进一步把这块 `P6` 地板打深，并帮助强完成者开始往早期 `P7` 走。
+- `P8` 需要多年原创工作和协作者层面的技术带动，不属于这个仓库的直接承诺。
 
-所以这个项目的北极星是 `P8`，但方法不是喊口号，而是先把每一层地板搭起来。在严格规则下，只有 `paper-faithful` 和 `method-lab` 状态的条目才算 live code。
+所以这个项目应该按“能不能让一个普通本科生在完整项目下诚实达到 `P6-ready`”来评估，而不是按“能不能直接产出 `P8`”来评估。在严格规则下，只有 `paper-faithful` 和 `method-lab` 状态的条目才算 live code。
 
 ## 两条起跑线
 
@@ -68,14 +70,14 @@
 - 适合：会一点 Python，但环境、数学、实验记录都还不稳定的人。
 - 进入信号：你还不能稳定跑 notebook、看懂基础图表，或者还说不清 baseline 是什么。
 - 建议走法：先完成 `F00-F03` 和 `M00`、`M01`，把 reading note 和 experiment log 模板用熟，再进入完整课程和后续扩展复现。
-- 目标：先把自己推进到接近阿里式 `P4`，再借助主线和扩展轨道进入 `P5/P6` 地板，继续朝 `P7/P8` 推进。
+- 目标：先把自己推进到接近阿里式 `P4`，再借助主线、bootcamp 和扩展轨道进入可信的 `P6-ready` 状态。
 
 ### 基础者起跑线
 
 - 适合：已经能跑 notebook、会基本 PyTorch、能看懂常见图表，但还没有系统 interpretability 路线的人。
 - 进入信号：你已经能独立做简单复现、写基础笔记，只是缺一条完整主线。
 - 建议走法：先快速完成可运行的 `M00 → M05` 主线，再把 `M03` 和 `M06-M10` 当成阅读与批判任务插入，然后尽早进入 research-ready 模式，开始写 memo、failure analysis 和扩展复现。
-- 目标：直接进入 `P5/P6` 主干，再用扩展论文、提案和 capstone 朝 `P7/P8` 推进。
+- 目标：直接进入完整的 `P6-ready` 路径，而不是停在“我把 notebook 跑通了”。
 
 ## 为什么要学这个
 
@@ -159,7 +161,8 @@
 
 - [研究就绪总览](docs/zh/program/research-ready.md)
 - [Colab 优先路径](docs/zh/program/colab-first-path.md)
-- [P8 路线图](docs/zh/program/p8-roadmap.md)
+- [能力成长弧线与 P6 证据门槛](docs/zh/program/capability-arc.md)
+- [P6 毕业清单](docs/zh/program/p6-graduation-checklist.md)
 - [12 周训练营](docs/zh/program/week-by-week.md)
 - [研究工作流](docs/zh/program/research-playbook.md)
 - [评估 rubric](docs/zh/program/evaluation-rubric.md)
@@ -173,7 +176,7 @@
 - [Experiment log](templates/experiment_log_zh.md)
 - [Research memo](templates/research_memo_zh.md)
 
-内部训练阶段现在统一用 `S0-S4` 命名，和上面的阿里式 `P4-P12` 能力映射分开，避免把“课程阶段”误读成“公司职级”。`S0-S4` 是搭地板的核心段，不是完整 `P8` 路径的全部。
+内部训练阶段现在统一用 `S0-S4` 命名，和上面的阿里式 `P4-P12` 能力映射分开，避免把“课程阶段”误读成“公司职级”。`S0-S4` 是搭地板的核心段，不是完整长期成长弧线的全部。
 
 把 research-ready path 当成一套工作系统，而不是额外阅读：
 
@@ -181,6 +184,7 @@
 - 这条路径默认你每周投入 `8-12` 小时的专注学习时间。
 - 结营时应该拿得出真实作品集：notes、logs、memos、artifact critique 和两周 capstone proposal。
 - 标准不是“我跟着 notebook 跑过了”，而是“我能读、能复现、能批判、也能提出下一步实验”。
+- 单独完成 12 周训练营还不等于 `P6-ready`；只有再通过 P6 毕业清单，仓库才应该把结果叫做 `P6-ready`。
 
 ## 参考答案层
 
@@ -197,7 +201,7 @@
 
 ## 扩展论文轨道
 
-主线课程故意围绕 Anthropic interpretability 弧线来组织，但如果你的目标是朝 `P8` 方向推进，这还不够。做完主线后，继续用更多 Colab 方法练习补 transformer circuits、经典行为电路、memory/editing 和 auditing 视角。
+主线课程故意围绕 Anthropic interpretability 弧线来组织，但如果你的目标是让 `P6-ready` 这句结论诚实成立，或者继续往上长，这还不够。做完核心学徒阶段后，还要继续用更多 Colab 方法练习补 transformer circuits、经典行为电路、memory/editing 和 auditing 视角。
 
 在严格实时规则下，状态列要这样理解：
 

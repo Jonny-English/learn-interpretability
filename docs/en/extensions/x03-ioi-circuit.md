@@ -8,7 +8,7 @@ Push circuit analysis from toy settings into natural-language behavior and pract
 
 - [Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 Small](https://arxiv.org/abs/2211.00593)
 
-## Why it matters for the P8 path
+## Why it matters for robust P6 growth
 
 - This paper forces you to handle natural-language behavior definitions, more components, and more complex ablation evidence.
 - If you want to own a research sub-area later, you cannot stay only inside clean toys; you need this level of evidence complexity too.

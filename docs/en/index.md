@@ -38,7 +38,8 @@ This course is now Colab-first under a strict honesty rule: only notebooks that 
 
 - [Research-ready overview](program/research-ready.md)
 - [Colab-first path](program/colab-first-path.md)
-- [P8 roadmap](program/p8-roadmap.md)
+- [Capability arc and P6 evidence gates](program/capability-arc.md)
+- [P6 graduation checklist](program/p6-graduation-checklist.md)
 - [12-week bootcamp](program/week-by-week.md)
 - [Research playbook](program/research-playbook.md)
 - [Evaluation rubric](program/evaluation-rubric.md)
@@ -49,10 +50,11 @@ This course is now Colab-first under a strict honesty rule: only notebooks that 
 Use the track in this order:
 
 1. Read the overview.
-2. Commit to the 12-week schedule.
+2. Commit to the 12-week schedule as the core apprenticeship stage, not the whole finish line.
 3. Use the playbook and templates while you work through the articles.
 4. Score yourself with the rubric at Week 7 and Week 12.
-5. Finish one independent research sprint and one capstone proposal.
+5. Clear the P6 graduation checklist after the bootcamp.
+6. Finish one independent research sprint and one capstone proposal.
 
 ## Ground rules
 

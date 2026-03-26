@@ -8,10 +8,10 @@ Push beyond attention heatmaps into a concrete copying mechanism and understand 
 
 - [In-context Learning and Induction Heads](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html)
 
-## Why it matters for the P8 path
+## Why it matters for direction-level growth
 
 - This paper forces you to separate a hot pattern from a mechanism.
-- For P7/P8 growth, the ability to turn a pattern story into a mechanism story is a major dividing line.
+- For serious growth beyond single-paper summaries, the ability to turn a pattern story into a mechanism story is a major dividing line.
 
 ## Notebook and deliverable
 

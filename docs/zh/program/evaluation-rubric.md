@@ -71,4 +71,6 @@
 - 至少 3 项达到“就绪”
 - 作品集里真的有支持这些分数的证据
 
+对一个普通本科生来说，只有当作品集里额外包含 1 份完整的 scoped research-task dossier、至少 3 次满足分组要求的扩展复现，而且 rubric 没有任何维度低于“就绪”时，才适合把结果叫做 `P6-ready`。这份 dossier 至少要有 baseline、受限 sweep 或 ablation、failure-analysis、两页 memo 和下一步实验。
+
 如果写作还很弱，不要因为 notebook 能跑就说自己已经准备好了。真实研究环境里，书面判断的重要性往往比初学者想得更高。

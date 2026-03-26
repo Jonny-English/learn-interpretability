@@ -4,13 +4,15 @@ This repository is no longer a single course. It is a three-layer training syste
 
 - a Colab-first paper-reproduction core
 - a research-apprenticeship bootcamp
-- an extension-and-portfolio layer meant to keep pushing toward an Alibaba-style `P8`
+- an extension-and-portfolio layer meant to stabilize and deepen a `P6` floor
 
 The second and third layers matter because the gap between "I followed the notebook" and "I produce stable value in a serious research setting" is usually not one more paper summary. The gap is reproduction density, writing density, and research judgment.
 
 ## What this path is actually trying to produce
 
-This path first tries to make you effective as a student researcher or independent researcher, and then places you on a longer `P8` growth arc.
+This path is designed to make an ordinary undergraduate or independent learner effective enough to meet the repository's `P6` description: take a clearly scoped research task, critique evidence, and propose the next experiment.
+
+The key boundary is this: the 12-week bootcamp is the core apprenticeship stage, not the whole graduation line. The repository should call the outcome `P6-ready` only after the learner also clears the full graduation checklist.
 
 In the core stage, a learner should be able to:
 
@@ -54,7 +56,7 @@ To avoid treating every reader as if they start from the same place, the project
 - For readers who can already run notebooks, use basic PyTorch, and do simple reproductions.
 - Start here if you already have some experiment and reading ability but still lack a systematic interpretability path.
 - Move more quickly through the runnable `M00 → M05` core, then insert `M03` plus `M06-M10` as reading-and-critique work and enter the high-density writing mode early.
-- The point is not to stop at a `P5/P6` description. The point is to use `P5/P6` as the core floor for a longer move toward `P7/P8`.
+- The point is not to stop at notebook completion. The point is to turn the course into a defensible `P6-ready` result.
 
 ## Four support layers now sit underneath the path
 
@@ -92,17 +94,17 @@ If you cannot point to these outputs, you are probably still browsing rather tha
 - Always write one paragraph on what the artifact, result, or edit still does not prove.
 - Review weekly, not only at the end.
 
-These rules matter because beginners tend to over-read pretty plots and under-document failure, while one of the clearest differences in `P7/P8`-level research is stronger evidence-boundary awareness.
+These rules matter because beginners tend to over-read pretty plots and under-document failure, while one of the clearest differences between `P5` and `P6` is stronger evidence-boundary awareness.
 
-## How to keep moving toward P8 after the bootcamp
+## How to keep strengthening the P6 result after the bootcamp
 
-When the 12-week bootcamp ends, do not stop at "I completed the course." The next move is to do three things immediately:
+When the 12-week bootcamp ends, do not stop at "I completed the course." The bootcamp alone is not yet the `P6-ready` claim. The next move is to do three things immediately:
 
 - enter the `X01-X07` extension reproduction track
 - keep calibrating memo and proposal density against the reference outputs
 - turn capstones from one assignment into repeated small research cycles
 
-If the core path gave you a `P5/P6` floor, these steps are what keep pushing you toward `P7/P8`.
+If the core path plus the graduation checklist gave you a `P6-ready` result, these steps are what make it robust instead of shallow.
 
 ## Exit portfolio
 
@@ -113,12 +115,14 @@ Finishing the full path should leave you with a portfolio, not a memory:
 - 6 or more short research memos
 - 2 or more graph, artifact, or edit critiques
 - 2 two-week capstone proposals
+- at least 3 extension reproductions across the required buckets
+- 1 full scoped research-task dossier
 
 This portfolio is what lets you show a mentor, advisor, collaborator, or peer reviewer that you did more than consume material. You learned how to work in a research mode.
 
 ## What this path still cannot replace
 
-No repository can literally replace a real advisor, collaborator group, or long apprenticeship. What this path can do is remove the most common blockers:
+No repository can literally replace a real advisor, collaborator group, or long apprenticeship. What this path can do is remove the most common blockers that stop an ordinary undergraduate from reaching `P6-ready` behavior:
 
 - weak paper reading
 - weak experiment logging

@@ -8,7 +8,7 @@ Push from "explanation" into "controllable editing" while tracking edit success,
 
 - [Locating and Editing Factual Associations in GPT](https://arxiv.org/abs/2202.05262)
 
-## Why it matters for the P8 path
+## Why it matters for robust P6 growth
 
 - Reading graphs is not enough. Real research also needs to discuss whether an edit is stable, local, and worth shipping.
 - This paper pulls interpretability toward intervention and product-facing judgment.

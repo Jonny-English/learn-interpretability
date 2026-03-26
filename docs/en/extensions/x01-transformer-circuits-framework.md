@@ -8,7 +8,7 @@ Put residual streams, attention, MLPs, and composition into one language so that
 
 - [A Mathematical Framework for Transformer Circuits](https://transformer-circuits.pub/2021/framework/index.html)
 
-## Why it matters for the P8 path
+## Why it matters for robust P6 growth
 
 - This moves you from "I can read one graph" to "I can describe how a whole class of mechanisms composes."
 - Without this language, many later explanations stay at the level of listing parts instead of making direction-level judgments.

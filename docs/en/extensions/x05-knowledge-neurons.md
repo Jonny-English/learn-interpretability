@@ -8,7 +8,7 @@ Practice localizing "knowledge" into a more intervention-friendly set of units a
 
 - [Knowledge Neurons in Pretrained Transformers](https://arxiv.org/abs/2104.08696)
 
-## Why it matters for the P8 path
+## Why it matters for robust P6 growth
 
 - This paper forces a sharper distinction between readout, localization, and causality.
 - If you later want to do stronger editing or auditing work, you cannot treat high-scoring units as causal conclusions by default.

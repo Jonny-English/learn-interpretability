@@ -8,7 +8,7 @@
 
 - [Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 Small](https://arxiv.org/abs/2211.00593)
 
-## 为什么它对 P8 路径重要
+## 为什么它对扎实的 P6 成长重要
 
 - 这篇迫使你面对自然语言行为定义、更多组件和更复杂的 ablation 证据。
 - 如果你未来要负责一个研究子方向，不能只会处理干净 toy，需要会处理这种证据复杂度。

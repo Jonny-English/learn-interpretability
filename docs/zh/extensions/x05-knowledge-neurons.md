@@ -8,7 +8,7 @@
 
 - [Knowledge Neurons in Pretrained Transformers](https://arxiv.org/abs/2104.08696)
 
-## 为什么它对 P8 路径重要
+## 为什么它对扎实的 P6 成长重要
 
 - 这篇会逼你认真区分 readout、localization 和 causality。
 - 如果未来要做更强的 editing 或 auditing，不能把高分单元直接当因果结论。

@@ -38,7 +38,8 @@
 
 - [研究就绪总览](program/research-ready.md)
 - [Colab 优先路径](program/colab-first-path.md)
-- [P8 路线图](program/p8-roadmap.md)
+- [能力成长弧线与 P6 证据门槛](program/capability-arc.md)
+- [P6 毕业清单](program/p6-graduation-checklist.md)
 - [12 周训练营](program/week-by-week.md)
 - [研究工作流](program/research-playbook.md)
 - [评估 rubric](program/evaluation-rubric.md)
@@ -49,10 +50,11 @@
 建议按这个顺序使用：
 
 1. 先看总览，确认目标和门槛。
-2. 再按 12 周计划推进。
+2. 再把 12 周训练营当成核心学徒阶段推进，而不是全部终点。
 3. 一边做文章，一边使用 playbook 和模板。
 4. 在第 7 周和第 12 周用 rubric 自评。
-5. 最后完成一个独立研究冲刺任务和一个 capstone proposal。
+5. 训练营结束后，再通过 P6 毕业清单。
+6. 最后完成一个独立研究冲刺任务和一个 capstone proposal。
 
 ## 使用约束
 

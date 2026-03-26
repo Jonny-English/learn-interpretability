@@ -8,7 +8,7 @@ Place interpretability, editing, behavior evaluation, and auditing inside one ju
 
 - [Auditing Language Models for Hidden Objectives](https://www.anthropic.com/research/auditing-hidden-objectives)
 
-## Why it matters for the P8 path
+## Why it matters for robust P6 growth
 
 - This pushes the question from "can I understand the model?" toward "what might the model be optimizing secretly?"
 - If you want to move from interpretability reading into risk-facing research judgment, this is one of the clearest transition points.

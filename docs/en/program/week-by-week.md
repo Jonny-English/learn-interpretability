@@ -1,6 +1,6 @@
 # Week-by-Week Bootcamp
 
-Treat this as a 12-week apprenticeship, not a playlist. Each week ends with a gate. If the gate is not met, repeat the week or narrow the scope.
+Treat this as a 12-week apprenticeship, not a playlist. Each week ends with a gate. If the gate is not met, repeat the week or narrow the scope. The bootcamp is the core apprenticeship stage, not the whole `P6-ready` claim; use the graduation checklist after Week 12.
 
 ## Week 1: Environment, terms, reading method
 
@@ -168,4 +168,4 @@ Treat this as a 12-week apprenticeship, not a playlist. Each week ends with a ga
   - one final memo
   - one next-step plan
   - one short presentation
-- Gate: your report makes a decision, states the evidence, names the risks, and asks for one concrete next action
+- Gate: your report makes a decision, states the evidence, names the risks, asks for one concrete next action, and can be defended as a scoped research-task dossier rather than a course summary
