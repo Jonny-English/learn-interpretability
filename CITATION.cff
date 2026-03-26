@@ -5,7 +5,7 @@ type: software
 authors:
   - name: "Jonny-English"
 license: MIT
-repository-code: "https://github.com/Jonny-English/circuits-zoom-in-fresh-20260325"
+repository-code: "https://github.com/Jonny-English/learn-interpretability"
 keywords:
   - mechanistic interpretability
   - neural circuits education

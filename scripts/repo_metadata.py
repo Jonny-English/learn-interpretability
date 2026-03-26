@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_REPO_SLUG = "Jonny-English/circuits-zoom-in-fresh-20260325"
+DEFAULT_REPO_SLUG = "Jonny-English/learn-interpretability"
 DEFAULT_BRANCH = "main"
 GITHUB_REMOTE_RE = re.compile(
     r"^(?:git@github\.com:|https?://github\.com/|ssh://git@github\.com/)"
