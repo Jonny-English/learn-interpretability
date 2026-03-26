@@ -4,13 +4,16 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from repo_metadata import current_branch, current_repo_slug
+
 
 ROOT = Path(__file__).resolve().parents[1]
 COURSE_PATH = ROOT / "content" / "course.json"
 FOUNDATIONS_PATH = ROOT / "content" / "foundations.json"
 REFERENCE_OUTPUTS_PATH = ROOT / "content" / "reference_outputs.json"
 EXTENSIONS_PATH = ROOT / "content" / "extensions.json"
-REPO_SLUG = "Jonny-English/circuits-zoom-in-fresh-20260325"
+REPO_SLUG = current_repo_slug()
+REPO_BRANCH = current_branch()
 README_PATHS = {
     "en": ROOT / "README.md",
     "zh": ROOT / "README_zh.md",
@@ -25,7 +28,7 @@ def notebook_path(module: dict, language: str) -> str:
 def colab_url(module: dict, language: str) -> str:
     return (
         "https://colab.research.google.com/github/"
-        f"{REPO_SLUG}/blob/main/{notebook_path(module, language)}"
+        f"{REPO_SLUG}/blob/{REPO_BRANCH}/{notebook_path(module, language)}"
     )
 
 
@@ -37,7 +40,7 @@ def foundation_notebook_path(lab: dict, language: str) -> str:
 def foundation_colab_url(lab: dict, language: str) -> str:
     return (
         "https://colab.research.google.com/github/"
-        f"{REPO_SLUG}/blob/main/{foundation_notebook_path(lab, language)}"
+        f"{REPO_SLUG}/blob/{REPO_BRANCH}/{foundation_notebook_path(lab, language)}"
     )
 
 
@@ -49,7 +52,7 @@ def extension_notebook_path(item: dict, language: str) -> str:
 def extension_colab_url(item: dict, language: str) -> str:
     return (
         "https://colab.research.google.com/github/"
-        f"{REPO_SLUG}/blob/main/{extension_notebook_path(item, language)}"
+        f"{REPO_SLUG}/blob/{REPO_BRANCH}/{extension_notebook_path(item, language)}"
     )
 
 

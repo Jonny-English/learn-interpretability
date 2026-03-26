@@ -53,13 +53,13 @@ To avoid treating every reader as if they start from the same place, the project
 
 - For readers who can already run notebooks, use basic PyTorch, and do simple reproductions.
 - Start here if you already have some experiment and reading ability but still lack a systematic interpretability path.
-- Move more quickly through `M00 → M06`, then enter the high-density writing and reproduction mode early.
+- Move more quickly through the runnable `M00 → M05` core, then insert `M03` plus `M06-M10` as reading-and-critique work and enter the high-density writing mode early.
 - The point is not to stop at a `P5/P6` description. The point is to use `P5/P6` as the core floor for a longer move toward `P7/P8`.
 
 ## Four support layers now sit underneath the path
 
 - `Pre-P4 foundations`: repair environment setup, attention-shape intuition, vector geometry, and experiment discipline.
-- `Core paper reproductions`: turn the Anthropic interpretability arc into one paper, one Colab.
+- `Core paper notes plus live reproductions`: keep every Anthropic-core paper mirrored as a note, and keep Colabs only for the items that are honestly runnable.
 - `Reference-output layer`: calibrate the density of memos, briefs, experiment logs, and proposals against examples.
 - `Extension reproduction track`: keep reproducing transformer-circuits, memory/editing, and auditing papers in Colab.
 

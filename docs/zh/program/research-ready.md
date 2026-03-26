@@ -53,13 +53,13 @@
 
 - 适合已经能跑 notebook、会基本 PyTorch、能做简单复现的人。
 - 如果你已经有一些实验和阅读能力，但缺一条系统 interpretability 主线，就从这里开始。
-- 建议更快完成 `M00 → M06`，然后尽早进入高密度写作与复现模式。
+- 建议先更快完成可运行的 `M00 → M05` 主线，再把 `M03` 和 `M06-M10` 当成阅读与批判任务插入，然后尽早进入高密度写作模式。
 - 目标不是停在 `P5/P6` 描述上，而是把 `P5/P6` 当成进入 `P7/P8` 长路径的核心地板。
 
 ## 现在这条路径下面压着四层支撑
 
 - `Pre-P4 基础包`：先补环境、attention 形状感、向量几何和实验纪律。
-- `主线论文复现`：把 Anthropic interpretability 弧线做成一篇一 Colab。
+- `主线论文讲义 + live 复现`：每篇 Anthropic 主线论文都有镜像讲义，只有诚实可跑的条目才配 Colab。
 - `参考答案层`：用样例校准 memo、brief、experiment log 和 proposal 的密度。
 - `扩展论文复现轨道`：把 transformer circuits、memory/editing 和 auditing 继续做成 Colab 复现。
 

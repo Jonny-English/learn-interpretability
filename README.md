@@ -10,7 +10,7 @@ The repository has three core synced layers:
 
 - `content/course.json` is the single source of truth for order, prerequisites, links, and artifacts.
 - `docs/en` and `docs/zh` mirror each other exactly.
-- `notebooks/en` and `notebooks/zh` mirror each other exactly so the whole core path can be run in Colab or locally.
+- `notebooks/en` and `notebooks/zh` mirror each other exactly, with live notebooks only for runnable items and no generated notebooks for `reading-only` items.
 
 It now also has four reinforcement layers:
 
@@ -74,7 +74,7 @@ To serve both true beginners and readers with some prior foundation, the reposit
 
 - Best for: readers who can already run notebooks, use basic PyTorch, and read common plots, but lack a systematic interpretability roadmap.
 - Entry signal: you can already do simple reproductions and keep basic notes, but you do not yet have a coherent research path.
-- Recommended path: move quickly through `M00 → M06`, then switch into research-ready mode early, start writing memos plus failure analysis, and continue into the extension reproductions.
+- Recommended path: move quickly through the runnable `M00 → M05` core, then insert `M03` and `M06-M10` as reading-and-critique tasks, switch into research-ready mode early, and continue into the extension reproductions.
 - Target: move directly into a `P5/P6` core and use the extension track, proposals, and capstones to keep growing toward `P7/P8`.
 
 ## Why Learn This
@@ -137,9 +137,9 @@ Each row below corresponds to exactly one paper and one notebook. Every paired n
 | `M03` | Mapping the Mind of a Large Language Model | `2024-05-21` | `reading-only` | Reading | - | `reading-only` | Browse a teaching-scale feature catalog to understand what it means to discover many reusable features. |
 | `M04` | Using Dictionary Learning Features as Classifiers | `2024-10-16` | `method-lab` | [Open](notebooks/en/m04_features_as_classifiers.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/en/m04_features_as_classifiers.ipynb) | `cpu-colab` | Treat features as classifier inputs and study where readout ability comes from. |
 | `M05` | Evaluating Feature Steering | `2024-10-25` | `method-lab` | [Open](notebooks/en/m05_evaluating_feature_steering.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/en/m05_evaluating_feature_steering.ipynb) | `cpu-colab` | Sweep steering strength to inspect target gain, sweet spots, and off-target costs. |
-| `M06` | Tracing the Thoughts of a Large Language Model | `2025-03-27` | `reading-only` | Reading | - | `reading-only` | Run a toy tracing reproduction locally, then use a shared attribution graph to read a local computation path. |
+| `M06` | Tracing the Thoughts of a Large Language Model | `2025-03-27` | `reading-only` | Reading | - | `reading-only` | Read a shared attribution graph and learn to describe one local computation path plus the public tooling gaps that still block a live reproduction. |
 | `M07` | Open-sourcing Circuit Tracing Tools | `2025-05-29` | `reading-only` | Reading | - | `reading-only` | Inspect tracing artifacts and workflow stages to understand the tooling layer behind the analysis. |
-| `M08` | Persona Vectors | `2025-08-01` | `reading-only` | Reading | - | `reading-only` | Construct a teaching-scale persona direction locally, then use a shared artifact to compare before/after trait shifts. |
+| `M08` | Persona Vectors | `2025-08-01` | `reading-only` | Reading | - | `reading-only` | Read a shared persona artifact, compare before/after trait shifts, and state what is still missing for an honest live reproduction. |
 | `M09` | Signs of Introspection in Large Language Models | `2025-10-29` | `reading-only` | Reading | - | `reading-only` | Compare self-report and behavior signals in teaching data to discuss what 'signs of introspection' actually mean. |
 | `M10` | The Assistant Axis | `2026-01-19` | `reading-only` | Reading | - | `reading-only` | Project multiple assistant styles onto one axis and inspect the problem of stabilizing character. |
 <!-- COURSE_TABLE:END -->

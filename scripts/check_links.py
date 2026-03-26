@@ -8,12 +8,13 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+from repo_metadata import current_repo_url
+
 
 ROOT = Path(__file__).resolve().parents[1]
 COURSE_PATH = ROOT / "content" / "course.json"
 EXTENSIONS_PATH = ROOT / "content" / "extensions.json"
 EXTRA_LINKS = [
-    "https://github.com/Jonny-English/circuits-zoom-in-fresh-20260325",
     "https://github.com/shareAI-lab/learn-claude-code",
     "https://www.anthropic.com/research/team/interpretability",
 ]
@@ -43,6 +44,7 @@ def main() -> None:
             urls.append(paper["url"])
     for item in extensions:
         urls.append(item["source_url"])
+    urls.append(current_repo_url())
     urls.extend(EXTRA_LINKS)
     seen = []
     for url in urls:

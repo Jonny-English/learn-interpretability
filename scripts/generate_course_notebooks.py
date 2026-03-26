@@ -4,6 +4,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from repo_metadata import current_branch, current_clone_dir, current_repo_url
+
 
 ROOT = Path(__file__).resolve().parents[1]
 COURSE_PATH = ROOT / "content" / "course.json"
@@ -14,18 +16,25 @@ OUTPUT_ROOT = ROOT / "notebooks"
 
 
 def repo_root_snippet() -> str:
-    return """import os
+    repo_url = f"{current_repo_url()}.git"
+    repo_dir = current_clone_dir()
+    repo_branch = current_branch()
+    return f"""import os
 import subprocess
 import sys
 from pathlib import Path
 
-REPO_URL = "https://github.com/Jonny-English/circuits-zoom-in-fresh-20260325.git"
-REPO_DIR = "circuits-zoom-in-fresh-20260325"
+REPO_URL = "{repo_url}"
+REPO_DIR = "{repo_dir}"
+REPO_BRANCH = "{repo_branch}"
 
 if "google.colab" in sys.modules:
     candidate = Path("/content") / REPO_DIR
     if not candidate.exists():
-        subprocess.run(["git", "clone", "--depth", "1", REPO_URL, str(candidate)], check=True)
+        subprocess.run(
+            ["git", "clone", "--depth", "1", "--branch", REPO_BRANCH, REPO_URL, str(candidate)],
+            check=True,
+        )
     os.chdir(candidate)
 
 root = Path.cwd().resolve()

@@ -115,7 +115,7 @@
     "summary_zh": "把 feature 当成分类器输入，理解“读出”能力从哪里来。",
     "summary_en": "Treat features as classifier inputs and study where readout ability comes from.",
     "prereqs": [
-      "M03"
+      "M02"
     ],
     "paper_refs": [
       {
@@ -166,8 +166,8 @@
     "order": 6,
     "title_zh": "Tracing the Thoughts",
     "title_en": "Tracing the Thoughts of a Large Language Model",
-    "summary_zh": "先在本地跑一个 toy tracing 复现，再用共享 attribution graph 学会阅读一条局部计算路径。",
-    "summary_en": "Run a toy tracing reproduction locally, then use a shared attribution graph to read a local computation path.",
+    "summary_zh": "阅读共享 attribution graph，学会描述一条局部计算路径以及实时复现还缺哪些公开工具。",
+    "summary_en": "Read a shared attribution graph and learn to describe one local computation path plus the public tooling gaps that still block a live reproduction.",
     "prereqs": [
       "M03",
       "M05"
@@ -224,8 +224,8 @@
     "order": 8,
     "title_zh": "Persona Vectors",
     "title_en": "Persona Vectors",
-    "summary_zh": "先在本地构造一个教学版 persona direction，再用共享 artifact 对比 trait 前后变化。",
-    "summary_en": "Construct a teaching-scale persona direction locally, then use a shared artifact to compare before/after trait shifts.",
+    "summary_zh": "阅读共享 persona artifact，比较 trait 前后变化，并说明诚实的实时复现还缺什么。",
+    "summary_en": "Read a shared persona artifact, compare before/after trait shifts, and state what is still missing for an honest live reproduction.",
     "prereqs": [
       "M05"
     ],

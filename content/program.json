@@ -43,12 +43,12 @@
       "entry_signal_zh": "如果你还不能稳定跑 notebook、看懂 loss/accuracy 图、解释 baseline 是什么，就从这里开始。",
       "entry_signal_en": "Start here if you still cannot run notebooks reliably, read simple loss/accuracy plots, or explain what a baseline is.",
       "first_steps_zh": [
-        "先完成 M00 和 M01，不着急追求速度。",
+        "先完成 F00-F03，再进入 M00 和 M01，不着急追求速度。",
         "先把 paper reading note、experiment log 模板用顺手。",
         "先把目标放在进入接近 P4，再进入完整研究路径。"
       ],
       "first_steps_en": [
-        "Finish M00 and M01 first without trying to move too fast.",
+        "Finish F00-F03 first, then move into M00 and M01 without trying to move too fast.",
         "Make the paper-reading-note and experiment-log templates feel routine.",
         "Aim first to reach something close to P4 before entering the full research path."
       ],
@@ -64,12 +64,12 @@
       "entry_signal_zh": "如果你已经能独立跑实验、读简单论文并写基础笔记，可以从这里切入。",
       "entry_signal_en": "Start here if you can already run simple experiments independently, read straightforward papers, and keep basic notes.",
       "first_steps_zh": [
-        "按 M00 → M05 快速完成 foundations 和 feature 主线。",
+        "按 M00 → M05 快速完成可运行主线，再把 M03 与 M06-M10 当成阅读和批判任务插入。",
         "尽早进入 research-ready 模式，开始写 memo 和 failure analysis。",
         "把目标直接放在 P5/P6 主线，并为后续的扩展复现和 capstone 留出节奏。"
       ],
       "first_steps_en": [
-        "Move quickly through M00 → M05 to lock in the foundations and feature track.",
+        "Move quickly through the runnable M00 → M05 core, then insert M03 plus M06-M10 as reading-and-critique tasks.",
         "Switch into research-ready mode early and start writing memos plus failure analysis.",
         "Aim directly at the P5/P6 core track and leave room for later extension reproductions and capstones."
       ],

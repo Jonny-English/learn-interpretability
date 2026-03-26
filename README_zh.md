@@ -10,7 +10,7 @@
 
 - `content/course.json`：顺序、先修关系、论文链接和 artifact 引用的唯一真相源。
 - `docs/zh` 与 `docs/en`：结构完全镜像的文章讲义。
-- `notebooks/zh` 与 `notebooks/en`：结构完全镜像的文章 notebook，整个主线都可以在 Colab 或本地运行。
+- `notebooks/zh` 与 `notebooks/en`：结构完全镜像的文章 notebook；只有可运行条目才生成 live notebook，`reading-only` 条目不会生成 notebook。
 
 现在仓库还多了四层强化内容：
 
@@ -74,7 +74,7 @@
 
 - 适合：已经能跑 notebook、会基本 PyTorch、能看懂常见图表，但还没有系统 interpretability 路线的人。
 - 进入信号：你已经能独立做简单复现、写基础笔记，只是缺一条完整主线。
-- 建议走法：按 `M00 → M06` 快速锁定基础，再尽早进入 research-ready 模式，开始写 memo、failure analysis 和扩展复现。
+- 建议走法：先快速完成可运行的 `M00 → M05` 主线，再把 `M03` 和 `M06-M10` 当成阅读与批判任务插入，然后尽早进入 research-ready 模式，开始写 memo、failure analysis 和扩展复现。
 - 目标：直接进入 `P5/P6` 主干，再用扩展论文、提案和 capstone 朝 `P7/P8` 推进。
 
 ## 为什么要学这个
@@ -137,9 +137,9 @@
 | `M03` | Mapping the Mind | `2024-05-21` | `reading-only` | 阅读 | - | `reading-only` | 浏览教学版 feature catalog，理解“发现大量特征”到底意味着什么。 |
 | `M04` | Features as Classifiers | `2024-10-16` | `method-lab` | [打开](notebooks/zh/m04_features_as_classifiers.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m04_features_as_classifiers.ipynb) | `cpu-colab` | 把 feature 当成分类器输入，理解“读出”能力从哪里来。 |
 | `M05` | Evaluating Feature Steering | `2024-10-25` | `method-lab` | [打开](notebooks/zh/m05_evaluating_feature_steering.ipynb) | [Colab](https://colab.research.google.com/github/Jonny-English/circuits-zoom-in-fresh-20260325/blob/main/notebooks/zh/m05_evaluating_feature_steering.ipynb) | `cpu-colab` | 扫描 steering 强度，观察 target gain、sweet spot 与 off-target cost 的平衡。 |
-| `M06` | Tracing the Thoughts | `2025-03-27` | `reading-only` | 阅读 | - | `reading-only` | 先在本地跑一个 toy tracing 复现，再用共享 attribution graph 学会阅读一条局部计算路径。 |
+| `M06` | Tracing the Thoughts | `2025-03-27` | `reading-only` | 阅读 | - | `reading-only` | 阅读共享 attribution graph，学会描述一条局部计算路径以及实时复现还缺哪些公开工具。 |
 | `M07` | Circuit Tracing Tools | `2025-05-29` | `reading-only` | 阅读 | - | `reading-only` | 查看 tracing artifact 与工作流拆解，理解工具层如何支撑分析。 |
-| `M08` | Persona Vectors | `2025-08-01` | `reading-only` | 阅读 | - | `reading-only` | 先在本地构造一个教学版 persona direction，再用共享 artifact 对比 trait 前后变化。 |
+| `M08` | Persona Vectors | `2025-08-01` | `reading-only` | 阅读 | - | `reading-only` | 阅读共享 persona artifact，比较 trait 前后变化，并说明诚实的实时复现还缺什么。 |
 | `M09` | Signs of Introspection | `2025-10-29` | `reading-only` | 阅读 | - | `reading-only` | 用教学数据对比 self-report 与行为信号，讨论“内省迹象”到底意味着什么。 |
 | `M10` | The Assistant Axis | `2026-01-19` | `reading-only` | 阅读 | - | `reading-only` | 把不同 assistant 风格投到同一条轴上，观察 character 稳定化问题。 |
 <!-- COURSE_TABLE:END -->
