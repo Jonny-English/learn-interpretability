@@ -6,6 +6,32 @@
 
 `Learn Interpretability` is a bilingual, Colab-first interpretability training project for readers who know basic Python and PyTorch but are new to mechanistic interpretability. The repository is now paper-reproduction-first: every core paper in the path has one mirrored note, and every honestly runnable paper gets one Colab notebook.
 
+If this repository saves you weeks of scattered paper-hopping, gives you a usable Colab path, or helps you build a serious interpretability study habit, give it a star.
+
+## Why This Repo Is Worth Opening
+
+- You do not need prior interpretability experience; the project is designed for beginners who can already handle basic Python and PyTorch.
+- You can open a real Colab in the first session instead of reading for hours before touching code.
+- The live-code boundary is explicit: runnable notebooks are runnable, and anything else is labeled `reading-only`.
+- The long-term promise is concrete, not vague: the full path is aimed at a credible `P6-ready` outcome, not passive familiarity.
+
+## Repository Snapshot
+
+- `4` foundation labs for setup, plots, attention reading, and experiment discipline
+- `5` live core notebooks for the strict runnable path: `M00`, `M01`, `M02`, `M04`, `M05`
+- `7` runnable extension drills after the core
+- `32` notebooks smoke-tested in the current repo
+- `180-250` focused hours for the full `P6-ready` path
+
+## Try It In Your First Hour
+
+- `30-45 min`: [F00 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/foundations/en/f00_environment_plots_baselines.ipynb)
+  Build a working Colab loop, read a loss curve, and learn what a baseline is.
+- `45-60 min`: [M00 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/m00_zoom_in_circuits.ipynb)
+  Get first intuition for features, circuits, and interventions through a visual model.
+- `60-90 min`: [M01 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/m01_toy_models_superposition.ipynb)
+  Run the first paper-shaped reproduction and see why neurons can mix multiple semantics.
+
 ## Start Here
 
 - If notebook setup, plots, or experiment discipline still feel shaky, start with `F00 -> F03`.
@@ -119,6 +145,12 @@ So the right focus is no longer only the fine-grained craft of manually executin
 - how we understand, use, debug, and control this abstraction layer
 
 That is also why this repository is not only about paper summaries. It is about Colab reproductions, experiments, artifacts, steering, tracing, editing, auditing, and research communication.
+
+## What You Can Expect If You Stay With It
+
+- After the first hour: you should have run at least one real notebook and written the first lines of a reading note or experiment log.
+- After the first weekend: you should know whether the beginner runway or the prepared runway is the right fit, and you should have completed one live paper reproduction.
+- After the full path: you should have a portfolio of notes, logs, memos, critiques, and extension reproductions strong enough for the repo to call the result `P6-ready`.
 
 ## Pre-P4 Foundation Pack
 

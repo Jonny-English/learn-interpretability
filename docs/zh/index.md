@@ -2,6 +2,22 @@
 
 这门课现在是带严格诚实规则的 Colab 优先结构：只有在运行时实时产生输出的 notebook，才算可运行内容；凡是仍然依赖预计算 artifact 的部分，一律按阅读材料处理。
 
+如果你是第一次打开这个仓库，不要一上来把所有文档都读完；先证明给自己看，至少有 1 个 Colab 能跑通。
+
+## 第一轮先做什么
+
+- [F00 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/foundations/zh/f00_environment_plots_baselines.ipynb)：修好环境和 baseline 纪律
+- [M00 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/m00_zoom_in_circuits.ipynb)：建立 feature 和 circuit 的第一层直觉
+- [M01 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/m01_toy_models_superposition.ipynb)：跑第一篇带论文形状的复现
+
+当前仓库快照：
+
+- `4` 个基础 lab
+- `5` 个 live 主线 notebook
+- `7` 个可运行扩展方法练习
+- `32` 本 notebook 通过 smoke test
+- 完整 `P6-ready` 路径建议投入 `180-250` 小时
+
 ## Pre-P4 基础包
 
 - [基础包总览](foundations/index.md)
@@ -63,3 +79,4 @@
 - 生成 notebook 后可运行 `python3 scripts/audit_realtime_policy.py`，用脚本强制检查“不得依赖预计算 artifact”。
 - 中英内容必须结构镜像。如果一边新增文章讲义，另一边也要新增。
 - 如果目标是严肃地进入研究状态，最重要的是输出质量，而不是完成数量。
+- 如果这个仓库确实帮你省了时间、给了清晰路径，请给它一个 star，让更多小白能找到它。

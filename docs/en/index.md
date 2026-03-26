@@ -2,6 +2,22 @@
 
 This course is now Colab-first under a strict honesty rule: only notebooks that generate outputs live at runtime count as runnable work. Anything that still depends on precomputed artifacts is treated as reading-only.
 
+If you are opening the repo for the first time, do not start by reading everything. Start by proving to yourself that one Colab runs.
+
+## First session
+
+- [F00 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/foundations/en/f00_environment_plots_baselines.ipynb): fix setup and learn baseline discipline
+- [M00 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/m00_zoom_in_circuits.ipynb): get the first intuition for features and circuits
+- [M01 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/m01_toy_models_superposition.ipynb): run the first paper-shaped reproduction
+
+Current repo snapshot:
+
+- `4` foundation labs
+- `5` live core notebooks
+- `7` runnable extension drills
+- `32` notebooks smoke-tested
+- `180-250` focused hours for the full `P6-ready` path
+
 ## Pre-P4 foundation pack
 
 - [Foundation pack overview](foundations/index.md)
@@ -63,3 +79,4 @@ Use the track in this order:
 - Use `python3 scripts/audit_realtime_policy.py` after notebook generation if you want the repo to enforce the no-precomputed-artifact rule.
 - Chinese and English stay structurally mirrored. If you add an article note in one language, add it in the other.
 - If your goal is serious research growth, output quality matters more than completion counts.
+- If the repo gives you a clear path and saves you time, star it so more beginners can find it.

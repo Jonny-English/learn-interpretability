@@ -6,6 +6,32 @@
 
 `Learn Interpretability` 是一个面向初学者的双语、Colab 优先 interpretability 训练项目。仓库现在改成了“论文复现优先”结构：核心路径里的每一篇论文，都有一份同步讲义；凡是能诚实实时复现的论文，再配一份独立 Colab notebook。
 
+如果这个仓库帮你省掉了大量零散找论文、找复现、找路径的时间，或者确实帮你建立了靠谱的 interpretability 学习习惯，请给它一个 star。
+
+## 为什么这个仓库值得点开
+
+- 你不需要先有 interpretability 背景；它就是按“会基础 Python/PyTorch 的小白”来设计的。
+- 你可以在第一轮学习里就打开真实 Colab，而不是先看几个小时材料再碰代码。
+- live-code 边界写得很清楚：能跑的就是能跑，不能诚实实时跑的就标成 `reading-only`。
+- 长期承诺也不是空话：完整路径瞄准的是可信的 `P6-ready`，不是“看过不少内容”。
+
+## 仓库快照
+
+- `4` 个基础 lab，补环境、图表、attention 读图和实验纪律
+- `5` 个严格可运行的主线 notebook：`M00`、`M01`、`M02`、`M04`、`M05`
+- `7` 个主线后的扩展方法练习
+- 当前仓库里有 `32` 本 notebook 通过 smoke test
+- 完整 `P6-ready` 路径建议投入 `180-250` 小时
+
+## 第一小时直接试
+
+- `30-45 分钟`：[F00 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/foundations/zh/f00_environment_plots_baselines.ipynb)
+  搭好 Colab 工作流，读一张 loss 曲线，搞清 baseline 是什么。
+- `45-60 分钟`：[M00 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/m00_zoom_in_circuits.ipynb)
+  用视觉模型建立 feature、circuit、intervention 的第一层直觉。
+- `60-90 分钟`：[M01 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/m01_toy_models_superposition.ipynb)
+  跑第一篇真正有“论文形状”的复现，看清为什么神经元会混装多个语义。
+
 ## 从这里开始
 
 - 如果你对 notebook 环境、图表或实验纪律还不稳，先做 `F00 -> F03`。
@@ -119,6 +145,12 @@
 - 我们怎样理解、使用、调试和控制这一层封装
 
 这也是为什么这个项目既讲论文，也讲 Colab 复现、实验、artifact、steering、tracing、editing、auditing 和研究写作。
+
+## 如果你持续做下去，会得到什么
+
+- 第一小时之后：你至少应该已经跑通 1 个真实 notebook，并写下 reading note 或 experiment log 的开头。
+- 第一个周末之后：你应该已经知道自己更适合走小白起跑线还是基础者起跑线，并完成 1 个 live 论文复现。
+- 完整路径之后：你应该能拿出 notes、logs、memos、critiques 和扩展复现组成的作品集，强到足以让仓库把结果叫做 `P6-ready`。
 
 ## Pre-P4 基础包
 
