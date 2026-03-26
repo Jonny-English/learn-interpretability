@@ -10,6 +10,8 @@
 - [M00 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/m00_zoom_in_circuits.ipynb)：建立 feature 和 circuit 的第一层直觉
 - [M01 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/m01_toy_models_superposition.ipynb)：跑第一篇带论文形状的复现
 
+如果你想做更严格的去留判断，就看这份[第一周验证路径](program/first-week-checklist.md)。
+
 当前仓库快照：
 
 - `4` 个基础 lab
@@ -53,6 +55,7 @@
 ## 研究就绪路径
 
 - [研究就绪总览](program/research-ready.md)
+- [第一周验证路径](program/first-week-checklist.md)
 - [Colab 优先路径](program/colab-first-path.md)
 - [能力成长弧线与 P6 证据门槛](program/capability-arc.md)
 - [P6 毕业清单](program/p6-graduation-checklist.md)

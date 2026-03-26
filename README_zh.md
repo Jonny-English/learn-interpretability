@@ -23,6 +23,13 @@
 - 当前仓库里有 `32` 本 notebook 通过 smoke test
 - 完整 `P6-ready` 路径建议投入 `180-250` 小时
 
+## 快速回答
+
+- `需要 GPU 吗？` 不需要。当前 live 路径按 CPU 或免费 Colab 设计。
+- `需要 interpretability 基础吗？` 不需要。你需要的是基础 Python/PyTorch，以及愿意写笔记和实验记录。
+- `多快能知道这个仓库适不适合我？` 一般第一个周末试完 `F00`、`M00`、`M01` 就能判断。
+- `仓库是不是承诺我自动变成 P6？` 不是。只有完整跑完路径并通过证据门槛，仓库才会把结果叫做 `P6-ready`。
+
 ## 第一小时直接试
 
 - `30-45 分钟`：[F00 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/foundations/zh/f00_environment_plots_baselines.ipynb)
@@ -31,6 +38,8 @@
   用视觉模型建立 feature、circuit、intervention 的第一层直觉。
 - `60-90 分钟`：[M01 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/m01_toy_models_superposition.ipynb)
   跑第一篇真正有“论文形状”的复现，看清为什么神经元会混装多个语义。
+
+如果你想在投入完整路径之前先做一次更严格的适配验证，就看这份[第一周验证路径](docs/zh/program/first-week-checklist.md)。
 
 ## 从这里开始
 

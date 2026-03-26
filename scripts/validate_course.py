@@ -62,6 +62,7 @@ PROGRAM_REQUIRED_FIELDS = {
 
 EXPECTED_PROGRAM_DOCS = {
     "research-ready.md",
+    "first-week-checklist.md",
     "colab-first-path.md",
     "capability-arc.md",
     "p6-graduation-checklist.md",

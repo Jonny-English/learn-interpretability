@@ -10,6 +10,8 @@ If you are opening the repo for the first time, do not start by reading everythi
 - [M00 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/m00_zoom_in_circuits.ipynb): get the first intuition for features and circuits
 - [M01 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/m01_toy_models_superposition.ipynb): run the first paper-shaped reproduction
 
+If you want a stricter go/no-go check, use the [first-week proof path](program/first-week-checklist.md).
+
 Current repo snapshot:
 
 - `4` foundation labs
@@ -53,6 +55,7 @@ Current repo snapshot:
 ## Research-ready track
 
 - [Research-ready overview](program/research-ready.md)
+- [First-week proof path](program/first-week-checklist.md)
 - [Colab-first path](program/colab-first-path.md)
 - [Capability arc and P6 evidence gates](program/capability-arc.md)
 - [P6 graduation checklist](program/p6-graduation-checklist.md)

@@ -23,6 +23,13 @@ If this repository saves you weeks of scattered paper-hopping, gives you a usabl
 - `32` notebooks smoke-tested in the current repo
 - `180-250` focused hours for the full `P6-ready` path
 
+## Fast Answers
+
+- `Do I need a GPU?` No. The current live path is designed for CPU or free Colab.
+- `Do I need prior interpretability experience?` No. You need basic Python/PyTorch plus the willingness to write notes and logs.
+- `How quickly will I know whether this repo fits me?` Usually within the first weekend if you try `F00`, `M00`, and `M01`.
+- `Does the repo claim I automatically become P6?` No. `P6-ready` is only the claim after the full path and the evidence gates.
+
 ## Try It In Your First Hour
 
 - `30-45 min`: [F00 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/foundations/en/f00_environment_plots_baselines.ipynb)
@@ -31,6 +38,8 @@ If this repository saves you weeks of scattered paper-hopping, gives you a usabl
   Get first intuition for features, circuits, and interventions through a visual model.
 - `60-90 min`: [M01 Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/m01_toy_models_superposition.ipynb)
   Run the first paper-shaped reproduction and see why neurons can mix multiple semantics.
+
+If you want a stricter proof-of-fit before committing to the whole repo, use the [first-week proof path](docs/en/program/first-week-checklist.md).
 
 ## Start Here
 
