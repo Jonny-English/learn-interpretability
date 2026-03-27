@@ -13,6 +13,7 @@ build/
 
 # Data
 data/
+.learn_interpretability_data/
 
 # OS
 .DS_Store

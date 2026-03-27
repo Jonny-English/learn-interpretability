@@ -1,12 +1,55 @@
 [
   {
-    "id": "M00",
+    "id": "D00",
     "order": 0,
-    "title_zh": "Zoom In：电路入门",
-    "title_en": "Zoom In: An Introduction to Circuits",
-    "summary_zh": "在公开 InceptionV1 上实时生成 feature visualization、真实图片验证、方向调谐与小型 circuit trace。",
-    "summary_en": "Run live feature visualization, real-image validation, orientation tuning, and a small circuit trace on public InceptionV1.",
+    "slug": "thread-circuits",
+    "title_en": "Thread: Circuits",
+    "title_zh": "Circuits 线程总览",
+    "summary_en": "Use the Distill thread homepage as the entry point for the full Circuits sequence and understand how the articles fit together.",
+    "summary_zh": "把 Distill 线程首页当成整条 Circuits 学习线的入口，先看清文章之间的拼接关系。",
+    "notebook_scope_en": "This entry is reading-only. It maps the thread, the article order, and what each live notebook adds on top of the original Distill writing.",
+    "notebook_scope_zh": "这一篇是只读入口页，用来交代整条线程、文章顺序，以及各个 live notebook 在原始 Distill 写作之外补了什么。",
+    "live_sections_en": [],
+    "live_sections_zh": [],
     "prereqs": [],
+    "paper_refs": [
+      {
+        "title": "Thread: Circuits",
+        "url": "https://distill.pub/2020/circuits/",
+        "date": "2020-03-09"
+      }
+    ],
+    "delivery_mode": "reading-only",
+    "notebook_enabled": false,
+    "integrity_note_en": "This item is intentionally reading-only because the Distill thread page is a narrative entry point rather than a single experiment notebook.",
+    "integrity_note_zh": "这一项刻意保留为只读，因为 Distill 线程首页本质上是叙事入口，而不是单篇实验 notebook。",
+    "runnable_tier": "reading-only"
+  },
+  {
+    "id": "D01",
+    "order": 1,
+    "slug": "zoom-in",
+    "title_en": "Zoom In: An Introduction to Circuits",
+    "title_zh": "Zoom In：电路入门",
+    "summary_en": "Run a live visual-circuits walkthrough on InceptionV1: feature visualization, real-image validation, orientation tuning, and a small circuit trace.",
+    "summary_zh": "在 InceptionV1 上跑一条 live 视觉电路入门线：feature visualization、真实图片验证、方向调谐和一条小型 circuit trace。",
+    "notebook_scope_en": "This notebook keeps the article's intuition but rebuilds it with live public-stack outputs instead of pre-rendered figures.",
+    "notebook_scope_zh": "这本 notebook 保留原文的直觉主线，但把关键图和测量改成公开栈上的实时产出，而不是预渲染图片。",
+    "live_sections_en": [
+      "Activation maximization on representative channels",
+      "CIFAR-10 validation for a curve-preferring neuron",
+      "Orientation tuning on synthetic arc stimuli",
+      "A small upstream-weight trace for one mixed3b circuit"
+    ],
+    "live_sections_zh": [
+      "代表性通道的激活最大化",
+      "曲线偏好神经元的 CIFAR-10 真实图片验证",
+      "合成弧线刺激上的方向调谐",
+      "一条 mixed3b 小型电路的上游权重 trace"
+    ],
+    "prereqs": [
+      "D00"
+    ],
     "paper_refs": [
       {
         "title": "Zoom In: An Introduction to Circuits",
@@ -14,293 +57,298 @@
         "date": "2020-03-10"
       }
     ],
-    "artifact_refs": [
-      "concept-graph"
-    ],
-    "delivery_mode": "method-lab",
+    "delivery_mode": "live-lab",
     "notebook_enabled": true,
-    "integrity_note_zh": "这是公开栈上的 live 视觉电路练习：结果在运行时实时生成，但不宣称重建 Distill 原文的全部手工工件。",
-    "integrity_note_en": "This is a public-stack live visual-circuits lab: outputs are generated at runtime, but it does not claim to recreate every hand-crafted artifact from the Distill article.",
-    "runnable_tier": "cpu-colab",
-    "web_slug": "zoom-in-circuits"
+    "integrity_note_en": "This is a live public-stack reconstruction of the article's core moves. It does not claim to reproduce every bespoke figure or manual annotation from the Distill page.",
+    "integrity_note_zh": "这是对原文核心动作的公开栈 live 重建，但不宣称复现 Distill 页面里的每一张定制图或人工注释。",
+    "runnable_tier": "cpu-colab"
   },
   {
-    "id": "M01",
-    "order": 1,
-    "title_zh": "Toy Models of Superposition",
-    "title_en": "Toy Models of Superposition",
-    "summary_zh": "用最小 toy model 理解为什么神经元会混装多个语义。",
-    "summary_en": "Use a minimal toy model to see why neurons can mix multiple semantics.",
-    "prereqs": [
-      "M00"
-    ],
-    "paper_refs": [
-      {
-        "title": "Toy Models of Superposition",
-        "url": "https://www.anthropic.com/research/toy-models-of-superposition",
-        "date": "2022-09-14"
-      }
-    ],
-    "artifact_refs": [
-      "concept-graph"
-    ],
-    "delivery_mode": "paper-faithful",
-    "notebook_enabled": true,
-    "integrity_note_zh": "该论文本身就是 toy-model 研究，notebook 的输出在运行时实时生成。",
-    "integrity_note_en": "The paper itself is a toy-model study, and the notebook generates its outputs live at runtime.",
-    "runnable_tier": "cpu-colab",
-    "web_slug": "toy-models-superposition"
-  },
-  {
-    "id": "M02",
+    "id": "D02",
     "order": 2,
-    "title_zh": "Towards Monosemanticity",
-    "title_en": "Towards Monosemanticity",
-    "summary_zh": "通过教学版 sparse autoencoder 理解为什么 feature 视角比 neuron 视角更稳。",
-    "summary_en": "Use a teaching-scale sparse autoencoder to see why a feature view can be cleaner than a neuron view.",
+    "slug": "early-vision",
+    "title_en": "An Overview of Early Vision in InceptionV1",
+    "title_zh": "InceptionV1 早期视觉总览",
+    "summary_en": "Survey early InceptionV1 layers with live feature renders, family-response statistics, and layer-by-layer channel snapshots.",
+    "summary_zh": "用 live feature render、family-response 统计和逐层通道快照，梳理 InceptionV1 的早期视觉层。",
+    "notebook_scope_en": "The notebook samples early layers directly from a pretrained InceptionV1 and summarizes how feature families broaden from edges to small motifs.",
+    "notebook_scope_zh": "这本 notebook 直接从公开 InceptionV1 里采样早期层，概括 feature 家族如何从边缘扩展到小型图案。",
+    "live_sections_en": [
+      "Layer-by-layer feature render gallery",
+      "Synthetic family response heatmap across early layers",
+      "Real-image activation snapshots for selected channels"
+    ],
+    "live_sections_zh": [
+      "逐层 feature render 图库",
+      "早期层上的合成刺激家族响应热图",
+      "选定通道的真实图片激活快照"
+    ],
     "prereqs": [
-      "M01"
+      "D01"
     ],
     "paper_refs": [
       {
-        "title": "Towards Monosemanticity: Decomposing Language Models With Dictionary Learning",
-        "url": "https://www.anthropic.com/research/towards-monosemanticity-decomposing-language-models-with-dictionary-learning",
-        "date": "2023-10-05"
+        "title": "An Overview of Early Vision in InceptionV1",
+        "url": "https://distill.pub/2020/circuits/early-vision/",
+        "date": "2020-03-31"
       }
     ],
-    "artifact_refs": [
-      "concept-graph"
-    ],
-    "delivery_mode": "method-lab",
+    "delivery_mode": "live-lab",
     "notebook_enabled": true,
-    "integrity_note_zh": "这是公开栈上的方法练习，不宣称完整复现 Anthropic 原文规模与工件。",
-    "integrity_note_en": "This is a public-stack method lab and does not claim a full-scale reproduction of the Anthropic paper and artifacts.",
-    "runnable_tier": "cpu-colab",
-    "web_slug": "towards-monosemanticity"
+    "integrity_note_en": "This notebook uses live renders and measured activations on the public model. The scope is teaching-scale, but every figure is produced at runtime.",
+    "integrity_note_zh": "这本 notebook 在公开模型上用 live render 和实测激活做分析。规模是教学尺度，但所有图都在运行时生成。",
+    "runnable_tier": "cpu-colab"
   },
   {
-    "id": "M03",
+    "id": "D03",
     "order": 3,
-    "title_zh": "Mapping the Mind",
-    "title_en": "Mapping the Mind of a Large Language Model",
-    "summary_zh": "浏览教学版 feature catalog，理解“发现大量特征”到底意味着什么。",
-    "summary_en": "Browse a teaching-scale feature catalog to understand what it means to discover many reusable features.",
+    "slug": "curve-detectors",
+    "title_en": "Curve Detectors",
+    "title_zh": "曲线检测器",
+    "summary_en": "Search for curve-preferring channels live, compare line/arc/curvature stimuli, and validate the best channel on real images.",
+    "summary_zh": "实时搜索曲线偏好通道，对比直线、弧线和曲率刺激，并用真实图片验证最佳通道。",
+    "notebook_scope_en": "Instead of replaying a static story, the notebook searches the model for curve-preferring channels at runtime and then tests what makes them special.",
+    "notebook_scope_zh": "这本 notebook 不再复读静态故事，而是在运行时直接搜索曲线偏好通道，再检验它们到底偏好什么。",
+    "live_sections_en": [
+      "Curve-preference search inside mixed3b",
+      "Line versus arc versus circle response comparisons",
+      "Real-image validation for the strongest curve channel"
+    ],
+    "live_sections_zh": [
+      "在 mixed3b 里搜索曲线偏好通道",
+      "直线、弧线和整圆刺激对比",
+      "对最强曲线通道做真实图片验证"
+    ],
     "prereqs": [
-      "M02"
+      "D02"
     ],
     "paper_refs": [
       {
-        "title": "Mapping the Mind of a Large Language Model",
-        "url": "https://www.anthropic.com/research/mapping-mind-language-model",
-        "date": "2024-05-21"
+        "title": "Curve Detectors",
+        "url": "https://distill.pub/2020/circuits/curve-detectors",
+        "date": "2020-04-21"
       }
     ],
-    "artifact_refs": [
-      "concept-graph",
-      "m03-feature-catalog"
-    ],
-    "delivery_mode": "reading-only",
-    "notebook_enabled": false,
-    "integrity_note_zh": "当前仓库没有诚实的实时复现版本；这里只保留阅读与方法说明。",
-    "integrity_note_en": "This repository does not currently contain an honest real-time reproduction; this item is retained as reading and method explanation only.",
-    "runnable_tier": "reading-only",
-    "web_slug": "mapping-the-mind"
+    "delivery_mode": "live-lab",
+    "notebook_enabled": true,
+    "integrity_note_en": "The search space and validation set are smaller than the Distill write-up, but the detector discovery and measurements are generated live on the public model.",
+    "integrity_note_zh": "搜索空间和验证集都比 Distill 原文更小，但检测器发现和测量都是在公开模型上实时生成的。",
+    "runnable_tier": "cpu-colab"
   },
   {
-    "id": "M04",
+    "id": "D04",
     "order": 4,
-    "title_zh": "Features as Classifiers",
-    "title_en": "Using Dictionary Learning Features as Classifiers",
-    "summary_zh": "把 feature 当成分类器输入，理解“读出”能力从哪里来。",
-    "summary_en": "Treat features as classifier inputs and study where readout ability comes from.",
+    "slug": "equivariance",
+    "title_en": "Naturally Occurring Equivariance in Neural Networks",
+    "title_zh": "神经网络中的自然涌现等变性",
+    "summary_en": "Find transformed filter pairs live, compare rotated and translated responses, and inspect how feature families move together.",
+    "summary_zh": "实时寻找变换对应的滤波器对，比对旋转和平移响应，观察 feature 家族如何一起移动。",
+    "notebook_scope_en": "The notebook demonstrates equivariant structure by searching weight-space similarities and then validating them with stimulus sweeps.",
+    "notebook_scope_zh": "这本 notebook 先在权重空间里搜索等变结构，再用刺激 sweep 去验证这些关系。",
+    "live_sections_en": [
+      "Rotation-similar filter-pair search in Inception branches",
+      "Rotated arc response sweeps for matched channels",
+      "Translated-stimulus response consistency checks"
+    ],
+    "live_sections_zh": [
+      "在 Inception 分支里搜索旋转相似滤波器对",
+      "匹配通道的旋转弧线响应 sweep",
+      "平移刺激上的响应一致性检查"
+    ],
     "prereqs": [
-      "M02"
+      "D03"
     ],
     "paper_refs": [
       {
-        "title": "Using dictionary learning features as classifiers",
-        "url": "https://www.anthropic.com/research/features-as-classifiers",
-        "date": "2024-10-16"
+        "title": "Naturally Occurring Equivariance in Neural Networks",
+        "url": "https://distill.pub/2020/circuits/equivariance/",
+        "date": "2020-05-20"
       }
     ],
-    "artifact_refs": [
-      "concept-graph"
-    ],
-    "delivery_mode": "method-lab",
+    "delivery_mode": "live-lab",
     "notebook_enabled": true,
-    "integrity_note_zh": "这是公开可跑的特征读出方法练习，不宣称对原论文结果做全文复现。",
-    "integrity_note_en": "This is a publicly runnable feature-readout method lab and does not claim a full reproduction of the paper's reported results.",
-    "runnable_tier": "cpu-colab",
-    "web_slug": "features-as-classifiers"
+    "integrity_note_en": "This is a teaching-scale live analysis of equivariant structure in public InceptionV1 weights and activations, not a claim to reproduce every Distill case study.",
+    "integrity_note_zh": "这是对公开 InceptionV1 权重和激活中等变结构的教学尺度 live 分析，不宣称逐一复现 Distill 原文里的所有案例。",
+    "runnable_tier": "cpu-colab"
   },
   {
-    "id": "M05",
+    "id": "D05",
     "order": 5,
-    "title_zh": "Evaluating Feature Steering",
-    "title_en": "Evaluating Feature Steering",
-    "summary_zh": "扫描 steering 强度，观察 target gain、sweet spot 与 off-target cost 的平衡。",
-    "summary_en": "Sweep steering strength to inspect target gain, sweet spots, and off-target costs.",
+    "slug": "high-low-frequency-detectors",
+    "title_en": "High-Low Frequency Detectors",
+    "title_zh": "高低频检测器",
+    "summary_en": "Generate directional high-low frequency transitions live and measure which channels prefer these frequency edges.",
+    "summary_zh": "实时生成有方向性的高低频过渡刺激，并测量哪些通道偏好这种频率边界。",
+    "notebook_scope_en": "The notebook synthesizes frequency-edge stimuli at runtime and searches for channels that respond strongly and selectively to them.",
+    "notebook_scope_zh": "这本 notebook 在运行时合成频率边界刺激，并搜索对它们强响应且具有选择性的通道。",
+    "live_sections_en": [
+      "High-low frequency stimulus generation",
+      "Channel search for frequency-edge preference",
+      "Orientation tuning for the best frequency detector"
+    ],
+    "live_sections_zh": [
+      "高低频刺激生成",
+      "频率边界偏好通道搜索",
+      "最佳频率检测器的方向调谐"
+    ],
     "prereqs": [
-      "M04"
+      "D04"
     ],
     "paper_refs": [
       {
-        "title": "Evaluating feature steering",
-        "url": "https://www.anthropic.com/research/evaluating-feature-steering",
-        "date": "2024-10-25"
+        "title": "High-Low Frequency Detectors",
+        "url": "https://distill.pub/2020/circuits/frequency-edges/",
+        "date": "2020-06-03"
       }
     ],
-    "artifact_refs": [
-      "concept-graph"
-    ],
-    "delivery_mode": "method-lab",
+    "delivery_mode": "live-lab",
     "notebook_enabled": true,
-    "integrity_note_zh": "这是公开可跑的 steering 方法练习，不把教学设置冒充成原论文结果。",
-    "integrity_note_en": "This is a publicly runnable steering method lab and does not present the teaching setup as the paper's original result.",
-    "runnable_tier": "cpu-colab",
-    "web_slug": "evaluating-feature-steering"
+    "integrity_note_en": "The stimuli are generated live with simple public code. The resulting figures are runtime measurements, not bundled replicas of the Distill artwork.",
+    "integrity_note_zh": "刺激由公开代码实时生成，图像和曲线都是运行时测量结果，而不是仓库内打包好的 Distill 图片副本。",
+    "runnable_tier": "cpu-colab"
   },
   {
-    "id": "M06",
+    "id": "D06",
     "order": 6,
-    "title_zh": "Tracing the Thoughts",
-    "title_en": "Tracing the Thoughts of a Large Language Model",
-    "summary_zh": "阅读共享 attribution graph，学会描述一条局部计算路径以及实时复现还缺哪些公开工具。",
-    "summary_en": "Read a shared attribution graph and learn to describe one local computation path plus the public tooling gaps that still block a live reproduction.",
+    "slug": "curve-circuits",
+    "title_en": "Curve Circuits",
+    "title_zh": "曲线电路",
+    "summary_en": "Trace a curve circuit through mixed3a and mixed3b with live upstream importance, ablation, and a minimal proxy model.",
+    "summary_zh": "通过 live 的上游重要度、消融和最小代理模型，在 mixed3a 与 mixed3b 之间追踪一条曲线电路。",
+    "notebook_scope_en": "The notebook turns one curve circuit into a public-stack trace: find upstream channels, ablate them, and compare the real target response to a minimal proxy.",
+    "notebook_scope_zh": "这本 notebook 把一条曲线电路改写成公开栈可跑的 trace：找上游通道、做消融，再把真实目标响应和最小代理模型对比起来。",
+    "live_sections_en": [
+      "Upstream importance search from mixed3b back to mixed3a",
+      "Ablation on the top contributing upstream channels",
+      "Minimal proxy-model comparison against the true target response"
+    ],
+    "live_sections_zh": [
+      "从 mixed3b 回溯到 mixed3a 的上游重要度搜索",
+      "对最关键上游通道做消融",
+      "最小代理模型与真实目标响应对比"
+    ],
     "prereqs": [
-      "M03",
-      "M05"
+      "D05"
     ],
     "paper_refs": [
       {
-        "title": "Tracing the thoughts of a large language model",
-        "url": "https://www.anthropic.com/research/tracing-thoughts-language-model",
-        "date": "2025-03-27"
+        "title": "Curve Circuits",
+        "url": "https://distill.pub/2020/circuits/curve-circuits/",
+        "date": "2020-06-14"
       }
     ],
-    "artifact_refs": [
-      "concept-graph",
-      "m06-attribution-graph"
-    ],
-    "delivery_mode": "reading-only",
-    "notebook_enabled": false,
-    "integrity_note_zh": "当前没有不依赖预计算 attribution graph 的公开实时复现版本，因此只保留阅读说明。",
-    "integrity_note_en": "There is no current public real-time reproduction here that avoids precomputed attribution graphs, so this is retained as reading-only.",
-    "runnable_tier": "reading-only",
-    "web_slug": "tracing-thoughts"
+    "delivery_mode": "live-lab",
+    "notebook_enabled": true,
+    "integrity_note_en": "This notebook uses live weights, activations, and ablations from public InceptionV1. It is a teaching-scale circuit trace, not a complete rebuild of every Distill artifact.",
+    "integrity_note_zh": "这本 notebook 直接使用公开 InceptionV1 的实时权重、激活和消融结果。它是教学尺度的 circuit trace，不是 Distill 原文所有工件的完整重建。",
+    "runnable_tier": "cpu-colab"
   },
   {
-    "id": "M07",
+    "id": "D07",
     "order": 7,
-    "title_zh": "Circuit Tracing Tools",
-    "title_en": "Open-sourcing Circuit Tracing Tools",
-    "summary_zh": "查看 tracing artifact 与工作流拆解，理解工具层如何支撑分析。",
-    "summary_en": "Inspect tracing artifacts and workflow stages to understand the tooling layer behind the analysis.",
+    "slug": "visualizing-weights",
+    "title_en": "Visualizing Weights",
+    "title_zh": "权重可视化",
+    "summary_en": "Visualize real InceptionV1 weights directly and compare what weight views reveal versus what feature visualizations reveal.",
+    "summary_zh": "直接可视化真实的 InceptionV1 权重，并比较权重视角和 feature visualization 视角各自揭示了什么。",
+    "notebook_scope_en": "This notebook stays entirely in runtime-generated weight views and pairs them with live feature renders so the comparison is grounded in the same channels.",
+    "notebook_scope_zh": "这本 notebook 全程使用运行时生成的权重视图，再配上同一批通道的 live feature render，让两种视角建立直接对应。",
+    "live_sections_en": [
+      "Direct visualization of first-layer RGB filters",
+      "Energy-map views for deeper convolutional filters",
+      "Weight-view versus feature-view comparisons on matched channels"
+    ],
+    "live_sections_zh": [
+      "第一层 RGB 滤波器直接可视化",
+      "更深卷积滤波器的能量图视角",
+      "同一通道上的权重视角与 feature 视角对比"
+    ],
     "prereqs": [
-      "M06"
+      "D06"
     ],
     "paper_refs": [
       {
-        "title": "Open-sourcing circuit tracing tools",
-        "url": "https://www.anthropic.com/research/open-source-circuit-tracing",
-        "date": "2025-05-29"
+        "title": "Visualizing Weights",
+        "url": "https://distill.pub/2020/circuits/visualizing-weights/",
+        "date": "2020-07-13"
       }
     ],
-    "artifact_refs": [
-      "concept-graph",
-      "m06-attribution-graph",
-      "m07-tracing-tool-workflow"
-    ],
-    "delivery_mode": "reading-only",
-    "notebook_enabled": false,
-    "integrity_note_zh": "该主题当前依赖预计算工作流工件，本仓库不再把它伪装成实时复现。",
-    "integrity_note_en": "This topic currently depends on precomputed workflow artifacts, and the repository no longer presents it as a live reproduction.",
-    "runnable_tier": "reading-only",
-    "web_slug": "circuit-tracing-tools"
+    "delivery_mode": "live-lab",
+    "notebook_enabled": true,
+    "integrity_note_en": "All visualizations are generated at runtime from public model weights. No pre-rendered weight figures are bundled in the repository.",
+    "integrity_note_zh": "所有图像都在运行时直接从公开模型权重生成，仓库里不再打包任何预渲染的权重图。",
+    "runnable_tier": "cpu-colab"
   },
   {
-    "id": "M08",
+    "id": "D08",
     "order": 8,
-    "title_zh": "Persona Vectors",
-    "title_en": "Persona Vectors",
-    "summary_zh": "阅读共享 persona artifact，比较 trait 前后变化，并说明诚实的实时复现还缺什么。",
-    "summary_en": "Read a shared persona artifact, compare before/after trait shifts, and state what is still missing for an honest live reproduction.",
+    "slug": "branch-specialization",
+    "title_en": "Branch Specialization",
+    "title_zh": "分支专门化",
+    "summary_en": "Measure how different Inception branches respond to line, arc, and frequency families, then render branch-specific exemplars live.",
+    "summary_zh": "测量不同 Inception 分支对直线、弧线和频率刺激家族的响应，再实时渲染各分支的代表性通道。",
+    "notebook_scope_en": "The notebook studies specialization as a live branch-by-family response pattern rather than as a static diagram imported from the paper.",
+    "notebook_scope_zh": "这本 notebook 把分支专门化写成一张 live 的“分支 × 刺激家族”响应图，而不是从论文里搬一张静态示意图。",
+    "live_sections_en": [
+      "Branch-wise response heatmap across stimulus families",
+      "Top-channel search inside each branch",
+      "Live feature renders for branch-specific exemplars"
+    ],
+    "live_sections_zh": [
+      "刺激家族上的分支响应热图",
+      "各分支内部的 top-channel 搜索",
+      "分支代表通道的 live feature render"
+    ],
     "prereqs": [
-      "M05"
+      "D07"
     ],
     "paper_refs": [
       {
-        "title": "Persona vectors: Monitoring and controlling character traits in language models",
-        "url": "https://www.anthropic.com/research/persona-vectors",
-        "date": "2025-08-01"
+        "title": "Branch Specialization",
+        "url": "https://distill.pub/2020/circuits/branch-specialization/",
+        "date": "2020-08-26"
       }
     ],
-    "artifact_refs": [
-      "concept-graph",
-      "m08-persona-vectors"
-    ],
-    "delivery_mode": "reading-only",
-    "notebook_enabled": false,
-    "integrity_note_zh": "当前仓库没有不依赖教学 artifact 的诚实 persona-vectors 实时复现版本。",
-    "integrity_note_en": "The repository does not currently contain an honest persona-vectors live reproduction that avoids teaching artifacts.",
-    "runnable_tier": "reading-only",
-    "web_slug": "persona-vectors"
+    "delivery_mode": "live-lab",
+    "notebook_enabled": true,
+    "integrity_note_en": "The specialization story here comes from live measurements on public branches and stimuli. It is meant to be transparent and inspectable rather than exhaustively paper-faithful.",
+    "integrity_note_zh": "这里的专门化结论来自公开分支和公开刺激上的实时测量，目标是透明可检查，而不是穷尽式地追平论文所有细节。",
+    "runnable_tier": "cpu-colab"
   },
   {
-    "id": "M09",
+    "id": "D09",
     "order": 9,
-    "title_zh": "Signs of Introspection",
-    "title_en": "Signs of Introspection in Large Language Models",
-    "summary_zh": "用教学数据对比 self-report 与行为信号，讨论“内省迹象”到底意味着什么。",
-    "summary_en": "Compare self-report and behavior signals in teaching data to discuss what 'signs of introspection' actually mean.",
+    "slug": "weight-banding",
+    "title_en": "Weight Banding",
+    "title_zh": "权重带状结构",
+    "summary_en": "Analyze the final classifier weight matrix live: reorder classes and channels, visualize bands, and compare against shuffled baselines.",
+    "summary_zh": "实时分析最终分类器权重矩阵：重排行与列、可视化带状结构，并和打乱基线比较。",
+    "notebook_scope_en": "This notebook treats banding as a live weight-analysis problem on the public classifier head rather than a static export of a finished figure.",
+    "notebook_scope_zh": "这本 notebook 把带状结构当成公开分类头上的实时权重分析问题来做，而不是直接导出一张完成图。",
+    "live_sections_en": [
+      "Final-layer weight-matrix reordering",
+      "Band-span versus shuffled-baseline measurements",
+      "Candidate class-group inspection from the reordered matrix"
+    ],
+    "live_sections_zh": [
+      "最终层权重矩阵重排",
+      "带宽跨度与打乱基线的比较",
+      "从重排矩阵里检查候选类别分组"
+    ],
     "prereqs": [
-      "M08"
+      "D08"
     ],
     "paper_refs": [
       {
-        "title": "Signs of introspection in large language models",
-        "url": "https://www.anthropic.com/research/introspection",
-        "date": "2025-10-29"
+        "title": "Weight Banding",
+        "url": "https://distill.pub/2020/circuits/weight-banding/",
+        "date": "2020-09-01"
       }
     ],
-    "artifact_refs": [
-      "concept-graph",
-      "m09-introspection-signals"
-    ],
-    "delivery_mode": "reading-only",
-    "notebook_enabled": false,
-    "integrity_note_zh": "当前仓库没有原论文层面的实时实验栈；这里只保留阅读与批判入口。",
-    "integrity_note_en": "The repository does not contain a paper-level live experiment stack here; this item remains as a reading-and-critique entry only.",
-    "runnable_tier": "reading-only",
-    "web_slug": "signs-of-introspection"
-  },
-  {
-    "id": "M10",
-    "order": 10,
-    "title_zh": "The Assistant Axis",
-    "title_en": "The Assistant Axis",
-    "summary_zh": "把不同 assistant 风格投到同一条轴上，观察 character 稳定化问题。",
-    "summary_en": "Project multiple assistant styles onto one axis and inspect the problem of stabilizing character.",
-    "prereqs": [
-      "M08",
-      "M09"
-    ],
-    "paper_refs": [
-      {
-        "title": "The assistant axis: situating and stabilizing the character of large language models",
-        "url": "https://www.anthropic.com/research/assistant-axis",
-        "date": "2026-01-19"
-      }
-    ],
-    "artifact_refs": [
-      "concept-graph",
-      "m10-assistant-axis"
-    ],
-    "delivery_mode": "reading-only",
-    "notebook_enabled": false,
-    "integrity_note_zh": "当前仓库没有不依赖预计算数据的 assistant-axis 实时复现版本。",
-    "integrity_note_en": "The repository does not currently contain an assistant-axis live reproduction that avoids precomputed data.",
-    "runnable_tier": "reading-only",
-    "web_slug": "assistant-axis"
+    "delivery_mode": "live-lab",
+    "notebook_enabled": true,
+    "integrity_note_en": "The matrix views and banding scores are computed live from the public classifier head. This is a runtime analysis notebook, not a bundled static export.",
+    "integrity_note_zh": "矩阵图和 banding 分数都直接从公开分类头实时计算而来。这是运行时分析 notebook，不是预先打包好的静态导出。",
+    "runnable_tier": "cpu-colab"
   }
 ]

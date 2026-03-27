@@ -1,42 +1,22 @@
-# Learn Interpretability
+# Distill Circuits 索引
 
-这是仓库的文档首页。如果你想要一个比根 README 更干净的导航面，就从这里进。
+这个仓库把 Distill Circuits 线程维护成一条中英镜像学习线。
 
-## 起步路径
+- 仓库首页：[README_zh.md](../../README_zh.md)
+- 仓库地图：[repo-map.md](repo-map.md)
+- 文章列表：[articles/index.md](articles/index.md)
 
-- 环境、图表还不稳：先看 [foundations/index.md](foundations/index.md)
-- 想先做去留判断：看 [program/first-week-checklist.md](program/first-week-checklist.md)
-- 已经能走 live 主线：从 `M00`、`M01`、`M02`、`M04`、`M05` 开始
-- 想看完整长期路径：去 [program/research-ready.md](program/research-ready.md)
+## 顺序
 
-## 文档分层
-
-- [基础包](foundations/index.md)
-- [主线模块](modules/m00-zoom-in-circuits.md)
-- [扩展轨道](extensions/index.md)
-- [Research-ready 文档](program/research-ready.md)
-- [仓库地图](repo-map.md)
-
-## Live 主线顺序
-
-1. [M00 Zoom In：电路入门](modules/m00-zoom-in-circuits.md)
-2. [M01 Toy Models of Superposition](modules/m01-toy-models-superposition.md)
-3. [M02 Towards Monosemanticity](modules/m02-towards-monosemanticity.md)
-4. [M04 Features as Classifiers](modules/m04-features-as-classifiers.md)
-5. [M05 Evaluating Feature Steering](modules/m05-evaluating-feature-steering.md)
-
-只读讲义仍然保留在仓库里，而且依然重要：
-
-- [M03 Mapping the Mind](modules/m03-mapping-the-mind.md)
-- [M06 Tracing the Thoughts](modules/m06-tracing-thoughts.md)
-- [M07 Circuit Tracing Tools](modules/m07-circuit-tracing-tools.md)
-- [M08 Persona Vectors](modules/m08-persona-vectors.md)
-- [M09 Signs of Introspection](modules/m09-signs-of-introspection.md)
-- [M10 The Assistant Axis](modules/m10-assistant-axis.md)
-
-## 使用规则
-
-- 只有运行时实时产出结果的 notebook 才算 runnable。
-- `reading-only` 的意思是保留讲义，但 notebook 故意不生成。
-- `X01-X07` 是可运行的方法练习，不冒充完整论文级复现。
-- 如果这个仓库帮你找到了更清晰的路径，就给它一个 star，让更多小白找到它。
+| ID | Article | Paper | Notebook |
+| --- | --- | --- | --- |
+| D00 | [D00 Circuits 线程总览](articles/d00-thread-circuits.md) | [Distill](https://distill.pub/2020/circuits/) | 只读 |
+| D01 | [D01 Zoom In：电路入门](articles/d01-zoom-in.md) | [Distill](https://distill.pub/2020/circuits/zoom-in/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/d01_zoom_in.ipynb) |
+| D02 | [D02 InceptionV1 早期视觉总览](articles/d02-early-vision.md) | [Distill](https://distill.pub/2020/circuits/early-vision/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/d02_early_vision.ipynb) |
+| D03 | [D03 曲线检测器](articles/d03-curve-detectors.md) | [Distill](https://distill.pub/2020/circuits/curve-detectors) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/d03_curve_detectors.ipynb) |
+| D04 | [D04 神经网络中的自然涌现等变性](articles/d04-equivariance.md) | [Distill](https://distill.pub/2020/circuits/equivariance/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/d04_equivariance.ipynb) |
+| D05 | [D05 高低频检测器](articles/d05-high-low-frequency-detectors.md) | [Distill](https://distill.pub/2020/circuits/frequency-edges/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/d05_high_low_frequency_detectors.ipynb) |
+| D06 | [D06 曲线电路](articles/d06-curve-circuits.md) | [Distill](https://distill.pub/2020/circuits/curve-circuits/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/d06_curve_circuits.ipynb) |
+| D07 | [D07 权重可视化](articles/d07-visualizing-weights.md) | [Distill](https://distill.pub/2020/circuits/visualizing-weights/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/d07_visualizing_weights.ipynb) |
+| D08 | [D08 分支专门化](articles/d08-branch-specialization.md) | [Distill](https://distill.pub/2020/circuits/branch-specialization/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/d08_branch_specialization.ipynb) |
+| D09 | [D09 权重带状结构](articles/d09-weight-banding.md) | [Distill](https://distill.pub/2020/circuits/weight-banding/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/zh/d09_weight_banding.ipynb) |

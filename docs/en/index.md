@@ -1,42 +1,22 @@
-# Learn Interpretability
+# Distill Circuits Index
 
-This is the documentation home for the repository. Use it when you want a cleaner navigation surface than the root README.
+This repository tracks the Distill Circuits thread as one mirrored bilingual sequence.
 
-## Start Paths
+- Repo root: [README.md](../../README.md)
+- Repo map: [repo-map.md](repo-map.md)
+- Article list: [articles/index.md](articles/index.md)
 
-- New and unstable on setup or plots: [foundations/index.md](foundations/index.md)
-- Want a go/no-go test before going deep: [program/first-week-checklist.md](program/first-week-checklist.md)
-- Ready for the live core: start with `M00`, `M01`, `M02`, `M04`, `M05`
-- Want the full long-horizon path: [program/research-ready.md](program/research-ready.md)
+## Sequence
 
-## Documentation Layers
-
-- [Foundation pack](foundations/index.md)
-- [Core modules](modules/m00-zoom-in-circuits.md)
-- [Extension track](extensions/index.md)
-- [Research-ready docs](program/research-ready.md)
-- [Repo map](repo-map.md)
-
-## Live-Core Reading Order
-
-1. [M00 Zoom In: An Introduction to Circuits](modules/m00-zoom-in-circuits.md)
-2. [M01 Toy Models of Superposition](modules/m01-toy-models-superposition.md)
-3. [M02 Towards Monosemanticity](modules/m02-towards-monosemanticity.md)
-4. [M04 Using Dictionary Learning Features as Classifiers](modules/m04-features-as-classifiers.md)
-5. [M05 Evaluating Feature Steering](modules/m05-evaluating-feature-steering.md)
-
-Reading-only notes remain in the repo and still matter:
-
-- [M03 Mapping the Mind of a Large Language Model](modules/m03-mapping-the-mind.md)
-- [M06 Tracing the Thoughts of a Large Language Model](modules/m06-tracing-thoughts.md)
-- [M07 Open-sourcing Circuit Tracing Tools](modules/m07-circuit-tracing-tools.md)
-- [M08 Persona Vectors](modules/m08-persona-vectors.md)
-- [M09 Signs of Introspection in Large Language Models](modules/m09-signs-of-introspection.md)
-- [M10 The Assistant Axis](modules/m10-assistant-axis.md)
-
-## Ground Rules
-
-- Only notebooks that generate outputs live at runtime count as runnable work.
-- `reading-only` means the note stays, but the notebook is intentionally not generated.
-- `X01-X07` are runnable method labs, not claims of full paper-faithful reproduction.
-- If the repo helps you find a clear path, star it so more beginners can find it.
+| ID | Article | Paper | Notebook |
+| --- | --- | --- | --- |
+| D00 | [D00 Thread: Circuits](articles/d00-thread-circuits.md) | [Distill](https://distill.pub/2020/circuits/) | Reading-only |
+| D01 | [D01 Zoom In: An Introduction to Circuits](articles/d01-zoom-in.md) | [Distill](https://distill.pub/2020/circuits/zoom-in/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/d01_zoom_in.ipynb) |
+| D02 | [D02 An Overview of Early Vision in InceptionV1](articles/d02-early-vision.md) | [Distill](https://distill.pub/2020/circuits/early-vision/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/d02_early_vision.ipynb) |
+| D03 | [D03 Curve Detectors](articles/d03-curve-detectors.md) | [Distill](https://distill.pub/2020/circuits/curve-detectors) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/d03_curve_detectors.ipynb) |
+| D04 | [D04 Naturally Occurring Equivariance in Neural Networks](articles/d04-equivariance.md) | [Distill](https://distill.pub/2020/circuits/equivariance/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/d04_equivariance.ipynb) |
+| D05 | [D05 High-Low Frequency Detectors](articles/d05-high-low-frequency-detectors.md) | [Distill](https://distill.pub/2020/circuits/frequency-edges/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/d05_high_low_frequency_detectors.ipynb) |
+| D06 | [D06 Curve Circuits](articles/d06-curve-circuits.md) | [Distill](https://distill.pub/2020/circuits/curve-circuits/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/d06_curve_circuits.ipynb) |
+| D07 | [D07 Visualizing Weights](articles/d07-visualizing-weights.md) | [Distill](https://distill.pub/2020/circuits/visualizing-weights/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/d07_visualizing_weights.ipynb) |
+| D08 | [D08 Branch Specialization](articles/d08-branch-specialization.md) | [Distill](https://distill.pub/2020/circuits/branch-specialization/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/d08_branch_specialization.ipynb) |
+| D09 | [D09 Weight Banding](articles/d09-weight-banding.md) | [Distill](https://distill.pub/2020/circuits/weight-banding/) | [Colab](https://colab.research.google.com/github/Jonny-English/learn-interpretability/blob/main/notebooks/en/d09_weight_banding.ipynb) |

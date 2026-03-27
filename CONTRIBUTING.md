@@ -1,52 +1,45 @@
 # Contributing
 
-This project is now a bilingual interpretability course with three synced layers:
+This repository serves one scope only: the Distill 2020 Circuits thread.
 
-1. `content/course.json` as the source of truth
-2. mirrored `docs/zh` and `docs/en`
-3. mirrored `notebooks/zh` and `notebooks/en`
+The synced layers are:
 
-If you touch one layer, make sure the others still line up.
+1. `content/course.json`
+2. mirrored `docs/en` and `docs/zh`
+3. mirrored `notebooks/en` and `notebooks/zh`
+4. `utils/distill_circuits.py` plus the scripts that generate and validate the public surface
 
-There is also a fourth synced layer for the research-ready track:
-
-4. `content/program.json`, mirrored `docs/*/program`, and `templates/`
+If you change one layer, make sure the others still line up.
 
 ## High-value contributions
 
-**Fix conceptual mistakes.** If a claim about superposition, dictionary learning, circuit tracing, or persona control is wrong or too hand-wavy, open an issue or patch it directly.
+**Strengthen live notebooks.** The highest-value work is improving the `D01-D09` live notebooks without breaking the live-only contract.
 
-**Improve bilingual parity.** Chinese and English should stay structurally identical. Better wording is welcome; mismatched structure is not.
+**Improve bilingual parity.** English and Chinese should stay structurally aligned even when the wording changes.
 
-**Strengthen runnable labs.** `M00-M05` should stay CPU-friendly and Colab-friendly. Better toy datasets, clearer plots, and faster smoke execution are especially useful.
+**Tighten runtime honesty.** If a notebook looks like a static walkthrough, downgrade it or replace it with real runtime analysis.
 
-**Improve artifacts and visualizations.** `M06-M10` rely on precomputed artifacts. Clearer attribution-graph views, better glossary cards, and more readable persona or assistant-axis plots are good contributions.
+**Improve public reproducibility.** Better Colab behavior, faster CPU execution, clearer plots, and better smoke-test coverage are all useful.
 
-**Strengthen the research-ready layer.** Better weekly gates, sharper rubrics, stronger templates, and stronger independent research sprints are all high-value improvements.
+## Structural rules
+
+**Treat `content/course.json` as authoritative.** IDs, order, titles, prerequisites, paper links, and notebook availability should be edited there first.
+
+**Keep docs mirrored.** `docs/en` and `docs/zh` must expose the same article set and structure.
+
+**Keep notebooks mirrored.** `notebooks/en` and `notebooks/zh` must keep the same `D01-D09` execution shape.
+
+**Do not add precomputed artifacts back into the required path.** Live notebooks must not read bundled `figures/`, `artifacts/`, or other repository-side result files.
 
 ## Development workflow
 
 1. Create a branch from `main`.
 2. Make your changes.
-3. Regenerate derived content if you changed metadata:
+3. Regenerate derived content:
    `python3 scripts/render_readmes.py`
    `python3 scripts/generate_course_notebooks.py`
 4. Run validation:
    `python3 scripts/validate_course.py`
-   `python3 scripts/smoke_notebooks.py`
+   `python3 scripts/audit_realtime_policy.py`
    `python3 scripts/check_links.py`
-## Structural rules
-
-**Treat `content/course.json` as authoritative.** Article IDs, order, prerequisites, paper links, and artifact references should be edited there first.
-
-**Treat `content/program.json` as authoritative for the training layer.** Entry requirements, weekly checkpoints, independent sprints, and rubric levels should be updated there first.
-
-**Keep docs mirrored.** `docs/zh` and `docs/en` must expose the same article set and the same section structure.
-
-**Keep notebooks mirrored.** `notebooks/zh` and `notebooks/en` must keep the same article IDs and execution shape. Language can differ; structure should not.
-
-**Do not turn the course into a heavy compute project.** `M00-M05` should remain runnable on CPU or free Colab. Heavy model tracing belongs in artifact-guided articles, not in the required path.
-
-## Questions
-
-Open an issue or PR with the specific module ID you are changing. That makes review much faster.
+   `python3 scripts/smoke_notebooks.py`

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 
 
@@ -13,6 +14,7 @@ NOTEBOOKS_ROOT = ROOT / "notebooks"
 def run_notebook(path: Path) -> None:
     payload = json.loads(path.read_text())
     globals_dict = {"__name__": "__main__"}
+    os.environ["LEARN_INTERPRETABILITY_FAST"] = "1"
     exec("import matplotlib; matplotlib.use('Agg')", globals_dict, globals_dict)
     for index, cell in enumerate(payload.get("cells", []), start=1):
         if cell.get("cell_type") != "code":
@@ -32,16 +34,9 @@ def discover_paths(modules: set[str] | None, languages: set[str] | None) -> list
     for language in ("en", "zh"):
         if languages and language not in languages:
             continue
-        for path in sorted((NOTEBOOKS_ROOT / language).glob("m*.ipynb")):
-            if modules and path.stem.split("_", maxsplit=1)[0].upper() not in modules:
-                continue
-            paths.append(path)
-        for path in sorted((NOTEBOOKS_ROOT / "foundations" / language).glob("f*.ipynb")):
-            if modules and path.stem.split("_", maxsplit=1)[0].upper() not in modules:
-                continue
-            paths.append(path)
-        for path in sorted((NOTEBOOKS_ROOT / "extensions" / language).glob("x*.ipynb")):
-            if modules and path.stem.split("_", maxsplit=1)[0].upper() not in modules:
+        for path in sorted((NOTEBOOKS_ROOT / language).glob("d*.ipynb")):
+            module_id = path.stem.split("_", maxsplit=1)[0].upper()
+            if modules and module_id not in modules:
                 continue
             paths.append(path)
     return paths
@@ -49,7 +44,7 @@ def discover_paths(modules: set[str] | None, languages: set[str] | None) -> list
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--module", action="append", dest="modules", help="Module ID such as M01, F01, or X01")
+    parser.add_argument("--module", action="append", dest="modules", help="Article ID such as D01")
     parser.add_argument("--lang", action="append", dest="languages", choices=["en", "zh"])
     args = parser.parse_args()
 

@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use this course, please cite it as below."
-title: "Learn Interpretability: A Bilingual Interpretability Course"
+message: "If you use this repository, please cite it as below."
+title: "Learn Interpretability: Distill Circuits"
 type: software
 authors:
   - name: "Jonny-English"
@@ -8,12 +8,29 @@ license: MIT
 repository-code: "https://github.com/Jonny-English/learn-interpretability"
 keywords:
   - mechanistic interpretability
-  - neural circuits education
-  - superposition
-  - sparse autoencoders
-  - circuit tracing
-  - AI safety education
+  - Distill Circuits
+  - InceptionV1
+  - feature visualization
+  - bilingual education
 references:
+  - type: article
+    authors:
+      - family-names: Olah
+        given-names: Chris
+      - family-names: Cammarata
+        given-names: Nick
+      - family-names: Schubert
+        given-names: Ludwig
+      - family-names: Goh
+        given-names: Gabriel
+      - family-names: Petrov
+        given-names: Michael
+      - family-names: Carter
+        given-names: Shan
+    title: "Thread: Circuits"
+    journal: "Distill"
+    year: 2020
+    url: "https://distill.pub/2020/circuits/"
   - type: article
     authors:
       - family-names: Olah
@@ -32,17 +49,3 @@ references:
     journal: "Distill"
     year: 2020
     doi: "10.23915/distill.00024.001"
-  - type: article
-    authors:
-      - family-names: Anthropic
-        given-names: ""
-    title: "Toy Models of Superposition"
-    year: 2022
-    url: "https://www.anthropic.com/research/toy-models-of-superposition"
-  - type: article
-    authors:
-      - family-names: Anthropic
-        given-names: ""
-    title: "Towards Monosemanticity: Decomposing Language Models With Dictionary Learning"
-    year: 2023
-    url: "https://www.anthropic.com/research/towards-monosemanticity-decomposing-language-models-with-dictionary-learning"
